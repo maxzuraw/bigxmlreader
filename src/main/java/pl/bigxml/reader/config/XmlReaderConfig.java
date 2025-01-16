@@ -10,7 +10,7 @@ import java.util.List;
 @Data
 public class XmlReaderConfig {
 
-    private boolean isNamespaceAware;
+    private boolean namespaceAware;
     private boolean removeNamespaceManuallyEnabled;
     private String namespacesCommaSeparated;
 
