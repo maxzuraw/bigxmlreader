@@ -9,4 +9,6 @@ public class PathConfig {
     private String xmlPath;
     private String fullQualifiedClassName;
     private String targetName;
+    private Appearance appearance;
+    private Processing processing;
 }

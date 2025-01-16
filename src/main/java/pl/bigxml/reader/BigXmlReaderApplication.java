@@ -12,7 +12,7 @@ import pl.bigxml.reader.config.CsvReaderConfig;
 import pl.bigxml.reader.config.XmlReaderConfig;
 import pl.bigxml.reader.domain.PathConfig;
 import pl.bigxml.reader.domain.PathConfigMaps;
-import pl.bigxml.reader.domain.ResultMap;
+import pl.bigxml.reader.domain.ResultHolder;
 import pl.bigxml.reader.exceptions.CommandLineArgumentsCountMissmatchException;
 
 import java.util.List;
@@ -42,18 +42,19 @@ public class BigXmlReaderApplication implements CommandLineRunner {
 		PathConfigMaps pathConfigMaps = new PathConfigMaps(configs);
 
 		long startTime = System.nanoTime();
-		ResultMap resultMap = xmlFileReader.read(args[1], pathConfigMaps);
+		ResultHolder resultHolder = xmlFileReader.read(args[1], pathConfigMaps);
 		long stopTime = System.nanoTime();
 
 		log.info("Xml file processed in nano: {}", stopTime - startTime);
 
-
 		PathConfig pathConfig = pathConfigMaps.getResultMap().get("versionInterface");
-		var version = resultMap.get(pathConfig.getTargetName(), Class.forName(pathConfig.getFullQualifiedClassName()));
+		var version = resultHolder.getMapValueByKey(pathConfig.getTargetName(), Class.forName(pathConfig.getFullQualifiedClassName()));
 		log.info("{}", version);
 		pathConfig = pathConfigMaps.getResultMap().get("archivizationDate");
-		var archivizationDate = resultMap.get(pathConfig.getTargetName(), Class.forName(pathConfig.getFullQualifiedClassName()));
+		var archivizationDate = resultHolder.getMapValueByKey(pathConfig.getTargetName(), Class.forName(pathConfig.getFullQualifiedClassName()));
 		log.info("{}", archivizationDate);
-	}
 
+		log.info("{}", resultHolder.getHeader().toString());
+		log.info("{}", resultHolder.getFooter().toString());
+	}
 }
