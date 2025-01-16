@@ -1,0 +1,2 @@
+C:\Users\maxzu\Documents\cpl\zadanko_od_piotra\config.csv
+C:\Users\maxzu\Documents\cpl\zadanko_od_piotra\EUMAREARCH.00001.1900.20241031195539.00011.Payment_formatted.xml

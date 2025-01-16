@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: BigXmlReader
+
+bigxmlreader:
+  csv-reader:
+    skip-header: false
+    column-separator: ';'
