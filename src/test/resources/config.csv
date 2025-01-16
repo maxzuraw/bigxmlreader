@@ -1,0 +1,6 @@
+ZVSPaymentArchive.VersionInterface;java.lang.String;versionInterface
+ZVSPaymentArchive.DeliveringSystem;java.lang.String;delivery
+ZVSPaymentArchive.ArchDt;java.time.LocalDate;archivizationDate
+ZVSPaymentArchive.ArchFileNum;Integer;archivizationNumber
+ZVSPaymentArchive.IsLastArchFile;Boolean;isLastArchiveFile
+ZVSPaymentArchive.NbOfTxs;Integer;numberOfTransactions

@@ -39,9 +39,14 @@ public class BigXmlReaderApplication implements CommandLineRunner {
 			throw new CommandLineArgumentsCountMissmatchException();
 		}
 		List<PathConfig> configs = configFileReader.read(args[0]);
-
 		PathConfigMaps pathConfigMaps = new PathConfigMaps(configs);
+
+		long startTime = System.nanoTime();
 		ResultMap resultMap = xmlFileReader.read(args[1], pathConfigMaps);
+		long stopTime = System.nanoTime();
+
+		log.info("Xml file processed in nano: {}", stopTime - startTime);
+
 
 		PathConfig pathConfig = pathConfigMaps.getResultMap().get("versionInterface");
 		var version = resultMap.get(pathConfig.getTargetName(), Class.forName(pathConfig.getFullQualifiedClassName()));
