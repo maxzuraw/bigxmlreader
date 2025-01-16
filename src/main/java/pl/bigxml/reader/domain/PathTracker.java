@@ -5,7 +5,6 @@ import org.apache.logging.log4j.util.Strings;
 import java.util.LinkedList;
 import java.util.List;
 
-
 public class PathTracker {
 
     private final List<String> track;

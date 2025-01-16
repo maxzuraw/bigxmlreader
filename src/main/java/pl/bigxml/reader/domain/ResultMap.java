@@ -1,5 +1,7 @@
 package pl.bigxml.reader.domain;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 
 public class ResultMap {
@@ -11,6 +13,9 @@ public class ResultMap {
     }
 
     public <T> T get(String key, Class<T> type) {
+        if (type == LocalDate.class) {
+            return (T) LocalDate.parse(map.get(key), DateTimeFormatter.ISO_LOCAL_DATE);
+        }
         return type.cast(map.get(key));
     }
 }

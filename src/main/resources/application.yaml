@@ -6,3 +6,7 @@ bigxmlreader:
   csv-reader:
     skip-header: false
     column-separator: ';'
+  xml-reader:
+    is-namespace-aware: false
+    remove-namespace-manually-enabled: true
+    namespaces-comma-separated: ar,bb3.1.2,mx8.1.8
