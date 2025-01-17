@@ -7,13 +7,13 @@ Reads config.csv as configuration and xml file and processes xml file respective
 config file in form of csv
 
 ```shell
-ZVSPaymentArchive.VersionInterface;java.lang.String;versionInterface;MAP;INCLUDE
-ZVSPaymentArchive.DeliveringSystem;java.lang.String;delivery;MAP;INCLUDE
-ZVSPaymentArchive.ArchDt;java.time.LocalDate;archivizationDate;MAP;INCLUDE
-ZVSPaymentArchive.ArchFileNum;Integer;archivizationNumber;MAP;INCLUDE
-ZVSPaymentArchive.IsLastArchFile;Boolean;isLastArchiveFile;MAP;INCLUDE
-ZVSPaymentArchive.NbOfTxs;Integer;numberOfTransactions;MAP;INCLUDE
-ZVSPaymentArchive.PayInf;pl.bigxml.reader.domain.PayInfo;;LIST;EXCLUDE
+Document.ZVSPaymentArchive.VersionInterface;java.lang.String;versionInterface;MAP;INCLUDE
+Document.ZVSPaymentArchive.DeliveringSystem;java.lang.String;delivery;MAP;INCLUDE
+Document.ZVSPaymentArchive.ArchDt;java.time.LocalDate;archivizationDate;MAP;INCLUDE
+Document.ZVSPaymentArchive.ArchFileNum;Integer;archivizationNumber;MAP;INCLUDE
+Document.ZVSPaymentArchive.IsLastArchFile;Boolean;isLastArchiveFile;MAP;INCLUDE
+Document.ZVSPaymentArchive.NbOfTxs;Integer;numberOfTransactions;MAP;INCLUDE
+Document.ZVSPaymentArchive.PayInf;pl.bigxml.reader.domain.PayInfo;;LIST;EXCLUDE
 ```
 
 ## Columns
@@ -40,5 +40,5 @@ second argument is xml to parse
 # Running app example
 
 ```shell
-java -jar BigXmlReader-0.0.1-SNAPSHOT.jar C:\Users\maxzu\Documents\cpl\zadanko_od_piotra\config.csv C:\Users\maxzu\Documents\cpl\zadanko_od_piotra\EUMAREARCH.00001.1900.20241031195539.00011.Payment_formatted.xml
+java -jar BigXmlReader-0.0.1-SNAPSHOT.jar config.csv EUMAREARCH.00001.1900.20241031195539.00011.Payment_formatted.xml
 ```

@@ -4,12 +4,18 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import pl.bigxml.reader.config.XmlReaderConfig;
-import pl.bigxml.reader.domain.*;
+import pl.bigxml.reader.domain.Appearance;
+import pl.bigxml.reader.domain.PathConfig;
+import pl.bigxml.reader.domain.PathConfigMaps;
+import pl.bigxml.reader.domain.PathTracker;
+import pl.bigxml.reader.domain.PayInfo;
+import pl.bigxml.reader.domain.Processing;
+import pl.bigxml.reader.domain.ResultHolder;
 
 import javax.xml.stream.XMLInputFactory;
+import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
-import javax.xml.stream.XMLStreamConstants;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Map;
@@ -21,26 +27,14 @@ public class XmlFileReader {
 
     private final XmlReaderConfig xmlReaderConfig;
 
-    private static boolean isPayInfo(PathConfig pathConfig) {
-        return pathConfig != null &&
-                pathConfig.getFullQualifiedClassName().equals(PayInfo.class.getCanonicalName()) &&
-                pathConfig.getProcessing().equals(Processing.INCLUDE) &&
-                pathConfig.getAppearance().equals(Appearance.LIST);
-    }
-
     public ResultHolder read(String pathToXmlFile, PathConfigMaps pathConfigMaps) throws FileNotFoundException, XMLStreamException {
-        ResultHolder resultHolder = processXmlForValues(pathToXmlFile, pathConfigMaps);
-        processXmlForHeaderAndFooter(pathToXmlFile, resultHolder);
-        return resultHolder;
+        return processXmlForValues(pathToXmlFile, pathConfigMaps);
     }
 
     private ResultHolder processXmlForValues(String pathToXmlFile, PathConfigMaps pathConfigMaps) throws FileNotFoundException, XMLStreamException {
         Map<String, PathConfig> pathConfigPerPath = pathConfigMaps.getConfigMap();
 
         XMLInputFactory factory = XMLInputFactory.newInstance();
-        // NOTE: for some reason this property does not work on my environment
-        // so if it does not work, there is manual processing of elements to omit namespaces
-        // for that purpose there is property named: bigxmlreader.xml-reader.remove-namespace-manually-enabled
         factory.setProperty(XMLInputFactory.IS_NAMESPACE_AWARE, xmlReaderConfig.isNamespaceAware());
         XMLStreamReader xmlStreamReader = factory.createXMLStreamReader(new FileReader(pathToXmlFile));
 
@@ -48,15 +42,28 @@ public class XmlFileReader {
         ResultHolder resultHolder = new ResultHolder();
         PayInfo payInfo = null;
 
+        StringBuilder header = new StringBuilder();
+        StringBuilder footer = new StringBuilder();
+        StringBuilder currentSection = header;
+
+        boolean insidePayInf = false;
+
         while(xmlStreamReader.hasNext()) {
             int event = xmlStreamReader.next();
             PathConfig pathConfig = null;
             switch(event) {
                 case XMLStreamConstants.START_ELEMENT:
-                    if (xmlPathReaper(xmlStreamReader.getLocalName()).equals("Document")) {
-                        break;
+                    String localName = xmlStreamReader.getLocalName();
+                    if (xmlReaderConfig.getBodyNodeLocalName().equals(localName)
+                            && xmlReaderConfig.getBodyNodeNamespaceUri().equals(xmlStreamReader.getNamespaceURI())) {
+                        insidePayInf = true;
+                        currentSection = footer;
                     }
-                    pathTracker.addNextElement(xmlPathReaper(xmlStreamReader.getLocalName().trim()));
+                    if (!insidePayInf) {
+                        appendStartElement(xmlStreamReader, currentSection);
+                    }
+
+                    pathTracker.addNextElement(localName);
 
                     pathConfig = pathConfigPerPath.get(pathTracker.getFullTrack());
                     if (isPayInfo(pathConfig)) {
@@ -70,112 +77,86 @@ public class XmlFileReader {
                             resultHolder.putInMap(pathConfig.getTargetName(), xmlStreamReader.getText().trim());
                         }
                     }
+                    if (!insidePayInf) {
+                        currentSection.append(xmlStreamReader.getText());
+                    }
                     break;
                 case XMLStreamConstants.END_ELEMENT:
-                    if (xmlPathReaper(xmlStreamReader.getLocalName()).equals("Document")) {
-                        break;
-                    }
                     pathConfig = pathConfigPerPath.get(pathTracker.getFullTrack());
                     String lastElement = pathTracker.getLastElement();
-                    if (lastElement.equals(xmlPathReaper(xmlStreamReader.getLocalName()))) {
+                    if (lastElement.equals(xmlStreamReader.getLocalName())) {
                         log.debug(pathTracker.getFullTrack());
                         pathTracker.removeLastElement();
                     }
                     if (isPayInfo(pathConfig)) {
                         resultHolder.addToList(payInfo);
                     }
+
+                    if (xmlReaderConfig.getBodyNodeLocalName().equals(xmlStreamReader.getLocalName())
+                            && xmlReaderConfig.getBodyNodeNamespaceUri().equals(xmlStreamReader.getNamespaceURI())) {
+                        insidePayInf = false;
+                    } else if (!insidePayInf) {
+                        currentSection.append("</").append(xmlStreamReader.getPrefix()).append(":")
+                                .append(xmlStreamReader.getLocalName()).append(">");
+                    }
+
                     break;
+                case XMLStreamConstants.COMMENT:
+                    if (!insidePayInf) {
+                        currentSection.append("<!--").append(xmlStreamReader.getText()).append("-->");
+                    }
+                    break;
+
             }
         }
-
+        resultHolder.getHeader().append(header);
+        String cleanedUpFooter = cleanUpFooter(footer);
+        resultHolder.getFooter().append(cleanedUpFooter);
         return resultHolder;
     }
 
-    private void processXmlForHeaderAndFooter(String pathToXmlFile, ResultHolder resultHolder) throws FileNotFoundException, XMLStreamException {
-        XMLInputFactory factory = XMLInputFactory.newInstance();
-        XMLStreamReader xmlStreamReader = factory.createXMLStreamReader(new FileReader(pathToXmlFile));
-
-        boolean inHeader = true;
-        boolean inFooter = false;
-        int payInfDepth = 0;
-
-        StringBuilder header = resultHolder.getHeader();
-        StringBuilder footer = resultHolder.getFooter();
-
-        while(xmlStreamReader.hasNext()) {
-            int event = xmlStreamReader.next();
-            switch(event) {
-                case XMLStreamConstants.START_ELEMENT -> {
-                    String elementName = xmlStreamReader.getLocalName();
-                    // Check for <ar:PayInf>
-                    if ("PayInf".equals(elementName) && "http://www.equens.com/zvs/archive/transaction".equals(xmlStreamReader.getNamespaceURI())) {
-                        inHeader = false; // End header processing
-                        payInfDepth++;    // Start counting depth of <ar:PayInf>
-                    } else if (payInfDepth == 0 && !inFooter) {
-                        // Append to header if before <ar:PayInf>
-                        header.append("<ar:").append(elementName);
-                        appendNamespaces(xmlStreamReader, header);
-                        header.append(">");
-                    } else if (payInfDepth > 0) {
-                        // Increment depth for nested elements within <ar:PayInf>
-                        payInfDepth++;
-                    } else if (inFooter) {
-                        // Append to footer if after last </ar:PayInf>
-                        footer.append("<ar:").append(elementName);
-                        appendNamespaces(xmlStreamReader, footer);
-                        footer.append(">");
-                    }
-                }
-                case XMLStreamConstants.CHARACTERS -> {
-                    if (payInfDepth == 0) {
-                        // Append text content to header or footer
-                        String text = xmlStreamReader.getText().trim();
-                        if (inHeader && !text.isEmpty()) {
-                            header.append(text);
-                        } else if (inFooter && !text.isEmpty()) {
-                            footer.append(text);
-                        }
-                    }
-                }
-                case XMLStreamConstants.END_ELEMENT -> {
-                    String endElement = xmlStreamReader.getLocalName();
-                    // Check for </ar:PayInf>
-                    if ("PayInf".equals(endElement) && "http://www.equens.com/zvs/archive/transaction".equals(xmlStreamReader.getNamespaceURI())) {
-                        payInfDepth--; // Decrement depth
-                        if (payInfDepth == 0) {
-                            inFooter = true; // After last </ar:PayInf>, process footer
-                        }
-                    } else if (payInfDepth == 0 && !inFooter) {
-                        // Append closing tags to header
-                        header.append("</ar:").append(endElement).append(">");
-                    } else if (payInfDepth == 0 && inFooter) {
-                        // Append closing tags to footer
-                        footer.append("</ar:").append(endElement).append(">");
-                    } else if (payInfDepth > 0) {
-                        payInfDepth--; // Decrement nested depth
-                    }
-                }
-            }
-        }
+    private static boolean isPayInfo(PathConfig pathConfig) {
+        return pathConfig != null &&
+                pathConfig.getFullQualifiedClassName().equals(PayInfo.class.getCanonicalName()) &&
+                pathConfig.getProcessing().equals(Processing.INCLUDE) &&
+                pathConfig.getAppearance().equals(Appearance.LIST);
     }
 
-    private String xmlPathReaper(String originalPath) {
-        if (xmlReaderConfig.isRemoveNamespaceManuallyEnabled()) {
-            for (String ns : xmlReaderConfig.getNamespaces()) {
-                return originalPath.replace(ns, "");
-            }
+    private static void appendStartElement(XMLStreamReader reader, StringBuilder builder) {
+        builder.append("<");
+        if (reader.getPrefix() != null && !reader.getPrefix().isEmpty()) {
+            builder.append(reader.getPrefix()).append(":");
         }
-        return originalPath;
-    }
+        builder.append(reader.getLocalName());
 
-    private static void appendNamespaces(XMLStreamReader reader, StringBuilder builder) {
         for (int i = 0; i < reader.getNamespaceCount(); i++) {
-            builder.append(" xmlns:").append(reader.getNamespacePrefix(i))
-                    .append("=\"").append(reader.getNamespaceURI(i)).append("\"");
+            builder.append(" xmlns");
+            if (reader.getNamespacePrefix(i) != null) {
+                builder.append(":").append(reader.getNamespacePrefix(i));
+            }
+            builder.append("=\"").append(reader.getNamespaceURI(i)).append("\"");
         }
+
         for (int i = 0; i < reader.getAttributeCount(); i++) {
-            builder.append(" ").append(reader.getAttributeLocalName(i))
-                    .append("=\"").append(reader.getAttributeValue(i)).append("\"");
+            builder.append(" ")
+                    .append(reader.getAttributePrefix(i) != null && !reader.getAttributePrefix(i).isEmpty()
+                            ? reader.getAttributePrefix(i) + ":"
+                            : "")
+                    .append(reader.getAttributeLocalName(i))
+                    .append("=\"")
+                    .append(reader.getAttributeValue(i))
+                    .append("\"");
         }
+
+        builder.append(">");
     }
+
+    private static String cleanUpFooter(StringBuilder footer) {
+        String footerString = footer.toString();
+        return footerString.lines()
+                .filter(line -> !line.trim().isEmpty())
+                .reduce((line1, line2) -> line1 + "\n" + line2)
+                .orElse("");
+    }
+
 }

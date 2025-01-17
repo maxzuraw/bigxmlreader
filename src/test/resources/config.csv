@@ -1,7 +1,7 @@
-ZVSPaymentArchive.VersionInterface;java.lang.String;versionInterface;MAP;INCLUDE
-ZVSPaymentArchive.DeliveringSystem;java.lang.String;delivery;MAP;INCLUDE
-ZVSPaymentArchive.ArchDt;java.time.LocalDate;archivizationDate;MAP;INCLUDE
-ZVSPaymentArchive.ArchFileNum;Integer;archivizationNumber;MAP;INCLUDE
-ZVSPaymentArchive.IsLastArchFile;Boolean;isLastArchiveFile;MAP;INCLUDE
-ZVSPaymentArchive.NbOfTxs;Integer;numberOfTransactions;MAP;INCLUDE
-ZVSPaymentArchive.PayInf;pl.bigxml.reader.domain.PayInfo;;LIST;EXCLUDE
+Document.ZVSPaymentArchive.VersionInterface;java.lang.String;versionInterface;MAP;INCLUDE
+Document.ZVSPaymentArchive.DeliveringSystem;java.lang.String;delivery;MAP;INCLUDE
+Document.ZVSPaymentArchive.ArchDt;java.time.LocalDate;archivizationDate;MAP;INCLUDE
+Document.ZVSPaymentArchive.ArchFileNum;Integer;archivizationNumber;MAP;INCLUDE
+Document.ZVSPaymentArchive.IsLastArchFile;Boolean;isLastArchiveFile;MAP;INCLUDE
+Document.ZVSPaymentArchive.NbOfTxs;Integer;numberOfTransactions;MAP;INCLUDE
+Document.ZVSPaymentArchive.PayInf;pl.bigxml.reader.domain.PayInfo;;LIST;EXCLUDE

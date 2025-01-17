@@ -7,6 +7,6 @@ bigxmlreader:
     skip-header: false
     column-separator: ';'
   xml-reader:
-    namespace-aware: false
-    remove-namespace-manually-enabled: true
-    namespaces-comma-separated: ar,bb3.1.2,mx8.1.8
+    namespace-aware: true
+    body-node-local-name: PayInf
+    body-node-namespace-uri: http://www.equens.com/zvs/archive/transaction

@@ -10,7 +10,10 @@ import java.util.List;
 
 public class ResultHolder {
 
+    private static final DateTimeFormatter DEFAULT_DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
     private final HashMap<String, String> map = new HashMap<>();
+    @Getter
     private final List<Object> list = new ArrayList<>();
     @Getter
     private final StringBuilder header = new StringBuilder();
@@ -18,29 +21,22 @@ public class ResultHolder {
     private final StringBuilder footer = new StringBuilder();
 
 
-    public void appendToHeader(String text) {
-        header.append(text);
-    }
-
-    public void appendToFooter(String text) {
-        footer.append(text);
-    }
-
     public void addToList(Object object) {
         list.add(object);
-    }
-
-    public int getListSize() {
-        return list.size();
     }
 
     public void putInMap(String key, String value) {
         map.put(key, value);
     }
 
+    @SuppressWarnings("unchecked")
     public <T> T getMapValueByKey(String key, Class<T> type) {
+        String value = map.get(key);
+        if (value == null) {
+            return null;
+        }
         if (type == LocalDate.class) {
-            return (T) LocalDate.parse(map.get(key), DateTimeFormatter.ISO_LOCAL_DATE);
+            return (T) LocalDate.parse(value, DEFAULT_DATE_FORMATTER);
         }
         return type.cast(map.get(key));
     }
