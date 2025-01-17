@@ -41,7 +41,7 @@ public class XmlFileReader {
         // NOTE: for some reason this property does not work on my environment
         // so if it does not work, there is manual processing of elements to omit namespaces
         // for that purpose there is property named: bigxmlreader.xml-reader.remove-namespace-manually-enabled
-        factory.setProperty(XMLInputFactory.IS_NAMESPACE_AWARE, false);
+        factory.setProperty(XMLInputFactory.IS_NAMESPACE_AWARE, xmlReaderConfig.isNamespaceAware());
         XMLStreamReader xmlStreamReader = factory.createXMLStreamReader(new FileReader(pathToXmlFile));
 
         PathTracker pathTracker = new PathTracker();

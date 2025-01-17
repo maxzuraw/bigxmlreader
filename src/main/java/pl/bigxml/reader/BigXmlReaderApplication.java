@@ -7,7 +7,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import pl.bigxml.reader.business.ConfigFileReader;
+import pl.bigxml.reader.business.ProcessingCallback;
 import pl.bigxml.reader.business.XmlFileReader;
+import pl.bigxml.reader.business.XmlPaymentsProcessor;
 import pl.bigxml.reader.config.CsvReaderConfig;
 import pl.bigxml.reader.config.XmlReaderConfig;
 import pl.bigxml.reader.domain.PathConfig;
@@ -16,6 +18,8 @@ import pl.bigxml.reader.domain.ResultHolder;
 import pl.bigxml.reader.exceptions.CommandLineArgumentsCountMissmatchException;
 
 import java.util.List;
+
+import static pl.bigxml.reader.utils.NanoToSeconds.toSeconds;
 
 @Slf4j
 @SpringBootApplication
@@ -28,6 +32,7 @@ public class BigXmlReaderApplication implements CommandLineRunner {
 
 	private final ConfigFileReader configFileReader;
 	private final XmlFileReader xmlFileReader;
+	private final XmlPaymentsProcessor xmlPaymentsProcessor;
 
 	public static void main(String[] args) {
 		SpringApplication.run(BigXmlReaderApplication.class, args);
@@ -44,8 +49,15 @@ public class BigXmlReaderApplication implements CommandLineRunner {
 		long startTime = System.nanoTime();
 		ResultHolder resultHolder = xmlFileReader.read(args[1], pathConfigMaps);
 		long stopTime = System.nanoTime();
+		log.info("Xml file read in seconds: {}", toSeconds(stopTime - startTime));
 
-		log.info("Xml file processed in nano: {}", stopTime - startTime);
+
+		startTime = System.nanoTime();
+		xmlPaymentsProcessor.process(args[1], 100, new ProcessingCallback());
+		stopTime = System.nanoTime();
+		log.info("Payments processed in seconds: {}", toSeconds(stopTime - startTime));
+
+
 
 		PathConfig pathConfig = pathConfigMaps.getResultMap().get("versionInterface");
 		var version = resultHolder.getMapValueByKey(pathConfig.getTargetName(), Class.forName(pathConfig.getFullQualifiedClassName()));
