@@ -1,9 +1,9 @@
-package pl.bigxml.reader.business;
+package pl.bigxml.reader.business.headerandfooter;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-import pl.bigxml.reader.config.XmlReaderConfig;
+import pl.bigxml.reader.config.XmlReaderProperties;
 import pl.bigxml.reader.domain.Appearance;
 import pl.bigxml.reader.domain.PathConfig;
 import pl.bigxml.reader.domain.PathConfigMaps;
@@ -23,9 +23,9 @@ import java.util.Map;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class XmlFileReader {
+public class HeaderAndFooterProcessor {
 
-    private final XmlReaderConfig xmlReaderConfig;
+    private final XmlReaderProperties xmlReaderProperties;
 
     public ResultHolder read(String pathToXmlFile, PathConfigMaps pathConfigMaps) throws FileNotFoundException, XMLStreamException {
         return processXmlForValues(pathToXmlFile, pathConfigMaps);
@@ -35,7 +35,7 @@ public class XmlFileReader {
         Map<String, PathConfig> pathConfigPerPath = pathConfigMaps.getConfigMap();
 
         XMLInputFactory factory = XMLInputFactory.newInstance();
-        factory.setProperty(XMLInputFactory.IS_NAMESPACE_AWARE, xmlReaderConfig.isNamespaceAware());
+        factory.setProperty(XMLInputFactory.IS_NAMESPACE_AWARE, xmlReaderProperties.isNamespaceAware());
         XMLStreamReader xmlStreamReader = factory.createXMLStreamReader(new FileReader(pathToXmlFile));
 
         PathTracker pathTracker = new PathTracker();
@@ -54,8 +54,8 @@ public class XmlFileReader {
             switch(event) {
                 case XMLStreamConstants.START_ELEMENT:
                     String localName = xmlStreamReader.getLocalName();
-                    if (xmlReaderConfig.getBodyNodeLocalName().equals(localName)
-                            && xmlReaderConfig.getBodyNodeNamespaceUri().equals(xmlStreamReader.getNamespaceURI())) {
+                    if (xmlReaderProperties.getBodyNodeLocalName().equals(localName)
+                            && xmlReaderProperties.getBodyNodeNamespaceUri().equals(xmlStreamReader.getNamespaceURI())) {
                         insidePayInf = true;
                         currentSection = footer;
                     }
@@ -92,8 +92,8 @@ public class XmlFileReader {
                         resultHolder.addToList(payInfo);
                     }
 
-                    if (xmlReaderConfig.getBodyNodeLocalName().equals(xmlStreamReader.getLocalName())
-                            && xmlReaderConfig.getBodyNodeNamespaceUri().equals(xmlStreamReader.getNamespaceURI())) {
+                    if (xmlReaderProperties.getBodyNodeLocalName().equals(xmlStreamReader.getLocalName())
+                            && xmlReaderProperties.getBodyNodeNamespaceUri().equals(xmlStreamReader.getNamespaceURI())) {
                         insidePayInf = false;
                     } else if (!insidePayInf) {
                         currentSection.append("</").append(xmlStreamReader.getPrefix()).append(":")

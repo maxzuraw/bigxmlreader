@@ -1,9 +1,10 @@
-package pl.bigxml.reader.business;
+package pl.bigxml.reader.business.payments;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-import pl.bigxml.reader.config.XmlReaderConfig;
+import pl.bigxml.reader.business.chunks.ChunkProcessingCallback;
+import pl.bigxml.reader.config.XmlReaderProperties;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
@@ -15,11 +16,11 @@ import static pl.bigxml.reader.utils.NanoToSeconds.toSeconds;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class XmlPaymentsProcessor {
+public class PaymentsProcessor {
 
-    private final XmlReaderConfig readerConfig;
+    private final XmlReaderProperties readerConfig;
 
-    public void process(String pathToXmlFile, int chunkSize, ProcessingCallback processingCallback) throws Exception {
+    public void process(String pathToXmlFile, int chunkSize, ChunkProcessingCallback chunkProcessingCallback) throws Exception {
         XMLInputFactory factory = XMLInputFactory.newInstance();
         XMLStreamReader xmlStreamReader = factory.createXMLStreamReader(new FileReader(pathToXmlFile));
 
@@ -39,14 +40,14 @@ public class XmlPaymentsProcessor {
                 currentCount++;
 
                 if (count % chunkSize == 0 ) {
-                    processingCallback.apply(currentChunk.toString().trim(), currentCount);
+                    chunkProcessingCallback.apply(currentChunk.toString().trim(), currentCount);
                     currentChunk.setLength(0); // Clear the chunk
                     currentCount = 0;
                 }
             }
         }
         if (!currentChunk.isEmpty()) {
-            processingCallback.apply(currentChunk.toString().trim(), currentCount);
+            chunkProcessingCallback.apply(currentChunk.toString().trim(), currentCount);
         }
 
         long stopTime = System.nanoTime();

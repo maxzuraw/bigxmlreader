@@ -5,7 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ConfigurationProperties(prefix = "bigxmlreader.xml-reader")
 @Data
-public class XmlReaderConfig {
+public class XmlReaderProperties {
 
     private boolean namespaceAware;
     private String bodyNodeLocalName;

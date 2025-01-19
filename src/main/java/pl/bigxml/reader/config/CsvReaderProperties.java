@@ -5,7 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ConfigurationProperties(prefix = "bigxmlreader.csv-reader")
 @Data
-public class CsvReaderConfig {
+public class CsvReaderProperties {
 
     private boolean skipHeader;
     private char columnSeparator;

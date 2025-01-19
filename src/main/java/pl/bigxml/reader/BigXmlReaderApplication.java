@@ -6,12 +6,14 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import pl.bigxml.reader.business.ConfigFileReader;
-import pl.bigxml.reader.business.ProcessingCallback;
-import pl.bigxml.reader.business.XmlFileReader;
-import pl.bigxml.reader.business.XmlPaymentsProcessor;
-import pl.bigxml.reader.config.CsvReaderConfig;
-import pl.bigxml.reader.config.XmlReaderConfig;
+import pl.bigxml.reader.business.*;
+import pl.bigxml.reader.business.chunks.ChunkProcessingCallback;
+import pl.bigxml.reader.business.chunks.ChunksProcessor;
+import pl.bigxml.reader.business.headerandfooter.HeaderAndFooterProcessor;
+import pl.bigxml.reader.business.payments.PaymentsProcessor;
+import pl.bigxml.reader.config.CsvReaderProperties;
+import pl.bigxml.reader.config.XmlChunkWriterProperties;
+import pl.bigxml.reader.config.XmlReaderProperties;
 import pl.bigxml.reader.domain.PathConfig;
 import pl.bigxml.reader.domain.PathConfigMaps;
 import pl.bigxml.reader.domain.ResultHolder;
@@ -24,16 +26,21 @@ import static pl.bigxml.reader.utils.NanoToSeconds.toSeconds;
 @Slf4j
 @SpringBootApplication
 @EnableConfigurationProperties({
-		CsvReaderConfig.class,
-		XmlReaderConfig.class
+		CsvReaderProperties.class,
+		XmlReaderProperties.class,
+		XmlChunkWriterProperties.class
 })
 @RequiredArgsConstructor
 public class BigXmlReaderApplication implements CommandLineRunner {
 
 	private final ConfigFileReader configFileReader;
-	private final XmlFileReader xmlFileReader;
-	private final XmlPaymentsProcessor paymentsProcessor;
-	private final XmlReaderConfig xmlReaderConfig;
+	private final XmlReaderProperties xmlReaderProperties;
+	private final XmlChunkWriterProperties xmlChunkWriterProperties;
+
+	private final HeaderAndFooterProcessor headerAndFooterProcessor;
+	private final ChunksProcessor chunksProcessor;
+	private final PaymentsProcessor paymentsProcessor;
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(BigXmlReaderApplication.class, args);
@@ -47,24 +54,39 @@ public class BigXmlReaderApplication implements CommandLineRunner {
 		List<PathConfig> configs = configFileReader.read(args[0]);
 		PathConfigMaps pathConfigMaps = new PathConfigMaps(configs);
 
+
+		// 1. First processing: get header and footer as strings & get header values
 		long startTime = System.nanoTime();
-		ResultHolder resultHolder = xmlFileReader.read(args[1], pathConfigMaps);
+		ResultHolder resultHolder = headerAndFooterProcessor.read(args[1], pathConfigMaps);
 		long stopTime = System.nanoTime();
-		log.info("Xml file read in seconds: {}", toSeconds(stopTime - startTime));
+		log.info("Processing for header/footer string and header values done in seconds: {}", toSeconds(stopTime - startTime));
 
 
+		// 2. Second processing: chunk xml into smaller xmls
+		startTime = System.nanoTime();
+		chunksProcessor.process(args[1], xmlReaderProperties.getChunkSize(), new ChunkProcessingCallback(
+				resultHolder.getHeader().toString(),
+				resultHolder.getFooter().toString(),
+				xmlChunkWriterProperties.getTargetFolder(),
+				xmlChunkWriterProperties.getTargetFilePrefix())
+		);
+		stopTime = System.nanoTime();
+		log.info("Chunks read in seconds: {}", toSeconds(stopTime - startTime));
+
+
+//		paymentsProcessor.process(args[1], xmlReaderConfig.getChunkSize(), new ProcessingCallback());
+
+
+		// NOTE: write some header values to show how to access them
+		writeSomeHeaderValues(pathConfigMaps, resultHolder);
+	}
+
+	private static void writeSomeHeaderValues(PathConfigMaps pathConfigMaps, ResultHolder resultHolder) throws ClassNotFoundException {
 		PathConfig pathConfig = pathConfigMaps.getResultMap().get("versionInterface");
 		var version = resultHolder.getMapValueByKey(pathConfig.getTargetName(), Class.forName(pathConfig.getFullQualifiedClassName()));
 		log.info("{}", version);
 		pathConfig = pathConfigMaps.getResultMap().get("archivizationDate");
 		var archivizationDate = resultHolder.getMapValueByKey(pathConfig.getTargetName(), Class.forName(pathConfig.getFullQualifiedClassName()));
 		log.info("{}", archivizationDate);
-
-		log.info("{}", resultHolder.getHeader().toString());
-		log.info("{}", resultHolder.getFooter().toString());
-
-
-		paymentsProcessor.process(args[1], xmlReaderConfig.getChunkSize(), new ProcessingCallback());
-
 	}
 }
