@@ -16,8 +16,9 @@ import pl.bigxml.reader.business.payments.StorageCallback;
 import pl.bigxml.reader.config.CsvReaderProperties;
 import pl.bigxml.reader.config.XmlChunkWriterProperties;
 import pl.bigxml.reader.config.XmlReaderProperties;
-import pl.bigxml.reader.domain.PathConfig;
+import pl.bigxml.reader.domain.HeaderFooterConfig;
 import pl.bigxml.reader.domain.PathConfigMaps;
+import pl.bigxml.reader.domain.PayinfoMappingConfig;
 import pl.bigxml.reader.domain.ResultHolder;
 import pl.bigxml.reader.exceptions.CommandLineArgumentsCountMissmatchException;
 
@@ -35,7 +36,8 @@ import static pl.bigxml.reader.utils.NanoToSeconds.toSeconds;
 @RequiredArgsConstructor
 public class BigXmlReaderApplication implements CommandLineRunner {
 
-	private final ConfigFileReader configFileReader;
+	private final HeaderFooterConfigFileReader headerFooterConfigFileReader;
+	private final PayinfoMappingConfigFileReader payinfoMappingConfigFileReader;
 	private final XmlReaderProperties xmlReaderProperties;
 	private final XmlChunkWriterProperties xmlChunkWriterProperties;
 
@@ -53,7 +55,7 @@ public class BigXmlReaderApplication implements CommandLineRunner {
 		if (args.length < 1) {
 			throw new CommandLineArgumentsCountMissmatchException();
 		}
-		List<PathConfig> configs = configFileReader.read();
+		List<HeaderFooterConfig> configs = headerFooterConfigFileReader.read();
 		PathConfigMaps pathConfigMaps = new PathConfigMaps(configs);
 
 
@@ -77,7 +79,13 @@ public class BigXmlReaderApplication implements CommandLineRunner {
 
 
 		// 3. Third processing: map payments and store them somewhere
-		paymentsProcessor.process(args[0], xmlReaderProperties.getChunkSize(), new SinglePaymentMapper(), new StorageCallback());
+		List<PayinfoMappingConfig> payinfoConfigs = payinfoMappingConfigFileReader.read();
+		paymentsProcessor.process(
+				args[0],
+				xmlReaderProperties.getChunkSize(),
+				new SinglePaymentMapper(payinfoConfigs),
+				new StorageCallback()
+		);
 
 
 		// NOTE: write some header values to show how to access them
@@ -85,11 +93,11 @@ public class BigXmlReaderApplication implements CommandLineRunner {
 	}
 
 	private static void writeSomeHeaderValues(PathConfigMaps pathConfigMaps, ResultHolder resultHolder) throws ClassNotFoundException {
-		PathConfig pathConfig = pathConfigMaps.getResultMap().get("versionInterface");
-		var version = resultHolder.getMapValueByKey(pathConfig.getTargetName(), Class.forName(pathConfig.getFullQualifiedClassName()));
+		HeaderFooterConfig headerFooterConfig = pathConfigMaps.getResultMap().get("versionInterface");
+		var version = resultHolder.getMapValueByKey(headerFooterConfig.getTargetName(), Class.forName(headerFooterConfig.getFullQualifiedClassName()));
 		log.info("{}", version);
-		pathConfig = pathConfigMaps.getResultMap().get("archivizationDate");
-		var archivizationDate = resultHolder.getMapValueByKey(pathConfig.getTargetName(), Class.forName(pathConfig.getFullQualifiedClassName()));
+		headerFooterConfig = pathConfigMaps.getResultMap().get("archivizationDate");
+		var archivizationDate = resultHolder.getMapValueByKey(headerFooterConfig.getTargetName(), Class.forName(headerFooterConfig.getFullQualifiedClassName()));
 		log.info("{}", archivizationDate);
 	}
 }

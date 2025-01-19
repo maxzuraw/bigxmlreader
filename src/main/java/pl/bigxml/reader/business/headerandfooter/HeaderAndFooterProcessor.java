@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import pl.bigxml.reader.config.XmlReaderProperties;
 import pl.bigxml.reader.domain.Appearance;
-import pl.bigxml.reader.domain.PathConfig;
+import pl.bigxml.reader.domain.HeaderFooterConfig;
 import pl.bigxml.reader.domain.PathConfigMaps;
 import pl.bigxml.reader.domain.PathTracker;
 import pl.bigxml.reader.domain.PayInfo;
@@ -32,7 +32,7 @@ public class HeaderAndFooterProcessor {
     }
 
     private ResultHolder processXmlForValues(String pathToXmlFile, PathConfigMaps pathConfigMaps) throws FileNotFoundException, XMLStreamException {
-        Map<String, PathConfig> pathConfigPerPath = pathConfigMaps.getConfigMap();
+        Map<String, HeaderFooterConfig> pathConfigPerPath = pathConfigMaps.getConfigMap();
 
         XMLInputFactory factory = XMLInputFactory.newInstance();
         factory.setProperty(XMLInputFactory.IS_NAMESPACE_AWARE, xmlReaderProperties.isNamespaceAware());
@@ -50,7 +50,7 @@ public class HeaderAndFooterProcessor {
 
         while(xmlStreamReader.hasNext()) {
             int event = xmlStreamReader.next();
-            PathConfig pathConfig = null;
+            HeaderFooterConfig headerFooterConfig = null;
             switch(event) {
                 case XMLStreamConstants.START_ELEMENT:
                     String localName = xmlStreamReader.getLocalName();
@@ -65,16 +65,16 @@ public class HeaderAndFooterProcessor {
 
                     pathTracker.addNextElement(localName);
 
-                    pathConfig = pathConfigPerPath.get(pathTracker.getFullTrack());
-                    if (isPayInfo(pathConfig)) {
+                    headerFooterConfig = pathConfigPerPath.get(pathTracker.getFullTrack());
+                    if (isPayInfo(headerFooterConfig)) {
                         payInfo = new PayInfo();
                     }
                     break;
                 case XMLStreamConstants.CHARACTERS:
-                    pathConfig = pathConfigPerPath.get(pathTracker.getFullTrack());
-                    if (pathConfig != null) {
-                        if (Appearance.MAP.equals(pathConfig.getAppearance())) {
-                            resultHolder.putInMap(pathConfig.getTargetName(), xmlStreamReader.getText().trim());
+                    headerFooterConfig = pathConfigPerPath.get(pathTracker.getFullTrack());
+                    if (headerFooterConfig != null) {
+                        if (Appearance.MAP.equals(headerFooterConfig.getAppearance())) {
+                            resultHolder.putInMap(headerFooterConfig.getTargetName(), xmlStreamReader.getText().trim());
                         }
                     }
                     if (!insidePayInf) {
@@ -82,13 +82,13 @@ public class HeaderAndFooterProcessor {
                     }
                     break;
                 case XMLStreamConstants.END_ELEMENT:
-                    pathConfig = pathConfigPerPath.get(pathTracker.getFullTrack());
+                    headerFooterConfig = pathConfigPerPath.get(pathTracker.getFullTrack());
                     String lastElement = pathTracker.getLastElement();
                     if (lastElement.equals(xmlStreamReader.getLocalName())) {
                         log.debug(pathTracker.getFullTrack());
                         pathTracker.removeLastElement();
                     }
-                    if (isPayInfo(pathConfig)) {
+                    if (isPayInfo(headerFooterConfig)) {
                         resultHolder.addToList(payInfo);
                     }
 
@@ -115,11 +115,11 @@ public class HeaderAndFooterProcessor {
         return resultHolder;
     }
 
-    private static boolean isPayInfo(PathConfig pathConfig) {
-        return pathConfig != null &&
-                pathConfig.getFullQualifiedClassName().equals(PayInfo.class.getCanonicalName()) &&
-                pathConfig.getProcessing().equals(Processing.INCLUDE) &&
-                pathConfig.getAppearance().equals(Appearance.LIST);
+    private static boolean isPayInfo(HeaderFooterConfig headerFooterConfig) {
+        return headerFooterConfig != null &&
+                headerFooterConfig.getFullQualifiedClassName().equals(PayInfo.class.getCanonicalName()) &&
+                headerFooterConfig.getProcessing().equals(Processing.INCLUDE) &&
+                headerFooterConfig.getAppearance().equals(Appearance.LIST);
     }
 
     private static void appendStartElement(XMLStreamReader reader, StringBuilder builder) {

@@ -9,9 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
 import pl.bigxml.reader.config.CsvReaderProperties;
-import pl.bigxml.reader.domain.Appearance;
-import pl.bigxml.reader.domain.PathConfig;
-import pl.bigxml.reader.domain.Processing;
+import pl.bigxml.reader.domain.PayinfoMappingConfig;
 
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -19,15 +17,15 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
-public class ConfigFileReader {
+public class PayinfoMappingConfigFileReader {
 
     private final CsvReaderProperties csvReaderProperties;
 
-    @Value("classpath:config.csv")
+    @Value("classpath:payinfo_mapping.csv")
     private Resource resourceFile;
 
-    public List<PathConfig> read() throws Exception {
-        List<PathConfig> result = new ArrayList<>();
+    public List<PayinfoMappingConfig> read() throws Exception {
+        List<PayinfoMappingConfig> result = new ArrayList<>();
         CSVParser parser = new CSVParserBuilder()
                 .withSeparator(csvReaderProperties.getColumnSeparator())
                 .withIgnoreQuotations(true)
@@ -38,16 +36,14 @@ public class ConfigFileReader {
                 reader.readNext();
             }
             while ((line = reader.readNext()) != null) {
-                PathConfig pathConfig = PathConfig.builder()
+                PayinfoMappingConfig config = PayinfoMappingConfig.builder()
                         .xmlPath(line[0])
-                        .fullQualifiedClassName(line[1])
-                        .targetName(line[2])
-                        .appearance(Appearance.valueOf(line[3]))
-                        .processing(Processing.valueOf(line[4]))
+                        .targetPropertyName(line[1])
                         .build();
-                result.add(pathConfig);
+                result.add(config);
             }
         }
         return result;
     }
+
 }

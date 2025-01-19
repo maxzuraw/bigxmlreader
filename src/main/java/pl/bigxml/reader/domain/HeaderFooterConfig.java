@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class PathConfig {
+public class HeaderFooterConfig {
     private String xmlPath;
     private String fullQualifiedClassName;
     private String targetName;

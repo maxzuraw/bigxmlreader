@@ -1,15 +1,23 @@
 package pl.bigxml.reader.business.payments;
 
 import lombok.SneakyThrows;
+import pl.bigxml.reader.domain.PayinfoMappingConfig;
 import pl.bigxml.reader.domain.Payment;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamReader;
 import java.io.StringReader;
+import java.util.List;
 import java.util.function.Function;
 
 public class SinglePaymentMapper implements Function<String, Payment> {
+
+    private final List<PayinfoMappingConfig> configs;
+
+    public SinglePaymentMapper(List<PayinfoMappingConfig> configs) {
+        this.configs = configs;
+    }
 
     @SneakyThrows
     @Override
