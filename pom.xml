@@ -47,6 +47,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>com.fasterxml.woodstox</groupId>
+			<artifactId>woodstox-core</artifactId>
+			<version>6.2.8</version> <!-- Use the latest version -->
+		</dependency>
+
+		<dependency>
 			<groupId>com.opencsv</groupId>
 			<artifactId>opencsv</artifactId>
 			<version>5.7.1</version>

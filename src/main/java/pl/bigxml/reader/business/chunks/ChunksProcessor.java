@@ -72,6 +72,10 @@ public class ChunksProcessor {
 
             if (event == XMLStreamConstants.CHARACTERS) {
                 elementBuilder.append(reader.getText());
+            } else if (event == XMLStreamConstants.CDATA) {
+                elementBuilder.append("<![CDATA[")
+                        .append(reader.getText())
+                        .append("]]>");
             } else if (event == XMLStreamConstants.START_ELEMENT) {
                 elementBuilder.append("<");
                 appendPrefixIfExists(reader, elementBuilder);
@@ -84,14 +88,12 @@ public class ChunksProcessor {
                     elementBuilder.append("</");
                     appendPrefixIfExists(reader, elementBuilder);
                     elementBuilder.append(elementName);
-                    appendNamespacesIfExists(reader, elementBuilder);
                     elementBuilder.append(">");
                     break;
                 } else {
                     elementBuilder.append("</");
                     appendPrefixIfExists(reader, elementBuilder);
                     elementBuilder.append(reader.getLocalName());
-                    appendNamespacesIfExists(reader, elementBuilder);
                     elementBuilder.append(">");
                 }
             }

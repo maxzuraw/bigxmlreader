@@ -48,23 +48,23 @@ public class BigXmlReaderApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		if (args.length < 2) {
+		if (args.length < 1) {
 			throw new CommandLineArgumentsCountMissmatchException();
 		}
-		List<PathConfig> configs = configFileReader.read(args[0]);
+		List<PathConfig> configs = configFileReader.read();
 		PathConfigMaps pathConfigMaps = new PathConfigMaps(configs);
 
 
 		// 1. First processing: get header and footer as strings & get header values
 		long startTime = System.nanoTime();
-		ResultHolder resultHolder = headerAndFooterProcessor.read(args[1], pathConfigMaps);
+		ResultHolder resultHolder = headerAndFooterProcessor.read(args[0], pathConfigMaps);
 		long stopTime = System.nanoTime();
 		log.info("Processing for header/footer string and header values done in seconds: {}", toSeconds(stopTime - startTime));
 
 
 		// 2. Second processing: chunk xml into smaller xmls
 		startTime = System.nanoTime();
-		chunksProcessor.process(args[1], xmlReaderProperties.getChunkSize(), new ChunkProcessingCallback(
+		chunksProcessor.process(args[0], xmlReaderProperties.getChunkSize(), new ChunkProcessingCallback(
 				resultHolder.getHeader().toString(),
 				resultHolder.getFooter().toString(),
 				xmlChunkWriterProperties.getTargetFolder(),
