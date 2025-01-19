@@ -11,6 +11,8 @@ import pl.bigxml.reader.business.chunks.ChunkProcessingCallback;
 import pl.bigxml.reader.business.chunks.ChunksProcessor;
 import pl.bigxml.reader.business.headerandfooter.HeaderAndFooterProcessor;
 import pl.bigxml.reader.business.payments.PaymentsProcessor;
+import pl.bigxml.reader.business.payments.SinglePaymentMapper;
+import pl.bigxml.reader.business.payments.StorageCallback;
 import pl.bigxml.reader.config.CsvReaderProperties;
 import pl.bigxml.reader.config.XmlChunkWriterProperties;
 import pl.bigxml.reader.config.XmlReaderProperties;
@@ -74,7 +76,8 @@ public class BigXmlReaderApplication implements CommandLineRunner {
 		log.info("Chunks read in seconds: {}", toSeconds(stopTime - startTime));
 
 
-//		paymentsProcessor.process(args[1], xmlReaderConfig.getChunkSize(), new ProcessingCallback());
+		// 3. Third processing: map payments and store them somewhere
+		paymentsProcessor.process(args[0], xmlReaderProperties.getChunkSize(), new SinglePaymentMapper(), new StorageCallback());
 
 
 		// NOTE: write some header values to show how to access them
