@@ -1,0 +1,2817 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ar:Document xmlns:ar="http://www.equens.com/zvs/archive/transaction"
+             xmlns:bb3.1.2="urn:iso:std:iso:20022:tech:xsd:pacs.003.001.02"
+             xmlns:mx8.1.8="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08"
+>
+    <ar:ZVSPaymentArchive>
+        <ar:VersionInterface>24.4.1</ar:VersionInterface>
+        <ar:DeliveringSystem>ZVS1900</ar:DeliveringSystem>
+        <ar:ArchDt>2024-10-31</ar:ArchDt>
+        <ar:ArchFileNum>1</ar:ArchFileNum>
+        <ar:IsLastArchFile>true</ar:IsLastArchFile>
+        <ar:PayInf>
+            <ar:InFile>
+                <ar:Nm>EWLSCTIP0F.RINIT.1900.20241031113555.00098.tdt.uuu.ttt</ar:Nm>
+                <ar:Id>562929250001</ar:Id>
+                <ar:FmtGrpNm>SEPA_CT</ar:FmtGrpNm>
+                <ar:SndngSys>999</ar:SndngSys>
+            </ar:InFile>
+            <ar:OutFile>
+                <ar:Nm>COBA_P202BOX06_SIC_IP</ar:Nm>
+                <ar:Id>562929450000</ar:Id>
+                <ar:FmtGrpNm>SIC_INST</ar:FmtGrpNm>
+            </ar:OutFile>
+            <ar:InOrd>
+                <ar:LogFmtNm>sepa_ct_camt.056.001.08_standard</ar:LogFmtNm>
+                <ar:Area>
+                    <ar:Nm>internal</ar:Nm>
+                    <ar:Type>INT</ar:Type>
+                </ar:Area>
+                <ar:OrdType>RFC_CT</ar:OrdType>
+                <ar:InstgAgt>
+                    <ar:BIC>XXXXXXXX</ar:BIC>
+                </ar:InstgAgt>
+                <ar:InstdAgt>
+                    <ar:BIC>COBADEFF</ar:BIC>
+                    <ar:NatBkCd>088100</ar:NatBkCd>
+                </ar:InstdAgt>
+                <ar:OrdRef>
+                    <ar:OrdId>202410310000056</ar:OrdId>
+                    <ar:TechOrdId>257033440001</ar:TechOrdId>
+                    <ar:ClrRefNumOrd>202410310000060</ar:ClrRefNumOrd>
+                </ar:OrdRef>
+                <ar:ClrSysId>SIP</ar:ClrSysId>
+                <ar:Amt Ccy="CHF">5.23</ar:Amt>
+                <ar:NbOfTxs>1</ar:NbOfTxs>
+                <ar:OrgAmt Ccy="CHF">5.23</ar:OrgAmt>
+                <ar:OrgNbOfTxs>1</ar:OrgNbOfTxs>
+            </ar:InOrd>
+            <ar:OutOrd>
+                <ar:LogFmtNm>sic_inst_camt.056.001.08_six</ar:LogFmtNm>
+                <ar:Area>
+                    <ar:Nm>external</ar:Nm>
+                    <ar:Type>EXT</ar:Type>
+                </ar:Area>
+                <ar:OrdType>RFC_CT</ar:OrdType>
+                <ar:OrdRef>
+                    <ar:OrdId>COBADEFF202410310000061</ar:OrdId>
+                    <ar:TechOrdId>257033500000</ar:TechOrdId>
+                    <ar:ClrRefNumOrd>202410310000061</ar:ClrRefNumOrd>
+                </ar:OrdRef>
+                <ar:Amt Ccy="CHF">5.23</ar:Amt>
+                <ar:NbOfTxs>1</ar:NbOfTxs>
+            </ar:OutOrd>
+            <ar:Subm>
+                <ar:IBAN>CH4608836100001702006</ar:IBAN>
+                <ar:NatAcc>100001702006</ar:NatAcc>
+                <ar:AgtNatBkCd>088360</ar:AgtNatBkCd>
+                <ar:NmAdrCtry>
+                    <ar:Nm>Taylor Swift</ar:Nm>
+                    <ar:PstlAdr>
+                        <ar:AdrLine>ALLALL001000017 Addr line 2</ar:AdrLine>
+                        <ar:AdrLine>ALLALL001000017 Addr line 3</ar:AdrLine>
+                        <ar:Ctry>CH</ar:Ctry>
+                    </ar:PstlAdr>
+                </ar:NmAdrCtry>
+                <ar:Role>DBTR</ar:Role>
+            </ar:Subm>
+            <ar:Recv>
+                <ar:IBAN>LI21088100002324013AA</ar:IBAN>
+                <ar:AgtNatBkCd>088100</ar:AgtNatBkCd>
+                <ar:NmAdrCtry>
+                    <ar:Nm>Creditor Name 01 äöüß</ar:Nm>
+                    <ar:PstlAdr>
+                        <ar:AdrLine>Cdtr01 street äöüß</ar:AdrLine>
+                        <ar:AdrLine>C01 Zurich</ar:AdrLine>
+                        <ar:Ctry>LI</ar:Ctry>
+                    </ar:PstlAdr>
+                </ar:NmAdrCtry>
+                <ar:Role>CDTR</ar:Role>
+            </ar:Recv>
+            <ar:TxRef>
+                <ar:TxId>COBADEFF311024000020310000001</ar:TxId>
+                <ar:InstrIdExt>20240327-InstrId-CH-BB-001</ar:InstrIdExt>
+                <ar:InstrIdInt>EUX3110000058203</ar:InstrIdInt>
+                <ar:ClrRefNumTx>20241031000006000000001</ar:ClrRefNumTx>
+                <ar:OrgnlRef>
+                    <ar:OrgnlEndToEndId>EndToEndId-IPB-CH-BB-001</ar:OrgnlEndToEndId>
+                    <ar:OrgnlTxId>COBADEFF311024000015210000001</ar:OrgnlTxId>
+                    <ar:OrgnlInstrId>20240327-InstrId-CH-BB-001</ar:OrgnlInstrId>
+                </ar:OrgnlRef>
+                <ar:UETR>5ca6608d-5179-419e-875d-d5e34ed46df7</ar:UETR>
+                <ar:OrgnlUETR>5ca6608d-5179-419e-875d-d5e34ed46df7</ar:OrgnlUETR>
+                <ar:MsgId>202410310000056</ar:MsgId>
+            </ar:TxRef>
+            <ar:CtgyPurp>SALA</ar:CtgyPurp>
+            <ar:Purp>SALA</ar:Purp>
+            <ar:TxCd>
+                <ar:InTxCd>05049</ar:InTxCd>
+                <ar:OutTxCd>00000</ar:OutTxCd>
+            </ar:TxCd>
+            <ar:Prdct>SCT-Inst RfC</ar:Prdct>
+            <ar:Amt Ccy="CHF">5.23</ar:Amt>
+            <ar:RmtInf>
+                <ar:ISO2019>
+                    <ar:Strd
+                            xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.002.001.10">
+                        <mx8.1.8:CdtrRefInf>
+                            <mx8.1.8:Tp>
+                                <mx8.1.8:CdOrPrtry>
+                                    <mx8.1.8:Cd>SCOR</mx8.1.8:Cd>
+                                </mx8.1.8:CdOrPrtry>
+                            </mx8.1.8:Tp>
+                            <mx8.1.8:Ref>Structured RmtInf 01 äöüß</mx8.1.8:Ref>
+                        </mx8.1.8:CdtrRefInf>
+                    </ar:Strd>
+                </ar:ISO2019>
+            </ar:RmtInf>
+            <ar:DlvrdValDt>2024-10-31</ar:DlvrdValDt>
+            <ar:DlvrdExctDt>2024-10-31</ar:DlvrdExctDt>
+            <ar:TxType>DEBIT</ar:TxType>
+            <ar:LclInstrm>INST</ar:LclInstrm>
+            <ar:RTxInf>
+                <ar:InRsnCd>AM09</ar:InRsnCd>
+                <ar:OutRsnCd>AM09</ar:OutRsnCd>
+                <ar:OrgTx>
+                    <ar:TxRef>
+                        <ar:ClrRefNumTx>20241031000005600000001</ar:ClrRefNumTx>
+                        <ar:EndToEndId>EndToEndId-IPB-CH-BB-001</ar:EndToEndId>
+                        <ar:TxId>COBADEFF311024000015210000001</ar:TxId>
+                        <ar:InstrIdExt>20240327-InstrId-CH-BB-001</ar:InstrIdExt>
+                        <ar:InstrIdInt>EUX3110000058203</ar:InstrIdInt>
+                    </ar:TxRef>
+                    <ar:OrgnlIntrBkSttlmAmt Ccy="CHF">5.23</ar:OrgnlIntrBkSttlmAmt>
+                    <ar:OrgnlIntrBkSttlmDt>2024-10-31</ar:OrgnlIntrBkSttlmDt>
+                </ar:OrgTx>
+                <ar:Orgtr>
+                    <ar:Nm>Taylor Swift</ar:Nm>
+                </ar:Orgtr>
+            </ar:RTxInf>
+            <ar:FullTxInf>
+                <ar:InTx>
+                    <ar:camt.056.001.08
+                            xmlns="urn:iso:std:iso:20022:tech:xsd:camt.056.001.08">
+                        <CxlId>20241031000006000000001</CxlId>
+                        <OrgnlGrpInf>
+                            <OrgnlMsgId>IPBCOBADEFF202410310000057</OrgnlMsgId>
+                            <OrgnlMsgNmId>pacs.008.001.08</OrgnlMsgNmId>
+                        </OrgnlGrpInf>
+                        <OrgnlInstrId>20240327-InstrId-CH-BB-001</OrgnlInstrId>
+                        <OrgnlEndToEndId>EndToEndId-IPB-CH-BB-001</OrgnlEndToEndId>
+                        <OrgnlTxId>COBADEFF311024000015210000001</OrgnlTxId>
+                        <OrgnlUETR>5ca6608d-5179-419e-875d-d5e34ed46df7</OrgnlUETR>
+                        <OrgnlIntrBkSttlmAmt Ccy="CHF">5.23</OrgnlIntrBkSttlmAmt>
+                        <OrgnlIntrBkSttlmDt>2024-10-31</OrgnlIntrBkSttlmDt>
+                        <CxlRsnInf>
+                            <AddtlInf>Am 31.10.24 nicht bezahlt</AddtlInf>
+                        </CxlRsnInf>
+                        <OrgnlTxRef>
+                            <IntrBkSttlmDt>2024-10-31</IntrBkSttlmDt>
+                            <PmtTpInf>
+                                <SvcLvl>
+                                    <Cd>SEPA</Cd>
+                                </SvcLvl>
+                                <CtgyPurp>
+                                    <Cd>SALA</Cd>
+                                </CtgyPurp>
+                            </PmtTpInf>
+                            <RmtInf>
+                                <Strd>
+                                    <CdtrRefInf>
+                                        <Tp>
+                                            <CdOrPrtry>
+                                                <Cd>SCOR</Cd>
+                                            </CdOrPrtry>
+                                        </Tp>
+                                        <Ref>Structured RmtInf 01 äöüß</Ref>
+                                    </CdtrRefInf>
+                                </Strd>
+                            </RmtInf>
+                            <Dbtr>
+                                <Pty>
+                                    <Nm>Taylor Swift</Nm>
+                                    <PstlAdr>
+                                        <Ctry>CH</Ctry>
+                                        <AdrLine>ALLALL001000017 Addr line 2</AdrLine>
+                                        <AdrLine>ALLALL001000017 Addr line 3</AdrLine>
+                                    </PstlAdr>
+                                </Pty>
+                            </Dbtr>
+                            <DbtrAcct>
+                                <Id>
+                                    <IBAN>CH4608836100001702006</IBAN>
+                                </Id>
+                            </DbtrAcct>
+                            <DbtrAgt>
+                                <FinInstnId>
+                                    <ClrSysMmbId>
+                                        <ClrSysId>
+                                            <Cd>CHSIC</Cd>
+                                        </ClrSysId>
+                                        <MmbId>088360</MmbId>
+                                    </ClrSysMmbId>
+                                </FinInstnId>
+                            </DbtrAgt>
+                            <CdtrAgt>
+                                <FinInstnId>
+                                    <ClrSysMmbId>
+                                        <ClrSysId>
+                                            <Cd>CHSIC</Cd>
+                                        </ClrSysId>
+                                        <MmbId>088100</MmbId>
+                                    </ClrSysMmbId>
+                                </FinInstnId>
+                            </CdtrAgt>
+                            <Cdtr>
+                                <Pty>
+                                    <Nm>Creditor Name 01 äöüß</Nm>
+                                    <PstlAdr>
+                                        <Ctry>LI</Ctry>
+                                        <AdrLine>Cdtr01 street äöüß</AdrLine>
+                                        <AdrLine>C01 Zurich</AdrLine>
+                                    </PstlAdr>
+                                </Pty>
+                            </Cdtr>
+                            <CdtrAcct>
+                                <Id>
+                                    <IBAN>LI21088100002324013AA</IBAN>
+                                </Id>
+                            </CdtrAcct>
+                            <Purp>
+                                <Cd>SALA</Cd>
+                            </Purp>
+                        </OrgnlTxRef>
+                    </ar:camt.056.001.08>
+                </ar:InTx>
+                <ar:OutTx>
+                    <ar:OrgTx>
+                        &lt;Assgnmt&gt;&lt;Id&gt;COBADEFF202410310000061&lt;/Id&gt;&lt;Assgnr&gt;&lt;Agt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;Othr&gt;&lt;Id&gt;SIP&lt;/Id&gt;&lt;/Othr&gt;&lt;/FinInstnId&gt;&lt;/Agt&gt;&lt;/Assgnr&gt;&lt;Assgne&gt;&lt;Agt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088100&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/Agt&gt;&lt;/Assgne&gt;&lt;CreDtTm&gt;2024-10-31T11:36:12.516+01:00&lt;/CreDtTm&gt;&lt;/Assgnmt&gt;&lt;TxInf&gt;&lt;CxlId&gt;COBADEFF311024000020310000001&lt;/CxlId&gt;&lt;OrgnlGrpInf&gt;&lt;OrgnlMsgId&gt;IPBCOBADEFF202410310000057&lt;/OrgnlMsgId&gt;&lt;OrgnlMsgNmId&gt;pacs.008.001.08&lt;/OrgnlMsgNmId&gt;&lt;/OrgnlGrpInf&gt;&lt;OrgnlInstrId&gt;EUX3110000058203&lt;/OrgnlInstrId&gt;&lt;OrgnlEndToEndId&gt;EndToEndId-IPB-CH-BB-001&lt;/OrgnlEndToEndId&gt;&lt;OrgnlTxId&gt;EUX3110000058203&lt;/OrgnlTxId&gt;&lt;OrgnlUETR&gt;5ca6608d-5179-419e-875d-d5e34ed46df7&lt;/OrgnlUETR&gt;&lt;OrgnlIntrBkSttlmAmt
+                        Ccy=&quot;CHF&quot;&gt;5.23&lt;/OrgnlIntrBkSttlmAmt&gt;&lt;OrgnlIntrBkSttlmDt&gt;2024-10-31&lt;/OrgnlIntrBkSttlmDt&gt;&lt;CxlRsnInf&gt;&lt;Orgtr&gt;&lt;Nm&gt;Taylor
+                        Swift&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;Ctry&gt;CH&lt;/Ctry&gt;&lt;AdrLine&gt;ALLALL001000017
+                        Addr line
+                        2&lt;/AdrLine&gt;&lt;AdrLine&gt;ALLALL001000017 Addr
+                        line
+                        3&lt;/AdrLine&gt;&lt;/PstlAdr&gt;&lt;/Orgtr&gt;&lt;Rsn&gt;&lt;Cd&gt;AM09&lt;/Cd&gt;&lt;/Rsn&gt;&lt;/CxlRsnInf&gt;&lt;/TxInf&gt;
+                    </ar:OrgTx>
+                </ar:OutTx>
+            </ar:FullTxInf>
+            <ar:ClrSettInf>
+                <ar:PSR>NOT_CREATED</ar:PSR>
+            </ar:ClrSettInf>
+            <ar:GenProcInf>
+                <ar:TxStat>993890</ar:TxStat>
+                <ar:NmRemBp>SIC IP COBA</ar:NmRemBp>
+                <ar:NmRem>SIC IP R-TRX C56</ar:NmRem>
+                <ar:NmRoutBp>SIX Instant Payments</ar:NmRoutBp>
+                <ar:NmRout>SIC IP SIX OUT C56</ar:NmRout>
+                <ar:OrgDlvrMed>FTP</ar:OrgDlvrMed>
+                <ar:Timing>
+                    <ar:FileRecvDtTm>2024-10-31T11:35:55</ar:FileRecvDtTm>
+                    <ar:ExctDt>2024-10-31</ar:ExctDt>
+                    <ar:InpProcDtTm>2024-10-31T11:36:11</ar:InpProcDtTm>
+                    <ar:FileCreDtTm>2024-10-31T11:36:12</ar:FileCreDtTm>
+                </ar:Timing>
+                <ar:RiskFltr>
+                    <ar:Result>NO_HIT</ar:Result>
+                </ar:RiskFltr>
+                <ar:FltrFlg>
+                    <ar:Result>NO_HIT</ar:Result>
+                </ar:FltrFlg>
+                <ar:ProcHist>
+                    <ar:DtTm>2024-10-31T11:35:55Z</ar:DtTm>
+                    <ar:Inf>Der Benutzer w115288 hat eine R-Transaktion mit der
+                        Auftrags-Id 257033440001 für die Original-Zahlung mit
+                        der Id 357169950000 initiiert. UserType: ew.
+                        Manual-Aktion: Yes. Mass-Aktion: No. Relevant fuer
+                        Billing markiert: No.
+                    </ar:Inf>
+                </ar:ProcHist>
+                <ar:AccExistChk>NO_CHK</ar:AccExistChk>
+                <ar:FATF7Chk>NO_CHK</ar:FATF7Chk>
+            </ar:GenProcInf>
+        </ar:PayInf>
+        <ar:PayInf>
+            <ar:InFile>
+                <ar:Nm>EWLSCTIP0F.RINIT.1900.20241031113054.00097.tdt.uuu.ttt</ar:Nm>
+                <ar:Id>562929250000</ar:Id>
+                <ar:FmtGrpNm>SEPA_CT</ar:FmtGrpNm>
+                <ar:SndngSys>999</ar:SndngSys>
+            </ar:InFile>
+            <ar:OutFile>
+                <ar:Nm>COBA_P202BOX06_SIC_IP</ar:Nm>
+                <ar:Id>562929300000</ar:Id>
+                <ar:FmtGrpNm>SIC_INST</ar:FmtGrpNm>
+            </ar:OutFile>
+            <ar:InOrd>
+                <ar:LogFmtNm>sepa_ct_camt.056.001.08_standard</ar:LogFmtNm>
+                <ar:Area>
+                    <ar:Nm>internal</ar:Nm>
+                    <ar:Type>INT</ar:Type>
+                </ar:Area>
+                <ar:OrdType>RFC_CT</ar:OrdType>
+                <ar:InstgAgt>
+                    <ar:BIC>XXXXXXXX</ar:BIC>
+                </ar:InstgAgt>
+                <ar:InstdAgt>
+                    <ar:BIC>COBADEFF</ar:BIC>
+                    <ar:NatBkCd>088100</ar:NatBkCd>
+                </ar:InstdAgt>
+                <ar:OrdRef>
+                    <ar:OrdId>202410310000050</ar:OrdId>
+                    <ar:TechOrdId>257033440000</ar:TechOrdId>
+                    <ar:ClrRefNumOrd>202410310000054</ar:ClrRefNumOrd>
+                </ar:OrdRef>
+                <ar:ClrSysId>SIP</ar:ClrSysId>
+                <ar:Amt Ccy="CHF">10.23</ar:Amt>
+                <ar:NbOfTxs>1</ar:NbOfTxs>
+                <ar:OrgAmt Ccy="CHF">10.23</ar:OrgAmt>
+                <ar:OrgNbOfTxs>1</ar:OrgNbOfTxs>
+            </ar:InOrd>
+            <ar:OutOrd>
+                <ar:LogFmtNm>sic_inst_camt.056.001.08_six</ar:LogFmtNm>
+                <ar:Area>
+                    <ar:Nm>external</ar:Nm>
+                    <ar:Type>EXT</ar:Type>
+                </ar:Area>
+                <ar:OrdType>RFC_CT</ar:OrdType>
+                <ar:OrdRef>
+                    <ar:OrdId>COBADEFF202410310000055</ar:OrdId>
+                    <ar:TechOrdId>257033450000</ar:TechOrdId>
+                    <ar:ClrRefNumOrd>202410310000055</ar:ClrRefNumOrd>
+                </ar:OrdRef>
+                <ar:Amt Ccy="CHF">10.23</ar:Amt>
+                <ar:NbOfTxs>1</ar:NbOfTxs>
+            </ar:OutOrd>
+            <ar:Subm>
+                <ar:IBAN>CH4608836100001702006</ar:IBAN>
+                <ar:NatAcc>100001702006</ar:NatAcc>
+                <ar:AgtNatBkCd>088360</ar:AgtNatBkCd>
+                <ar:NmAdrCtry>
+                    <ar:Nm>Taylor Swift</ar:Nm>
+                    <ar:PstlAdr>
+                        <ar:AdrLine>ALLALL001000017 Addr line 2</ar:AdrLine>
+                        <ar:AdrLine>ALLALL001000017 Addr line 3</ar:AdrLine>
+                        <ar:Ctry>CH</ar:Ctry>
+                    </ar:PstlAdr>
+                </ar:NmAdrCtry>
+                <ar:Role>DBTR</ar:Role>
+            </ar:Subm>
+            <ar:Recv>
+                <ar:IBAN>LI21088100002324013AA</ar:IBAN>
+                <ar:AgtNatBkCd>088100</ar:AgtNatBkCd>
+                <ar:NmAdrCtry>
+                    <ar:Nm>Creditor Name 01 äöüß</ar:Nm>
+                    <ar:PstlAdr>
+                        <ar:AdrLine>Cdtr01 street äöüß</ar:AdrLine>
+                        <ar:AdrLine>C01 Zurich</ar:AdrLine>
+                        <ar:Ctry>LI</ar:Ctry>
+                    </ar:PstlAdr>
+                </ar:NmAdrCtry>
+                <ar:Role>CDTR</ar:Role>
+            </ar:Recv>
+            <ar:TxRef>
+                <ar:TxId>COBADEFF311024000020110000001</ar:TxId>
+                <ar:InstrIdExt>20240327-InstrId-CH-BB-001</ar:InstrIdExt>
+                <ar:InstrIdInt>EUX3110000058202</ar:InstrIdInt>
+                <ar:ClrRefNumTx>20241031000005400000001</ar:ClrRefNumTx>
+                <ar:OrgnlRef>
+                    <ar:OrgnlEndToEndId>EndToEndId-IPB-CH-BB-001</ar:OrgnlEndToEndId>
+                    <ar:OrgnlTxId>COBADEFF311024000015110000001</ar:OrgnlTxId>
+                    <ar:OrgnlInstrId>20240327-InstrId-CH-BB-001</ar:OrgnlInstrId>
+                </ar:OrgnlRef>
+                <ar:UETR>c25d9d93-e527-454b-b295-d1d85aea4278</ar:UETR>
+                <ar:OrgnlUETR>c25d9d93-e527-454b-b295-d1d85aea4278</ar:OrgnlUETR>
+                <ar:MsgId>202410310000050</ar:MsgId>
+            </ar:TxRef>
+            <ar:CtgyPurp>SALA</ar:CtgyPurp>
+            <ar:Purp>SALA</ar:Purp>
+            <ar:TxCd>
+                <ar:InTxCd>05049</ar:InTxCd>
+                <ar:OutTxCd>00000</ar:OutTxCd>
+            </ar:TxCd>
+            <ar:Prdct>SCT-Inst RfC</ar:Prdct>
+            <ar:Amt Ccy="CHF">10.23</ar:Amt>
+            <ar:RmtInf>
+                <ar:ISO2019>
+                    <ar:Strd
+                            xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.002.001.10">
+                        <mx8.1.8:CdtrRefInf>
+                            <mx8.1.8:Tp>
+                                <mx8.1.8:CdOrPrtry>
+                                    <mx8.1.8:Cd>SCOR</mx8.1.8:Cd>
+                                </mx8.1.8:CdOrPrtry>
+                            </mx8.1.8:Tp>
+                            <mx8.1.8:Ref>Structured RmtInf 01 äöüß</mx8.1.8:Ref>
+                        </mx8.1.8:CdtrRefInf>
+                    </ar:Strd>
+                </ar:ISO2019>
+            </ar:RmtInf>
+            <ar:DlvrdValDt>2024-10-31</ar:DlvrdValDt>
+            <ar:DlvrdExctDt>2024-10-31</ar:DlvrdExctDt>
+            <ar:TxType>DEBIT</ar:TxType>
+            <ar:LclInstrm>INST</ar:LclInstrm>
+            <ar:RTxInf>
+                <ar:InRsnCd>CUST</ar:InRsnCd>
+                <ar:OutRsnCd>CUST</ar:OutRsnCd>
+                <ar:OrgTx>
+                    <ar:TxRef>
+                        <ar:ClrRefNumTx>20241031000005000000001</ar:ClrRefNumTx>
+                        <ar:EndToEndId>EndToEndId-IPB-CH-BB-001</ar:EndToEndId>
+                        <ar:TxId>COBADEFF311024000015110000001</ar:TxId>
+                        <ar:InstrIdExt>20240327-InstrId-CH-BB-001</ar:InstrIdExt>
+                        <ar:InstrIdInt>EUX3110000058202</ar:InstrIdInt>
+                    </ar:TxRef>
+                    <ar:OrgnlIntrBkSttlmAmt Ccy="CHF">10.23</ar:OrgnlIntrBkSttlmAmt>
+                    <ar:OrgnlIntrBkSttlmDt>2024-10-31</ar:OrgnlIntrBkSttlmDt>
+                </ar:OrgTx>
+                <ar:Orgtr>
+                    <ar:Nm>Taylor Swift</ar:Nm>
+                </ar:Orgtr>
+            </ar:RTxInf>
+            <ar:FullTxInf>
+                <ar:InTx>
+                    <ar:camt.056.001.08
+                            xmlns="urn:iso:std:iso:20022:tech:xsd:camt.056.001.08">
+                        <CxlId>20241031000005400000001</CxlId>
+                        <OrgnlGrpInf>
+                            <OrgnlMsgId>IPBCOBADEFF202410310000051</OrgnlMsgId>
+                            <OrgnlMsgNmId>pacs.008.001.08</OrgnlMsgNmId>
+                        </OrgnlGrpInf>
+                        <OrgnlInstrId>20240327-InstrId-CH-BB-001</OrgnlInstrId>
+                        <OrgnlEndToEndId>EndToEndId-IPB-CH-BB-001</OrgnlEndToEndId>
+                        <OrgnlTxId>COBADEFF311024000015110000001</OrgnlTxId>
+                        <OrgnlUETR>c25d9d93-e527-454b-b295-d1d85aea4278</OrgnlUETR>
+                        <OrgnlIntrBkSttlmAmt Ccy="CHF">10.23</OrgnlIntrBkSttlmAmt>
+                        <OrgnlIntrBkSttlmDt>2024-10-31</OrgnlIntrBkSttlmDt>
+                        <CxlRsnInf>
+                            <AddtlInf>Am 31.10.24 nicht bezahlt</AddtlInf>
+                        </CxlRsnInf>
+                        <OrgnlTxRef>
+                            <IntrBkSttlmDt>2024-10-31</IntrBkSttlmDt>
+                            <PmtTpInf>
+                                <SvcLvl>
+                                    <Cd>SEPA</Cd>
+                                </SvcLvl>
+                                <CtgyPurp>
+                                    <Cd>SALA</Cd>
+                                </CtgyPurp>
+                            </PmtTpInf>
+                            <RmtInf>
+                                <Strd>
+                                    <CdtrRefInf>
+                                        <Tp>
+                                            <CdOrPrtry>
+                                                <Cd>SCOR</Cd>
+                                            </CdOrPrtry>
+                                        </Tp>
+                                        <Ref>Structured RmtInf 01 äöüß</Ref>
+                                    </CdtrRefInf>
+                                </Strd>
+                            </RmtInf>
+                            <Dbtr>
+                                <Pty>
+                                    <Nm>Taylor Swift</Nm>
+                                    <PstlAdr>
+                                        <Ctry>CH</Ctry>
+                                        <AdrLine>ALLALL001000017 Addr line 2</AdrLine>
+                                        <AdrLine>ALLALL001000017 Addr line 3</AdrLine>
+                                    </PstlAdr>
+                                </Pty>
+                            </Dbtr>
+                            <DbtrAcct>
+                                <Id>
+                                    <IBAN>CH4608836100001702006</IBAN>
+                                </Id>
+                            </DbtrAcct>
+                            <DbtrAgt>
+                                <FinInstnId>
+                                    <ClrSysMmbId>
+                                        <ClrSysId>
+                                            <Cd>CHSIC</Cd>
+                                        </ClrSysId>
+                                        <MmbId>088360</MmbId>
+                                    </ClrSysMmbId>
+                                </FinInstnId>
+                            </DbtrAgt>
+                            <CdtrAgt>
+                                <FinInstnId>
+                                    <ClrSysMmbId>
+                                        <ClrSysId>
+                                            <Cd>CHSIC</Cd>
+                                        </ClrSysId>
+                                        <MmbId>088100</MmbId>
+                                    </ClrSysMmbId>
+                                </FinInstnId>
+                            </CdtrAgt>
+                            <Cdtr>
+                                <Pty>
+                                    <Nm>Creditor Name 01 äöüß</Nm>
+                                    <PstlAdr>
+                                        <Ctry>LI</Ctry>
+                                        <AdrLine>Cdtr01 street äöüß</AdrLine>
+                                        <AdrLine>C01 Zurich</AdrLine>
+                                    </PstlAdr>
+                                </Pty>
+                            </Cdtr>
+                            <CdtrAcct>
+                                <Id>
+                                    <IBAN>LI21088100002324013AA</IBAN>
+                                </Id>
+                            </CdtrAcct>
+                            <Purp>
+                                <Cd>SALA</Cd>
+                            </Purp>
+                        </OrgnlTxRef>
+                    </ar:camt.056.001.08>
+                </ar:InTx>
+                <ar:OutTx>
+                    <ar:OrgTx>
+                        &lt;Assgnmt&gt;&lt;Id&gt;COBADEFF202410310000055&lt;/Id&gt;&lt;Assgnr&gt;&lt;Agt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;Othr&gt;&lt;Id&gt;SIP&lt;/Id&gt;&lt;/Othr&gt;&lt;/FinInstnId&gt;&lt;/Agt&gt;&lt;/Assgnr&gt;&lt;Assgne&gt;&lt;Agt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088100&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/Agt&gt;&lt;/Assgne&gt;&lt;CreDtTm&gt;2024-10-31T11:31:20.508+01:00&lt;/CreDtTm&gt;&lt;/Assgnmt&gt;&lt;TxInf&gt;&lt;CxlId&gt;COBADEFF311024000020110000001&lt;/CxlId&gt;&lt;OrgnlGrpInf&gt;&lt;OrgnlMsgId&gt;IPBCOBADEFF202410310000051&lt;/OrgnlMsgId&gt;&lt;OrgnlMsgNmId&gt;pacs.008.001.08&lt;/OrgnlMsgNmId&gt;&lt;/OrgnlGrpInf&gt;&lt;OrgnlInstrId&gt;EUX3110000058202&lt;/OrgnlInstrId&gt;&lt;OrgnlEndToEndId&gt;EndToEndId-IPB-CH-BB-001&lt;/OrgnlEndToEndId&gt;&lt;OrgnlTxId&gt;EUX3110000058202&lt;/OrgnlTxId&gt;&lt;OrgnlUETR&gt;c25d9d93-e527-454b-b295-d1d85aea4278&lt;/OrgnlUETR&gt;&lt;OrgnlIntrBkSttlmAmt
+                        Ccy=&quot;CHF&quot;&gt;10.23&lt;/OrgnlIntrBkSttlmAmt&gt;&lt;OrgnlIntrBkSttlmDt&gt;2024-10-31&lt;/OrgnlIntrBkSttlmDt&gt;&lt;CxlRsnInf&gt;&lt;Orgtr&gt;&lt;Nm&gt;Taylor
+                        Swift&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;Ctry&gt;CH&lt;/Ctry&gt;&lt;AdrLine&gt;ALLALL001000017
+                        Addr line
+                        2&lt;/AdrLine&gt;&lt;AdrLine&gt;ALLALL001000017 Addr
+                        line
+                        3&lt;/AdrLine&gt;&lt;/PstlAdr&gt;&lt;/Orgtr&gt;&lt;Rsn&gt;&lt;Cd&gt;CUST&lt;/Cd&gt;&lt;/Rsn&gt;&lt;/CxlRsnInf&gt;&lt;/TxInf&gt;
+                    </ar:OrgTx>
+                </ar:OutTx>
+            </ar:FullTxInf>
+            <ar:ClrSettInf>
+                <ar:PSR>NOT_CREATED</ar:PSR>
+            </ar:ClrSettInf>
+            <ar:GenProcInf>
+                <ar:TxStat>993890</ar:TxStat>
+                <ar:NmRemBp>SIC IP COBA</ar:NmRemBp>
+                <ar:NmRem>SIC IP R-TRX C56</ar:NmRem>
+                <ar:NmRoutBp>SIX Instant Payments</ar:NmRoutBp>
+                <ar:NmRout>SIC IP SIX OUT C56</ar:NmRout>
+                <ar:OrgDlvrMed>FTP</ar:OrgDlvrMed>
+                <ar:Timing>
+                    <ar:FileRecvDtTm>2024-10-31T11:30:54</ar:FileRecvDtTm>
+                    <ar:ExctDt>2024-10-31</ar:ExctDt>
+                    <ar:InpProcDtTm>2024-10-31T11:31:19</ar:InpProcDtTm>
+                    <ar:FileCreDtTm>2024-10-31T11:31:20</ar:FileCreDtTm>
+                </ar:Timing>
+                <ar:RiskFltr>
+                    <ar:Result>NO_HIT</ar:Result>
+                </ar:RiskFltr>
+                <ar:FltrFlg>
+                    <ar:Result>NO_HIT</ar:Result>
+                </ar:FltrFlg>
+                <ar:ProcHist>
+                    <ar:DtTm>2024-10-31T11:30:55Z</ar:DtTm>
+                    <ar:Inf>Der Benutzer w115288 hat eine R-Transaktion mit der
+                        Auftrags-Id 257033440000 für die Original-Zahlung mit
+                        der Id 357169910000 initiiert. UserType: ew.
+                        Manual-Aktion: Yes. Mass-Aktion: No. Relevant fuer
+                        Billing markiert: No.
+                    </ar:Inf>
+                </ar:ProcHist>
+                <ar:AccExistChk>NO_CHK</ar:AccExistChk>
+                <ar:FATF7Chk>NO_CHK</ar:FATF7Chk>
+            </ar:GenProcInf>
+        </ar:PayInf>
+        <ar:PayInf>
+            <ar:InFile>
+                <ar:Nm>ZAA2EWL_FL2</ar:Nm>
+                <ar:Id>562902610003</ar:Id>
+                <ar:FileRef>
+                    <ar:FileId>MSG-IPBulk-09-0223429539</ar:FileId>
+                </ar:FileRef>
+                <ar:FmtGrpNm>SEPA_INST_ZKA</ar:FmtGrpNm>
+                <ar:SbmttrId>TZAAK002</ar:SbmttrId>
+                <ar:SndngSys>120</ar:SndngSys>
+            </ar:InFile>
+            <ar:OutFile>
+                <ar:Nm>BOCSM_M1900_ORIGINATOR_PAYMENT_REQUESTFROMBULK</ar:Nm>
+                <ar:Id>562924380000</ar:Id>
+                <ar:FmtGrpNm>SEPA_INST_EBA</ar:FmtGrpNm>
+            </ar:OutFile>
+            <ar:InOrd>
+                <ar:LogFmtNm>sepa_inst_pain.001.001.09_zka</ar:LogFmtNm>
+                <ar:Area>
+                    <ar:Nm>internal</ar:Nm>
+                    <ar:Type>INT</ar:Type>
+                </ar:Area>
+                <ar:OrdType>CT</ar:OrdType>
+                <ar:InstgAgt>
+                    <ar:BIC>COBAFRPXXXX</ar:BIC>
+                </ar:InstgAgt>
+                <ar:InstdAgt>
+                    <ar:BIC>COBADEFF</ar:BIC>
+                </ar:InstdAgt>
+                <ar:OrdRef>
+                    <ar:OrdId>TestV9-IP-01-220241031616575</ar:OrdId>
+                    <ar:TechOrdId>257033110000</ar:TechOrdId>
+                    <ar:ClrRefNumOrd>202410310000021</ar:ClrRefNumOrd>
+                </ar:OrdRef>
+                <ar:Amt Ccy="EUR">33.44</ar:Amt>
+                <ar:NbOfTxs>1</ar:NbOfTxs>
+                <ar:Ntfctn>
+                    <ar:NtfctnTp>CT_INST_PAY_NOTIF</ar:NtfctnTp>
+                    <ar:Tm>2024-10-31T07:33:37.426</ar:Tm>
+                </ar:Ntfctn>
+                <ar:OrgAmt Ccy="EUR">33.44</ar:OrgAmt>
+                <ar:OrgNbOfTxs>1</ar:OrgNbOfTxs>
+            </ar:InOrd>
+            <ar:OutOrd>
+                <ar:LogFmtNm>sepa_inst_pacs.008.001.08_eba</ar:LogFmtNm>
+                <ar:Area>
+                    <ar:Nm>external</ar:Nm>
+                    <ar:Type>EXT</ar:Type>
+                </ar:Area>
+                <ar:OrdType>CT</ar:OrdType>
+                <ar:InstgAgt>
+                    <ar:BIC>COBADEF0</ar:BIC>
+                </ar:InstgAgt>
+                <ar:InstdAgt>
+                    <ar:BIC>IPSTFRP0</ar:BIC>
+                </ar:InstdAgt>
+                <ar:OrdRef>
+                    <ar:OrdId>IPBCOBADEFF202410310000022</ar:OrdId>
+                    <ar:TechOrdId>257033120000</ar:TechOrdId>
+                    <ar:ClrRefNumOrd>202410310000022</ar:ClrRefNumOrd>
+                </ar:OrdRef>
+                <ar:Amt Ccy="EUR">33.44</ar:Amt>
+                <ar:NbOfTxs>1</ar:NbOfTxs>
+                <ar:Ntfctn>
+                    <ar:NtfctnTp>CT_INST_PAY_NOTIF</ar:NtfctnTp>
+                    <ar:Rslt>OK</ar:Rslt>
+                    <ar:Tm>2024-10-31T07:33:45.713</ar:Tm>
+                </ar:Ntfctn>
+            </ar:OutOrd>
+            <ar:Subm>
+                <ar:IBAN>FR7617629000010010633460079</ar:IBAN>
+                <ar:NatAcc>00106334600</ar:NatAcc>
+                <ar:SubmAcctInf>
+                    <ar:Ccy>EUR</ar:Ccy>
+                </ar:SubmAcctInf>
+                <ar:AgtBIC>COBAFRPXXXX</ar:AgtBIC>
+                <ar:NmAdrCtry>
+                    <ar:Nm>COINFO*Testkonto Hr. Will</ar:Nm>
+                    <ar:StrcdPstlAdr>
+                        <mx8.1.8:TwnNm>Rome</mx8.1.8:TwnNm>
+                        <mx8.1.8:Ctry>IT</mx8.1.8:Ctry>
+                    </ar:StrcdPstlAdr>
+                </ar:NmAdrCtry>
+                <ar:Role>DBTR</ar:Role>
+            </ar:Subm>
+            <ar:InitgPty>
+                <ar:NmAdrCtry>
+                    <ar:Nm>COINFO*Testkonto Hr. Will</ar:Nm>
+                    <ar:ISO2019>
+                        <ar:Id>
+                            <mx8.1.8:OrgId>
+                                <mx8.1.8:Othr>
+                                    <mx8.1.8:Id>Id-IPBulk-09-20241031456575</mx8.1.8:Id>
+                                </mx8.1.8:Othr>
+                            </mx8.1.8:OrgId>
+                        </ar:Id>
+                    </ar:ISO2019>
+                </ar:NmAdrCtry>
+            </ar:InitgPty>
+            <ar:Recv>
+                <ar:IBAN>FR7630007999990429593000059</ar:IBAN>
+                <ar:NatAcc>04295930000</ar:NatAcc>
+                <ar:AgtBIC>APSPFRP1234</ar:AgtBIC>
+                <ar:NmAdrCtry>
+                    <ar:Nm>IPBulk-TestV3-CdtrNm 01-001</ar:Nm>
+                    <ar:StrcdPstlAdr>
+                        <mx8.1.8:TwnNm>Rome</mx8.1.8:TwnNm>
+                        <mx8.1.8:Ctry>IT</mx8.1.8:Ctry>
+                    </ar:StrcdPstlAdr>
+                </ar:NmAdrCtry>
+                <ar:Role>CDTR</ar:Role>
+            </ar:Recv>
+            <ar:TxRef>
+                <ar:EndToEndId>EndToEndId-9BB-315-682MP</ar:EndToEndId>
+                <ar:TxId>COBADEFF311024000005110000001</ar:TxId>
+                <ar:InstrIdExt>20241031536575-InstrId-9BB-001MP</ar:InstrIdExt>
+                <ar:InstrIdInt>COBADEFF20241031000002100000001</ar:InstrIdInt>
+                <ar:ClrRefNumTx>20241031000002100000001</ar:ClrRefNumTx>
+                <ar:MsgId>TestV9-IP-01-220241031616575</ar:MsgId>
+            </ar:TxRef>
+            <ar:CtgyPurp>SALA</ar:CtgyPurp>
+            <ar:Purp>SALA</ar:Purp>
+            <ar:TxCd>
+                <ar:InTxCd>71000</ar:InTxCd>
+                <ar:OutTxCd>00000</ar:OutTxCd>
+            </ar:TxCd>
+            <ar:Prdct>SCT-Inst</ar:Prdct>
+            <ar:Amt Ccy="EUR">33.44</ar:Amt>
+            <ar:DlvrdValDt>2024-10-31</ar:DlvrdValDt>
+            <ar:DlvrdExctDt>2024-10-31</ar:DlvrdExctDt>
+            <ar:TxType>CREDIT</ar:TxType>
+            <ar:LclInstrm>INST</ar:LclInstrm>
+            <ar:FullTxInf>
+                <ar:InTx>
+                    <ar:pain.001.001.09
+                            xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.09">
+                        <PmtInfId>TestV9-IP-01-220241031616575</PmtInfId>
+                        <PmtMtd>TRF</PmtMtd>
+                        <BtchBookg>false</BtchBookg>
+                        <NbOfTxs>1</NbOfTxs>
+                        <CtrlSum>33.44</CtrlSum>
+                        <PmtTpInf>
+                            <SvcLvl>
+                                <Cd>SEPA</Cd>
+                            </SvcLvl>
+                            <LclInstrm>
+                                <Cd>INST</Cd>
+                            </LclInstrm>
+                            <CtgyPurp>
+                                <Cd>SALA</Cd>
+                            </CtgyPurp>
+                        </PmtTpInf>
+                        <ReqdExctnDt>
+                            <DtTm>2024-10-31T06:10:21</DtTm>
+                        </ReqdExctnDt>
+                        <Dbtr>
+                            <Nm>COINFO*Testkonto Hr. Will</Nm>
+                            <PstlAdr>
+                                <TwnNm>Rome</TwnNm>
+                                <Ctry>IT</Ctry>
+                            </PstlAdr>
+                        </Dbtr>
+                        <DbtrAcct>
+                            <Id>
+                                <IBAN>FR7617629000010010633460079</IBAN>
+                            </Id>
+                            <Ccy>EUR</Ccy>
+                        </DbtrAcct>
+                        <DbtrAgt>
+                            <FinInstnId>
+                                <BICFI>COBAFRPXXXX</BICFI>
+                            </FinInstnId>
+                        </DbtrAgt>
+                        <ChrgBr>SLEV</ChrgBr>
+                        <CdtTrfTxInf>
+                            <PmtId>
+                                <InstrId>20241031536575-InstrId-9BB-001MP</InstrId>
+                                <EndToEndId>EndToEndId-9BB-315-682MP</EndToEndId>
+                            </PmtId>
+                            <Amt>
+                                <InstdAmt Ccy="EUR">33.44</InstdAmt>
+                            </Amt>
+                            <CdtrAgt>
+                                <FinInstnId>
+                                    <BICFI>APSPFRP1234</BICFI>
+                                </FinInstnId>
+                            </CdtrAgt>
+                            <Cdtr>
+                                <Nm>IPBulk-TestV3-CdtrNm 01-001</Nm>
+                                <PstlAdr>
+                                    <TwnNm>Vienna</TwnNm>
+                                    <Ctry>AT</Ctry>
+                                </PstlAdr>
+                            </Cdtr>
+                            <CdtrAcct>
+                                <Id>
+                                    <IBAN>FR7630007999990429593000059</IBAN>
+                                </Id>
+                            </CdtrAcct>
+                            <Purp>
+                                <Cd>SALA</Cd>
+                            </Purp>
+                        </CdtTrfTxInf>
+                    </ar:pain.001.001.09>
+                </ar:InTx>
+                <ar:OutTx>
+                    <ar:pacs.008.001.08
+                            xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08">
+                        <PmtId>
+                            <InstrId>COBADEFF20241031000002100000001</InstrId>
+                            <EndToEndId>EndToEndId-9BB-315-682MP</EndToEndId>
+                            <TxId>COBADEFF311024000005110000001</TxId>
+                        </PmtId>
+                        <IntrBkSttlmAmt Ccy="EUR">33.44</IntrBkSttlmAmt>
+                        <AccptncDtTm>2024-10-31T07:33:43.974+01:00</AccptncDtTm>
+                        <ChrgBr>SLEV</ChrgBr>
+                        <Dbtr>
+                            <Nm>COINFO*Testkonto Hr. Will</Nm>
+                            <PstlAdr>
+                                <TwnNm>Rome</TwnNm>
+                                <Ctry>IT</Ctry>
+                            </PstlAdr>
+                        </Dbtr>
+                        <DbtrAcct>
+                            <Id>
+                                <IBAN>FR7617629000010010633460079</IBAN>
+                            </Id>
+                        </DbtrAcct>
+                        <DbtrAgt>
+                            <FinInstnId>
+                                <BICFI>COBAFRPX</BICFI>
+                            </FinInstnId>
+                        </DbtrAgt>
+                        <CdtrAgt>
+                            <FinInstnId>
+                                <BICFI>APSPFRP1234</BICFI>
+                            </FinInstnId>
+                        </CdtrAgt>
+                        <Cdtr>
+                            <Nm>IPBulk-TestV3-CdtrNm 01-001</Nm>
+                            <PstlAdr>
+                                <TwnNm>Vienna</TwnNm>
+                                <Ctry>AT</Ctry>
+                            </PstlAdr>
+                        </Cdtr>
+                        <CdtrAcct>
+                            <Id>
+                                <IBAN>FR7630007999990429593000059</IBAN>
+                            </Id>
+                        </CdtrAcct>
+                        <Purp>
+                            <Cd>SALA</Cd>
+                        </Purp>
+                    </ar:pacs.008.001.08>
+                </ar:OutTx>
+            </ar:FullTxInf>
+            <ar:InSttlmInf>
+                <ar:BIC>COBADEFF</ar:BIC>
+                <ar:IBAN>DE72500400000940140701</ar:IBAN>
+                <ar:NatBkCd>50040000</ar:NatBkCd>
+                <ar:Acc>400940140701</ar:Acc>
+                <ar:Amt Ccy="EUR">33.44</ar:Amt>
+                <ar:ValDt>2024-10-31</ar:ValDt>
+                <ar:TxCnt>1</ar:TxCnt>
+                <ar:BkType>DEBIT</ar:BkType>
+            </ar:InSttlmInf>
+            <ar:OutSttlmInf>
+                <ar:BIC>COBADEF0</ar:BIC>
+                <ar:IBAN>DE80500400000931376801</ar:IBAN>
+                <ar:NatBkCd>50040000</ar:NatBkCd>
+                <ar:Acc>400931376801</ar:Acc>
+                <ar:Amt Ccy="EUR">33.44</ar:Amt>
+                <ar:ValDt>2024-10-31</ar:ValDt>
+                <ar:TxCnt>1</ar:TxCnt>
+                <ar:BkType>CREDIT</ar:BkType>
+            </ar:OutSttlmInf>
+            <ar:ClrSettInf>
+                <ar:PSR>NOT_CREATED</ar:PSR>
+            </ar:ClrSettInf>
+            <ar:GenProcInf>
+                <ar:TxStat>993890</ar:TxStat>
+                <ar:NmRemBp>CoBa IP-B EU RemSgl</ar:NmRemBp>
+                <ar:NmRem>SCT IP-B CobaP1.9SEU</ar:NmRem>
+                <ar:NmRoutBp>EBA Instant Payment</ar:NmRoutBp>
+                <ar:NmRout>SCT IP-B EBA OUT P8</ar:NmRout>
+                <ar:OrgDlvrMed>OPEN</ar:OrgDlvrMed>
+                <ar:Timing>
+                    <ar:FileRecvDtTm>2024-10-31T07:33:03</ar:FileRecvDtTm>
+                    <ar:ExctDt>2024-10-31</ar:ExctDt>
+                    <ar:FileCreDtTm>2024-10-31T07:33:44</ar:FileCreDtTm>
+                </ar:Timing>
+                <ar:InstPymtTmRslt>
+                    <ar:InstPymtTm>
+                        <ar:IPCrdtrFrwrdTm>2024-10-31T07:33:43.957</ar:IPCrdtrFrwrdTm>
+                        <ar:IPRcvTm>2024-10-31T07:33:04.418</ar:IPRcvTm>
+                        <ar:IPDbtrAccptTm>2024-10-31T07:33:43.974+01:00</ar:IPDbtrAccptTm>
+                        <ar:IPCrdtrfndsAvlblTm>2024-10-31T07:33:43.957</ar:IPCrdtrfndsAvlblTm>
+                    </ar:InstPymtTm>
+                    <ar:InstPymtCnfrmtn>
+                        <ar:IPDbtrCnfrmtn>
+                            <ar:MsgId>523126B15061A5288DDA62960AEECF1175C</ar:MsgId>
+                            <ar:XML_frgmnt>
+                                <ar:pacs.002.001.10
+                                        xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.002.001.10">
+                                    <StsId>523126E782</StsId>
+                                    <OrgnlInstrId>COBADEFF20241031000002100000001</OrgnlInstrId>
+                                    <OrgnlEndToEndId>EndToEndId-9BB-315-682MP</OrgnlEndToEndId>
+                                    <OrgnlTxId>COBADEFF311024000005110000001</OrgnlTxId>
+                                    <AccptncDtTm>2018-07-30T09:24:49.774+02:00</AccptncDtTm>
+                                    <OrgnlTxRef>
+                                        <PmtTpInf>
+                                            <SvcLvl>
+                                                <Cd>SEPA</Cd>
+                                            </SvcLvl>
+                                            <LclInstrm>
+                                                <Cd>INST</Cd>
+                                            </LclInstrm>
+                                        </PmtTpInf>
+                                        <DbtrAgt>
+                                            <FinInstnId>
+                                                <BICFI>COBAFRPX</BICFI>
+                                            </FinInstnId>
+                                        </DbtrAgt>
+                                    </OrgnlTxRef>
+                                </ar:pacs.002.001.10>
+                            </ar:XML_frgmnt>
+                        </ar:IPDbtrCnfrmtn>
+                        <ar:IPBoDbtrCnfrmtn></ar:IPBoDbtrCnfrmtn>
+                        <ar:IPCrdtrRply></ar:IPCrdtrRply>
+                    </ar:InstPymtCnfrmtn>
+                </ar:InstPymtTmRslt>
+                <ar:DispoInf>
+                    <ar:DispoType>INPUT</ar:DispoType>
+                    <ar:Result>POS</ar:Result>
+                    <ar:Req1DtTm>2024-10-31T07:33:38</ar:Req1DtTm>
+                    <ar:ReplDtTm>2024-10-31T07:33:38</ar:ReplDtTm>
+                </ar:DispoInf>
+                <ar:Frd>
+                    <ar:FrdType>INPUT</ar:FrdType>
+                    <ar:Req1DtTm>2024-10-31T07:33:42</ar:Req1DtTm>
+                    <ar:Repl>
+                        <ar:ReplDtTm>2024-10-31T07:33:42</ar:ReplDtTm>
+                        <ar:ReplCode>OK</ar:ReplCode>
+                    </ar:Repl>
+                </ar:Frd>
+                <ar:RiskFltr>
+                    <ar:Result>NO_HIT</ar:Result>
+                </ar:RiskFltr>
+                <ar:FltrFlg>
+                    <ar:Result>NO_HIT</ar:Result>
+                </ar:FltrFlg>
+                <ar:AckNakInf>
+                    <ar:Status>ACK</ar:Status>
+                    <ar:RecvDtTm>2024-10-31T07:33:45</ar:RecvDtTm>
+                </ar:AckNakInf>
+                <ar:AccExistChk>POS</ar:AccExistChk>
+                <ar:FATF7Chk>NO_CHK</ar:FATF7Chk>
+            </ar:GenProcInf>
+            <ar:FXInfo>
+                <ar:SrcCcy>EUR</ar:SrcCcy>
+            </ar:FXInfo>
+            <ar:SvcLvl>SEPA</ar:SvcLvl>
+            <ar:InstrPrty>NORM</ar:InstrPrty>
+        </ar:PayInf>
+        <ar:PayInf>
+            <ar:InFile>
+                <ar:Nm>ZAA2EWL_IP1</ar:Nm>
+                <ar:Id>562926210000</ar:Id>
+                <ar:FileRef>
+                    <ar:FileId>MSG-IPB-CH-202410300666</ar:FileId>
+                </ar:FileRef>
+                <ar:FmtGrpNm>SIC_INST</ar:FmtGrpNm>
+                <ar:SbmttrId>TZAAK002</ar:SbmttrId>
+                <ar:SndngSys>127</ar:SndngSys>
+            </ar:InFile>
+            <ar:OutFile>
+                <ar:Nm>COBA_P202BOX06_SIC_IP</ar:Nm>
+                <ar:Id>562926310000</ar:Id>
+                <ar:FmtGrpNm>SIC_INST</ar:FmtGrpNm>
+            </ar:OutFile>
+            <ar:InOrd>
+                <ar:LogFmtNm>sic_inst_pain.001.001.09_six</ar:LogFmtNm>
+                <ar:Area>
+                    <ar:Nm>internal</ar:Nm>
+                    <ar:Type>INT</ar:Type>
+                </ar:Area>
+                <ar:OrdType>CT</ar:OrdType>
+                <ar:InstgAgt>
+                    <ar:NatBkCd>088360</ar:NatBkCd>
+                </ar:InstgAgt>
+                <ar:InstdAgt>
+                    <ar:BIC>COBADEFF</ar:BIC>
+                    <ar:NatBkCd>088100</ar:NatBkCd>
+                </ar:InstdAgt>
+                <ar:OrdRef>
+                    <ar:OrdId>PmtInf-IPB-CH-2024103081666</ar:OrdId>
+                    <ar:TechOrdId>257033190000</ar:TechOrdId>
+                    <ar:ClrRefNumOrd>202410310000026</ar:ClrRefNumOrd>
+                </ar:OrdRef>
+                <ar:ClrSysId>SIP</ar:ClrSysId>
+                <ar:Amt Ccy="CHF">7.49</ar:Amt>
+                <ar:NbOfTxs>3</ar:NbOfTxs>
+                <ar:OrgAmt Ccy="CHF">7.49</ar:OrgAmt>
+                <ar:OrgNbOfTxs>3</ar:OrgNbOfTxs>
+            </ar:InOrd>
+            <ar:OutOrd>
+                <ar:LogFmtNm>sic_inst_pacs.008.001.08_six</ar:LogFmtNm>
+                <ar:Area>
+                    <ar:Nm>external</ar:Nm>
+                    <ar:Type>EXT</ar:Type>
+                </ar:Area>
+                <ar:OrdType>CT</ar:OrdType>
+                <ar:OrdRef>
+                    <ar:OrdId>IPBCOBADEFF202410310000028</ar:OrdId>
+                    <ar:TechOrdId>257033210000</ar:TechOrdId>
+                    <ar:ClrRefNumOrd>202410310000028</ar:ClrRefNumOrd>
+                </ar:OrdRef>
+                <ar:ClrSysId>SIP</ar:ClrSysId>
+                <ar:Amt Ccy="CHF">3.99</ar:Amt>
+                <ar:NbOfTxs>1</ar:NbOfTxs>
+            </ar:OutOrd>
+            <ar:Subm>
+                <ar:IBAN>CH3408836100003300006</ar:IBAN>
+                <ar:NatAcc>100003300006</ar:NatAcc>
+                <ar:SubmAcctInf>
+                    <ar:Ccy>CHF</ar:Ccy>
+                </ar:SubmAcctInf>
+                <ar:AgtNatBkCd>088360</ar:AgtNatBkCd>
+                <ar:NmAdrCtry>
+                    <ar:Nm>Donald Trump</ar:Nm>
+                    <ar:StrcdPstlAdr>
+                        <mx8.1.8:StrtNm>Ocean Blvd</mx8.1.8:StrtNm>
+                        <mx8.1.8:TwnNm>Palm Beach</mx8.1.8:TwnNm>
+                        <mx8.1.8:Ctry>US</mx8.1.8:Ctry>
+                    </ar:StrcdPstlAdr>
+                </ar:NmAdrCtry>
+                <ar:Role>DBTR</ar:Role>
+            </ar:Subm>
+            <ar:OrgSubm>
+                <ar:SubmAcctInf>
+                    <ar:Ccy>CHF</ar:Ccy>
+                </ar:SubmAcctInf>
+                <ar:NmAdrCtry>
+                    <ar:Nm>Donald Trump</ar:Nm>
+                    <ar:StrcdPstlAdr>
+                        <mx8.1.8:StrtNm>Ocean Blvd</mx8.1.8:StrtNm>
+                        <mx8.1.8:TwnNm>Palm Beach</mx8.1.8:TwnNm>
+                        <mx8.1.8:Ctry>US</mx8.1.8:Ctry>
+                    </ar:StrcdPstlAdr>
+                </ar:NmAdrCtry>
+                <ar:Role>DBTR</ar:Role>
+            </ar:OrgSubm>
+            <ar:InitgPty>
+                <ar:NmAdrCtry>
+                    <ar:ISO2019>
+                        <ar:Id>
+                            <mx8.1.8:OrgId>
+                                <mx8.1.8:Othr>
+                                    <mx8.1.8:Id>OrgtrId12344</mx8.1.8:Id>
+                                </mx8.1.8:Othr>
+                            </mx8.1.8:OrgId>
+                        </ar:Id>
+                    </ar:ISO2019>
+                </ar:NmAdrCtry>
+            </ar:InitgPty>
+            <ar:Recv>
+                <ar:IBAN>LI21088100002324013AA</ar:IBAN>
+                <ar:AgtNatBkCd>088100</ar:AgtNatBkCd>
+                <ar:NmAdr>Creditor Name 01 äöüß|Cdtr01 street äöüß|C01 Zurich|LI|&lt;PstlAdr&gt;&lt;StrtNm&gt;Cdtr01 street äöüß&lt;/StrtNm&gt;&lt;BldgNm&gt;Cdtr01bldg&lt;/BldgNm&gt;&lt;Flr&gt;23&lt;/Flr&gt;&lt;Roo</ar:NmAdr>
+                <ar:Role>CDTR</ar:Role>
+                <ar:RecvAgtInf>
+                    <ar:ClrSysMmbId>
+                        <ar:ClrSysId>CHSIC</ar:ClrSysId>
+                        <ar:MmbId>088360</ar:MmbId>
+                    </ar:ClrSysMmbId>
+                </ar:RecvAgtInf>
+            </ar:Recv>
+            <ar:TxRef>
+                <ar:EndToEndId>EndToEndId-IPB-CH-BB-001</ar:EndToEndId>
+                <ar:TxId>COBADEFF311024000010110000001</ar:TxId>
+                <ar:InstrIdExt>20241030-InstrId-CH-BB-001</ar:InstrIdExt>
+                <ar:InstrIdInt>EUX3110000058152</ar:InstrIdInt>
+                <ar:ClrRefNumTx>20241031000002600000001</ar:ClrRefNumTx>
+                <ar:UETR>151a9cb9-478e-4261-adb5-b11d97e078c3</ar:UETR>
+                <ar:OrgnlUETR>151a9cb9-478e-4261-adb5-b11d97e078c3</ar:OrgnlUETR>
+                <ar:MsgId>PmtInf-IPB-CH-2024103081666</ar:MsgId>
+            </ar:TxRef>
+            <ar:CtgyPurp>SALA</ar:CtgyPurp>
+            <ar:Purp>SALA</ar:Purp>
+            <ar:TxCd>
+                <ar:InTxCd>76000</ar:InTxCd>
+                <ar:OutTxCd>00000</ar:OutTxCd>
+            </ar:TxCd>
+            <ar:Prdct>SIC-Inst</ar:Prdct>
+            <ar:Amt Ccy="CHF">3.99</ar:Amt>
+            <ar:RmtInf>
+                <ar:ISO2019>
+                    <ar:Strd
+                            xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.002.001.10">
+                        <mx8.1.8:CdtrRefInf>
+                            <mx8.1.8:Tp>
+                                <mx8.1.8:CdOrPrtry>
+                                    <mx8.1.8:Cd>SCOR</mx8.1.8:Cd>
+                                </mx8.1.8:CdOrPrtry>
+                            </mx8.1.8:Tp>
+                            <mx8.1.8:Ref>Structured RmtInf 01 äöüß</mx8.1.8:Ref>
+                        </mx8.1.8:CdtrRefInf>
+                    </ar:Strd>
+                </ar:ISO2019>
+            </ar:RmtInf>
+            <ar:DlvrdValDt>2024-10-30</ar:DlvrdValDt>
+            <ar:DlvrdExctDt>2024-10-30</ar:DlvrdExctDt>
+            <ar:TxType>CREDIT</ar:TxType>
+            <ar:LclInstrm>INST</ar:LclInstrm>
+            <ar:FullTxInf>
+                <ar:InTx>
+                    <ar:OrgTx>
+                        &lt;PmtInf&gt;&lt;PmtInfId&gt;PmtInf-IPB-CH-2024103081666&lt;/PmtInfId&gt;&lt;PmtMtd&gt;TRF&lt;/PmtMtd&gt;&lt;BtchBookg&gt;true&lt;/BtchBookg&gt;&lt;NbOfTxs&gt;3&lt;/NbOfTxs&gt;&lt;CtrlSum&gt;10.49&lt;/CtrlSum&gt;&lt;PmtTpInf&gt;&lt;LclInstrm&gt;&lt;Cd&gt;INST&lt;/Cd&gt;&lt;/LclInstrm&gt;&lt;CtgyPurp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/CtgyPurp&gt;&lt;/PmtTpInf&gt;&lt;ReqdExctnDt&gt;&lt;DtTm&gt;2024-10-30T08:00:40&lt;/DtTm&gt;&lt;/ReqdExctnDt&gt;&lt;Dbtr&gt;&lt;Nm&gt;Debtor
+                        Name äöüßä
+                        IPB-CH&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;StrtNm&gt;Debtor
+                        Street äöüßä&lt;/StrtNm&gt;&lt;BldgNm&gt;Dbtr
+                        bldg&lt;/BldgNm&gt;&lt;Flr&gt;7&lt;/Flr&gt;&lt;Room&gt;58b&lt;/Room&gt;&lt;PstCd&gt;D01&lt;/PstCd&gt;&lt;TwnNm&gt;Bern&lt;/TwnNm&gt;&lt;Ctry&gt;CH&lt;/Ctry&gt;&lt;/PstlAdr&gt;&lt;/Dbtr&gt;&lt;DbtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;CH3408836100003300006&lt;/IBAN&gt;&lt;/Id&gt;&lt;Ccy&gt;CHF&lt;/Ccy&gt;&lt;/DbtrAcct&gt;&lt;DbtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/DbtrAgt&gt;&lt;ChrgBr&gt;SLEV&lt;/ChrgBr&gt;&lt;/PmtInf&gt;&lt;PmtInf&gt;&lt;PmtInfId&gt;PmtInf-IPB-CH-2024103081666&lt;/PmtInfId&gt;&lt;PmtMtd&gt;TRF&lt;/PmtMtd&gt;&lt;BtchBookg&gt;true&lt;/BtchBookg&gt;&lt;NbOfTxs&gt;3&lt;/NbOfTxs&gt;&lt;CtrlSum&gt;10.49&lt;/CtrlSum&gt;&lt;PmtTpInf&gt;&lt;LclInstrm&gt;&lt;Cd&gt;INST&lt;/Cd&gt;&lt;/LclInstrm&gt;&lt;CtgyPurp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/CtgyPurp&gt;&lt;/PmtTpInf&gt;&lt;ReqdExctnDt&gt;&lt;DtTm&gt;2024-10-30T08:00:40&lt;/DtTm&gt;&lt;/ReqdExctnDt&gt;&lt;Dbtr&gt;&lt;Nm&gt;Debtor
+                        Name äöüßä
+                        IPB-CH&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;StrtNm&gt;Debtor
+                        Street äöüßä&lt;/StrtNm&gt;&lt;BldgNm&gt;Dbtr
+                        bldg&lt;/BldgNm&gt;&lt;Flr&gt;7&lt;/Flr&gt;&lt;Room&gt;58b&lt;/Room&gt;&lt;PstCd&gt;D01&lt;/PstCd&gt;&lt;TwnNm&gt;Bern&lt;/TwnNm&gt;&lt;Ctry&gt;CH&lt;/Ctry&gt;&lt;/PstlAdr&gt;&lt;/Dbtr&gt;&lt;DbtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;CH3408836100003300006&lt;/IBAN&gt;&lt;/Id&gt;&lt;Ccy&gt;CHF&lt;/Ccy&gt;&lt;/DbtrAcct&gt;&lt;DbtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/DbtrAgt&gt;&lt;ChrgBr&gt;SLEV&lt;/ChrgBr&gt;&lt;CdtTrfTxInf&gt;&lt;PmtId&gt;&lt;InstrId&gt;20241030-InstrId-CH-BB-001&lt;/InstrId&gt;&lt;EndToEndId&gt;EndToEndId-IPB-CH-BB-001&lt;/EndToEndId&gt;&lt;/PmtId&gt;&lt;Amt&gt;&lt;InstdAmt
+                        Ccy=&quot;CHF&quot;&gt;3.99&lt;/InstdAmt&gt;&lt;/Amt&gt;&lt;CdtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088108&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/CdtrAgt&gt;&lt;Cdtr&gt;&lt;Nm&gt;Creditor
+                        Name 01
+                        äöüß&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;StrtNm&gt;Cdtr01
+                        street äöüß&lt;/StrtNm&gt;&lt;BldgNm&gt;Cdtr01
+                        bldg&lt;/BldgNm&gt;&lt;Flr&gt;23&lt;/Flr&gt;&lt;Room&gt;45&lt;/Room&gt;&lt;PstCd&gt;C01&lt;/PstCd&gt;&lt;TwnNm&gt;Zurich&lt;/TwnNm&gt;&lt;Ctry&gt;LI&lt;/Ctry&gt;&lt;/PstlAdr&gt;&lt;/Cdtr&gt;&lt;CdtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;LI21088100002324013AA&lt;/IBAN&gt;&lt;/Id&gt;&lt;/CdtrAcct&gt;&lt;Purp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/Purp&gt;&lt;RmtInf&gt;&lt;Strd&gt;&lt;CdtrRefInf&gt;&lt;Tp&gt;&lt;CdOrPrtry&gt;&lt;Cd&gt;SCOR&lt;/Cd&gt;&lt;/CdOrPrtry&gt;&lt;/Tp&gt;&lt;Ref&gt;Structured
+                        RmtInf 01
+                        äöüß&lt;/Ref&gt;&lt;/CdtrRefInf&gt;&lt;/Strd&gt;&lt;/RmtInf&gt;&lt;/CdtTrfTxInf&gt;&lt;/PmtInf&gt;
+                    </ar:OrgTx>
+                </ar:InTx>
+                <ar:OutTx>
+                    <ar:OrgTx>
+                        &lt;GrpHdr&gt;&lt;MsgId&gt;IPBCOBADEFF202410310000028&lt;/MsgId&gt;&lt;CreDtTm&gt;2024-10-31T09:11:04.311+01:00&lt;/CreDtTm&gt;&lt;NbOfTxs&gt;1&lt;/NbOfTxs&gt;&lt;TtlIntrBkSttlmAmt
+                        Ccy=&quot;CHF&quot;&gt;3.99&lt;/TtlIntrBkSttlmAmt&gt;&lt;SttlmInf&gt;&lt;SttlmMtd&gt;CLRG&lt;/SttlmMtd&gt;&lt;ClrSys&gt;&lt;Cd&gt;SIP&lt;/Cd&gt;&lt;/ClrSys&gt;&lt;/SttlmInf&gt;&lt;/GrpHdr&gt;&lt;CdtTrfTxInf&gt;&lt;PmtId&gt;&lt;InstrId&gt;EUX3110000058152&lt;/InstrId&gt;&lt;EndToEndId&gt;EndToEndId-IPB-CH-BB-001&lt;/EndToEndId&gt;&lt;TxId&gt;EUX3110000058152&lt;/TxId&gt;&lt;UETR&gt;151a9cb9-478e-4261-adb5-b11d97e078c3&lt;/UETR&gt;&lt;/PmtId&gt;&lt;PmtTpInf&gt;&lt;LclInstrm&gt;&lt;Prtry&gt;IPCPMT&lt;/Prtry&gt;&lt;/LclInstrm&gt;&lt;CtgyPurp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/CtgyPurp&gt;&lt;/PmtTpInf&gt;&lt;IntrBkSttlmAmt
+                        Ccy=&quot;CHF&quot;&gt;3.99&lt;/IntrBkSttlmAmt&gt;&lt;IntrBkSttlmDt&gt;2024-10-31&lt;/IntrBkSttlmDt&gt;&lt;AccptncDtTm&gt;2024-10-31T08:11:04.361Z&lt;/AccptncDtTm&gt;&lt;ChrgBr&gt;SHAR&lt;/ChrgBr&gt;&lt;InstgAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/InstgAgt&gt;&lt;InstdAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088100&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/InstdAgt&gt;&lt;Dbtr&gt;&lt;Nm&gt;Donald
+                        Trump&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;Ctry&gt;US&lt;/Ctry&gt;&lt;AdrLine&gt;Ocean
+                        Blvd&lt;/AdrLine&gt;&lt;AdrLine&gt;Palm
+                        Beach&lt;/AdrLine&gt;&lt;/PstlAdr&gt;&lt;/Dbtr&gt;&lt;DbtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;CH3408836100003300006&lt;/IBAN&gt;&lt;/Id&gt;&lt;/DbtrAcct&gt;&lt;DbtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/DbtrAgt&gt;&lt;CdtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088100&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/CdtrAgt&gt;&lt;Cdtr&gt;&lt;Nm&gt;Creditor
+                        Name 01
+                        äöüß&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;StrtNm&gt;Cdtr01
+                        street äöüß&lt;/StrtNm&gt;&lt;BldgNm&gt;Cdtr01
+                        bldg&lt;/BldgNm&gt;&lt;Flr&gt;23&lt;/Flr&gt;&lt;Room&gt;45&lt;/Room&gt;&lt;PstCd&gt;C01&lt;/PstCd&gt;&lt;TwnNm&gt;Zurich&lt;/TwnNm&gt;&lt;Ctry&gt;LI&lt;/Ctry&gt;&lt;/PstlAdr&gt;&lt;/Cdtr&gt;&lt;CdtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;LI21088100002324013AA&lt;/IBAN&gt;&lt;/Id&gt;&lt;/CdtrAcct&gt;&lt;Purp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/Purp&gt;&lt;RmtInf&gt;&lt;Strd&gt;&lt;CdtrRefInf&gt;&lt;Tp&gt;&lt;CdOrPrtry&gt;&lt;Cd&gt;SCOR&lt;/Cd&gt;&lt;/CdOrPrtry&gt;&lt;/Tp&gt;&lt;Ref&gt;Structured
+                        RmtInf 01
+                        äöüß&lt;/Ref&gt;&lt;/CdtrRefInf&gt;&lt;/Strd&gt;&lt;/RmtInf&gt;&lt;/CdtTrfTxInf&gt;
+                    </ar:OrgTx>
+                </ar:OutTx>
+            </ar:FullTxInf>
+            <ar:InSttlmInf>
+                <ar:BIC>COBACHZHXXX</ar:BIC>
+                <ar:IBAN>CH3408836100003300006</ar:IBAN>
+                <ar:NatBkCd>08836</ar:NatBkCd>
+                <ar:Acc>313100003300</ar:Acc>
+                <ar:Amt Ccy="CHF">7.49</ar:Amt>
+                <ar:ValDt>2024-10-31</ar:ValDt>
+                <ar:TxCnt>3</ar:TxCnt>
+                <ar:BkType>DEBIT</ar:BkType>
+            </ar:InSttlmInf>
+            <ar:OutSttlmInf>
+                <ar:Acc>313100000902</ar:Acc>
+                <ar:Amt Ccy="CHF">3.99</ar:Amt>
+                <ar:ValDt>2024-10-31</ar:ValDt>
+                <ar:TxCnt>1</ar:TxCnt>
+                <ar:BkType>CREDIT</ar:BkType>
+            </ar:OutSttlmInf>
+            <ar:ClrSettInf>
+                <ar:PSR>NOT_CREATED</ar:PSR>
+            </ar:ClrSettInf>
+            <ar:GenProcInf>
+                <ar:TxStat>993890</ar:TxStat>
+                <ar:NmRemBp>COBA IP-B SIC bulk</ar:NmRemBp>
+                <ar:NmRem>Coba IP-B SIC Pain1b</ar:NmRem>
+                <ar:NmRoutBp>SIX Instant Payments</ar:NmRoutBp>
+                <ar:NmRout>SIC IP-B SIX OUT P8</ar:NmRout>
+                <ar:OrgDlvrMed>PAPER</ar:OrgDlvrMed>
+                <ar:Timing>
+                    <ar:FileRecvDtTm>2024-10-31T09:10:13</ar:FileRecvDtTm>
+                    <ar:ExctDt>2024-10-31</ar:ExctDt>
+                    <ar:FileCreDtTm>2024-10-31T09:11:04</ar:FileCreDtTm>
+                </ar:Timing>
+                <ar:DispoInf>
+                    <ar:DispoType>INPUT</ar:DispoType>
+                    <ar:Result>POS</ar:Result>
+                    <ar:Req1DtTm>2024-10-31T09:10:51</ar:Req1DtTm>
+                    <ar:ReplDtTm>2024-10-31T09:10:52</ar:ReplDtTm>
+                </ar:DispoInf>
+                <ar:Embgo>
+                    <ar:EmbgoType>INPUT</ar:EmbgoType>
+                    <ar:Result>NO_HIT</ar:Result>
+                    <ar:Req1DtTm>2024-10-31T09:10:59</ar:Req1DtTm>
+                    <ar:Repl>
+                        <ar:ReplDtTm>2024-10-31T09:11:03</ar:ReplDtTm>
+                        <ar:ReplCode>NO_HIT</ar:ReplCode>
+                    </ar:Repl>
+                </ar:Embgo>
+                <ar:Frd>
+                    <ar:FrdType>INPUT</ar:FrdType>
+                    <ar:Req1DtTm>2024-10-31T09:10:57</ar:Req1DtTm>
+                    <ar:Repl>
+                        <ar:ReplDtTm>2024-10-31T09:10:58</ar:ReplDtTm>
+                        <ar:ReplCode>OK</ar:ReplCode>
+                    </ar:Repl>
+                </ar:Frd>
+                <ar:RiskFltr>
+                    <ar:Result>NO_HIT</ar:Result>
+                </ar:RiskFltr>
+                <ar:FltrFlg>
+                    <ar:Result>NO_HIT</ar:Result>
+                </ar:FltrFlg>
+                <ar:ProcHist>
+                    <ar:DtTm>2024-10-31T09:11:03Z</ar:DtTm>
+                    <ar:Inf>Embargo reply received in state &apos;NO_HIT&apos;
+                        with reference 20241031000002600000001.
+                    </ar:Inf>
+                </ar:ProcHist>
+                <ar:ProcHist>
+                    <ar:DtTm>2024-10-31T09:11:57Z</ar:DtTm>
+                    <ar:Inf>No CSM confirmation received within 00:00:25.
+                        Investigation message send to CSM for Instant Payment
+                        with clearing reference number 20241031000002600000001.
+                    </ar:Inf>
+                </ar:ProcHist>
+                <ar:AckNakInf>
+                    <ar:Status>ACK</ar:Status>
+                    <ar:RecvDtTm>2024-10-31T09:12:51</ar:RecvDtTm>
+                </ar:AckNakInf>
+                <ar:AccExistChk>POS</ar:AccExistChk>
+                <ar:FATF7Chk>NO_CHK</ar:FATF7Chk>
+            </ar:GenProcInf>
+            <ar:FXInfo>
+                <ar:SrcCcy>CHF</ar:SrcCcy>
+            </ar:FXInfo>
+            <ar:InstrPrty>NORM</ar:InstrPrty>
+        </ar:PayInf>
+        <ar:PayInf>
+            <ar:InFile>
+                <ar:Nm>ZAA2EWL_IP1</ar:Nm>
+                <ar:Id>562926210000</ar:Id>
+                <ar:FileRef>
+                    <ar:FileId>MSG-IPB-CH-202410300666</ar:FileId>
+                </ar:FileRef>
+                <ar:FmtGrpNm>SIC_INST</ar:FmtGrpNm>
+                <ar:SbmttrId>TZAAK002</ar:SbmttrId>
+                <ar:SndngSys>127</ar:SndngSys>
+            </ar:InFile>
+            <ar:OutFile>
+                <ar:Nm>COBA_P202BOX06_SIC_IP</ar:Nm>
+                <ar:Id>562926320000</ar:Id>
+                <ar:FmtGrpNm>SIC_INST</ar:FmtGrpNm>
+            </ar:OutFile>
+            <ar:InOrd>
+                <ar:LogFmtNm>sic_inst_pain.001.001.09_six</ar:LogFmtNm>
+                <ar:Area>
+                    <ar:Nm>internal</ar:Nm>
+                    <ar:Type>INT</ar:Type>
+                </ar:Area>
+                <ar:OrdType>CT</ar:OrdType>
+                <ar:InstgAgt>
+                    <ar:NatBkCd>088360</ar:NatBkCd>
+                </ar:InstgAgt>
+                <ar:InstdAgt>
+                    <ar:BIC>COBADEFF</ar:BIC>
+                    <ar:NatBkCd>088100</ar:NatBkCd>
+                </ar:InstdAgt>
+                <ar:OrdRef>
+                    <ar:OrdId>PmtInf-IPB-CH-2024103081666</ar:OrdId>
+                    <ar:TechOrdId>257033190000</ar:TechOrdId>
+                    <ar:ClrRefNumOrd>202410310000026</ar:ClrRefNumOrd>
+                </ar:OrdRef>
+                <ar:ClrSysId>SIP</ar:ClrSysId>
+                <ar:Amt Ccy="CHF">7.49</ar:Amt>
+                <ar:NbOfTxs>3</ar:NbOfTxs>
+                <ar:OrgAmt Ccy="CHF">7.49</ar:OrgAmt>
+                <ar:OrgNbOfTxs>3</ar:OrgNbOfTxs>
+            </ar:InOrd>
+            <ar:OutOrd>
+                <ar:LogFmtNm>sic_inst_pacs.008.001.08_six</ar:LogFmtNm>
+                <ar:Area>
+                    <ar:Nm>external</ar:Nm>
+                    <ar:Type>EXT</ar:Type>
+                </ar:Area>
+                <ar:OrdType>CT</ar:OrdType>
+                <ar:OrdRef>
+                    <ar:OrdId>IPBCOBADEFF202410310000029</ar:OrdId>
+                    <ar:TechOrdId>257033220000</ar:TechOrdId>
+                    <ar:ClrRefNumOrd>202410310000029</ar:ClrRefNumOrd>
+                </ar:OrdRef>
+                <ar:ClrSysId>SIP</ar:ClrSysId>
+                <ar:Amt Ccy="CHF">1.00</ar:Amt>
+                <ar:NbOfTxs>1</ar:NbOfTxs>
+            </ar:OutOrd>
+            <ar:Subm>
+                <ar:IBAN>CH3408836100003300006</ar:IBAN>
+                <ar:NatAcc>100003300006</ar:NatAcc>
+                <ar:SubmAcctInf>
+                    <ar:Ccy>CHF</ar:Ccy>
+                </ar:SubmAcctInf>
+                <ar:AgtNatBkCd>088360</ar:AgtNatBkCd>
+                <ar:NmAdrCtry>
+                    <ar:Nm>Donald Trump</ar:Nm>
+                    <ar:StrcdPstlAdr>
+                        <mx8.1.8:StrtNm>Ocean Blvd</mx8.1.8:StrtNm>
+                        <mx8.1.8:TwnNm>Palm Beach</mx8.1.8:TwnNm>
+                        <mx8.1.8:Ctry>US</mx8.1.8:Ctry>
+                    </ar:StrcdPstlAdr>
+                </ar:NmAdrCtry>
+                <ar:Role>DBTR</ar:Role>
+            </ar:Subm>
+            <ar:OrgSubm>
+                <ar:SubmAcctInf>
+                    <ar:Ccy>CHF</ar:Ccy>
+                </ar:SubmAcctInf>
+                <ar:NmAdrCtry>
+                    <ar:Nm>Donald Trump</ar:Nm>
+                    <ar:StrcdPstlAdr>
+                        <mx8.1.8:StrtNm>Ocean Blvd</mx8.1.8:StrtNm>
+                        <mx8.1.8:TwnNm>Palm Beach</mx8.1.8:TwnNm>
+                        <mx8.1.8:Ctry>US</mx8.1.8:Ctry>
+                    </ar:StrcdPstlAdr>
+                </ar:NmAdrCtry>
+                <ar:Role>DBTR</ar:Role>
+            </ar:OrgSubm>
+            <ar:InitgPty>
+                <ar:NmAdrCtry>
+                    <ar:ISO2019>
+                        <ar:Id>
+                            <mx8.1.8:OrgId>
+                                <mx8.1.8:Othr>
+                                    <mx8.1.8:Id>OrgtrId12344</mx8.1.8:Id>
+                                </mx8.1.8:Othr>
+                            </mx8.1.8:OrgId>
+                        </ar:Id>
+                    </ar:ISO2019>
+                </ar:NmAdrCtry>
+            </ar:InitgPty>
+            <ar:Recv>
+                <ar:IBAN>LI21088100002324013AA</ar:IBAN>
+                <ar:AgtNatBkCd>088100</ar:AgtNatBkCd>
+                <ar:NmAdr>Creditor Name 02 äöüß|Cdtr02 street äöüß|C02 Zurich|LI|&lt;PstlAdr&gt;&lt;StrtNm&gt;Cdtr02 street äöüß&lt;/StrtNm&gt;&lt;BldgNm&gt;Cdtr02 bldg&lt;/BldgNm&gt;&lt;Flr&gt;23&lt;/Flr&gt;&lt;Roo</ar:NmAdr>
+                <ar:Role>CDTR</ar:Role>
+                <ar:RecvAgtInf>
+                    <ar:ClrSysMmbId>
+                        <ar:ClrSysId>CHSIC</ar:ClrSysId>
+                        <ar:MmbId>088360</ar:MmbId>
+                    </ar:ClrSysMmbId>
+                </ar:RecvAgtInf>
+            </ar:Recv>
+            <ar:TxRef>
+                <ar:EndToEndId>EndToEndId-IPB-CH-BB-002</ar:EndToEndId>
+                <ar:TxId>COBADEFF311024000010110000002</ar:TxId>
+                <ar:InstrIdExt>20241030-InstrId-CH-BB-002</ar:InstrIdExt>
+                <ar:InstrIdInt>EUX3110000058153</ar:InstrIdInt>
+                <ar:ClrRefNumTx>20241031000002600000002</ar:ClrRefNumTx>
+                <ar:UETR>72839373-4103-4d40-9965-50727611cbae</ar:UETR>
+                <ar:OrgnlUETR>72839373-4103-4d40-9965-50727611cbae</ar:OrgnlUETR>
+                <ar:MsgId>PmtInf-IPB-CH-2024103081666</ar:MsgId>
+            </ar:TxRef>
+            <ar:CtgyPurp>SALA</ar:CtgyPurp>
+            <ar:Purp>SALA</ar:Purp>
+            <ar:TxCd>
+                <ar:InTxCd>76000</ar:InTxCd>
+                <ar:OutTxCd>00000</ar:OutTxCd>
+            </ar:TxCd>
+            <ar:Prdct>SIC-Inst</ar:Prdct>
+            <ar:Amt Ccy="CHF">1.00</ar:Amt>
+            <ar:RmtInf>
+                <ar:ISO2019>
+                    <ar:Strd
+                            xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.002.001.10">
+                        <mx8.1.8:CdtrRefInf>
+                            <mx8.1.8:Tp>
+                                <mx8.1.8:CdOrPrtry>
+                                    <mx8.1.8:Cd>SCOR</mx8.1.8:Cd>
+                                </mx8.1.8:CdOrPrtry>
+                            </mx8.1.8:Tp>
+                            <mx8.1.8:Ref>Structured RmtInf 02 äöüß</mx8.1.8:Ref>
+                        </mx8.1.8:CdtrRefInf>
+                    </ar:Strd>
+                </ar:ISO2019>
+            </ar:RmtInf>
+            <ar:DlvrdValDt>2024-10-30</ar:DlvrdValDt>
+            <ar:DlvrdExctDt>2024-10-30</ar:DlvrdExctDt>
+            <ar:TxType>CREDIT</ar:TxType>
+            <ar:LclInstrm>INST</ar:LclInstrm>
+            <ar:FullTxInf>
+                <ar:InTx>
+                    <ar:OrgTx>
+                        &lt;PmtInf&gt;&lt;PmtInfId&gt;PmtInf-IPB-CH-2024103081666&lt;/PmtInfId&gt;&lt;PmtMtd&gt;TRF&lt;/PmtMtd&gt;&lt;BtchBookg&gt;true&lt;/BtchBookg&gt;&lt;NbOfTxs&gt;3&lt;/NbOfTxs&gt;&lt;CtrlSum&gt;10.49&lt;/CtrlSum&gt;&lt;PmtTpInf&gt;&lt;LclInstrm&gt;&lt;Cd&gt;INST&lt;/Cd&gt;&lt;/LclInstrm&gt;&lt;CtgyPurp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/CtgyPurp&gt;&lt;/PmtTpInf&gt;&lt;ReqdExctnDt&gt;&lt;DtTm&gt;2024-10-30T08:00:40&lt;/DtTm&gt;&lt;/ReqdExctnDt&gt;&lt;Dbtr&gt;&lt;Nm&gt;Debtor
+                        Name äöüßä
+                        IPB-CH&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;StrtNm&gt;Debtor
+                        Street äöüßä&lt;/StrtNm&gt;&lt;BldgNm&gt;Dbtr
+                        bldg&lt;/BldgNm&gt;&lt;Flr&gt;7&lt;/Flr&gt;&lt;Room&gt;58b&lt;/Room&gt;&lt;PstCd&gt;D01&lt;/PstCd&gt;&lt;TwnNm&gt;Bern&lt;/TwnNm&gt;&lt;Ctry&gt;CH&lt;/Ctry&gt;&lt;/PstlAdr&gt;&lt;/Dbtr&gt;&lt;DbtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;CH3408836100003300006&lt;/IBAN&gt;&lt;/Id&gt;&lt;Ccy&gt;CHF&lt;/Ccy&gt;&lt;/DbtrAcct&gt;&lt;DbtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/DbtrAgt&gt;&lt;ChrgBr&gt;SLEV&lt;/ChrgBr&gt;&lt;/PmtInf&gt;&lt;PmtInf&gt;&lt;PmtInfId&gt;PmtInf-IPB-CH-2024103081666&lt;/PmtInfId&gt;&lt;PmtMtd&gt;TRF&lt;/PmtMtd&gt;&lt;BtchBookg&gt;true&lt;/BtchBookg&gt;&lt;NbOfTxs&gt;3&lt;/NbOfTxs&gt;&lt;CtrlSum&gt;10.49&lt;/CtrlSum&gt;&lt;PmtTpInf&gt;&lt;LclInstrm&gt;&lt;Cd&gt;INST&lt;/Cd&gt;&lt;/LclInstrm&gt;&lt;CtgyPurp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/CtgyPurp&gt;&lt;/PmtTpInf&gt;&lt;ReqdExctnDt&gt;&lt;DtTm&gt;2024-10-30T08:00:40&lt;/DtTm&gt;&lt;/ReqdExctnDt&gt;&lt;Dbtr&gt;&lt;Nm&gt;Debtor
+                        Name äöüßä
+                        IPB-CH&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;StrtNm&gt;Debtor
+                        Street äöüßä&lt;/StrtNm&gt;&lt;BldgNm&gt;Dbtr
+                        bldg&lt;/BldgNm&gt;&lt;Flr&gt;7&lt;/Flr&gt;&lt;Room&gt;58b&lt;/Room&gt;&lt;PstCd&gt;D01&lt;/PstCd&gt;&lt;TwnNm&gt;Bern&lt;/TwnNm&gt;&lt;Ctry&gt;CH&lt;/Ctry&gt;&lt;/PstlAdr&gt;&lt;/Dbtr&gt;&lt;DbtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;CH3408836100003300006&lt;/IBAN&gt;&lt;/Id&gt;&lt;Ccy&gt;CHF&lt;/Ccy&gt;&lt;/DbtrAcct&gt;&lt;DbtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/DbtrAgt&gt;&lt;ChrgBr&gt;SLEV&lt;/ChrgBr&gt;&lt;CdtTrfTxInf&gt;&lt;PmtId&gt;&lt;InstrId&gt;20241030-InstrId-CH-BB-002&lt;/InstrId&gt;&lt;EndToEndId&gt;EndToEndId-IPB-CH-BB-002&lt;/EndToEndId&gt;&lt;/PmtId&gt;&lt;Amt&gt;&lt;InstdAmt
+                        Ccy=&quot;CHF&quot;&gt;1.0&lt;/InstdAmt&gt;&lt;/Amt&gt;&lt;CdtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088108&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/CdtrAgt&gt;&lt;Cdtr&gt;&lt;Nm&gt;Creditor
+                        Name 02
+                        äöüß&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;StrtNm&gt;Cdtr02
+                        street äöüß&lt;/StrtNm&gt;&lt;BldgNm&gt;Cdtr02
+                        bldg&lt;/BldgNm&gt;&lt;Flr&gt;23&lt;/Flr&gt;&lt;Room&gt;45&lt;/Room&gt;&lt;PstCd&gt;C02&lt;/PstCd&gt;&lt;TwnNm&gt;Zurich&lt;/TwnNm&gt;&lt;Ctry&gt;LI&lt;/Ctry&gt;&lt;/PstlAdr&gt;&lt;/Cdtr&gt;&lt;CdtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;LI21088100002324013AA&lt;/IBAN&gt;&lt;/Id&gt;&lt;/CdtrAcct&gt;&lt;Purp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/Purp&gt;&lt;RmtInf&gt;&lt;Strd&gt;&lt;CdtrRefInf&gt;&lt;Tp&gt;&lt;CdOrPrtry&gt;&lt;Cd&gt;SCOR&lt;/Cd&gt;&lt;/CdOrPrtry&gt;&lt;/Tp&gt;&lt;Ref&gt;Structured
+                        RmtInf 02
+                        äöüß&lt;/Ref&gt;&lt;/CdtrRefInf&gt;&lt;/Strd&gt;&lt;/RmtInf&gt;&lt;/CdtTrfTxInf&gt;&lt;/PmtInf&gt;
+                    </ar:OrgTx>
+                </ar:InTx>
+                <ar:OutTx>
+                    <ar:OrgTx>
+                        &lt;GrpHdr&gt;&lt;MsgId&gt;IPBCOBADEFF202410310000029&lt;/MsgId&gt;&lt;CreDtTm&gt;2024-10-31T09:11:04.319+01:00&lt;/CreDtTm&gt;&lt;NbOfTxs&gt;1&lt;/NbOfTxs&gt;&lt;TtlIntrBkSttlmAmt
+                        Ccy=&quot;CHF&quot;&gt;1.00&lt;/TtlIntrBkSttlmAmt&gt;&lt;SttlmInf&gt;&lt;SttlmMtd&gt;CLRG&lt;/SttlmMtd&gt;&lt;ClrSys&gt;&lt;Cd&gt;SIP&lt;/Cd&gt;&lt;/ClrSys&gt;&lt;/SttlmInf&gt;&lt;/GrpHdr&gt;&lt;CdtTrfTxInf&gt;&lt;PmtId&gt;&lt;InstrId&gt;EUX3110000058153&lt;/InstrId&gt;&lt;EndToEndId&gt;EndToEndId-IPB-CH-BB-002&lt;/EndToEndId&gt;&lt;TxId&gt;EUX3110000058153&lt;/TxId&gt;&lt;UETR&gt;72839373-4103-4d40-9965-50727611cbae&lt;/UETR&gt;&lt;/PmtId&gt;&lt;PmtTpInf&gt;&lt;LclInstrm&gt;&lt;Prtry&gt;IPCPMT&lt;/Prtry&gt;&lt;/LclInstrm&gt;&lt;CtgyPurp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/CtgyPurp&gt;&lt;/PmtTpInf&gt;&lt;IntrBkSttlmAmt
+                        Ccy=&quot;CHF&quot;&gt;1.00&lt;/IntrBkSttlmAmt&gt;&lt;IntrBkSttlmDt&gt;2024-10-31&lt;/IntrBkSttlmDt&gt;&lt;AccptncDtTm&gt;2024-10-31T08:11:04.351Z&lt;/AccptncDtTm&gt;&lt;ChrgBr&gt;SHAR&lt;/ChrgBr&gt;&lt;InstgAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/InstgAgt&gt;&lt;InstdAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088100&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/InstdAgt&gt;&lt;Dbtr&gt;&lt;Nm&gt;Donald
+                        Trump&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;Ctry&gt;US&lt;/Ctry&gt;&lt;AdrLine&gt;Ocean
+                        Blvd&lt;/AdrLine&gt;&lt;AdrLine&gt;Palm
+                        Beach&lt;/AdrLine&gt;&lt;/PstlAdr&gt;&lt;/Dbtr&gt;&lt;DbtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;CH3408836100003300006&lt;/IBAN&gt;&lt;/Id&gt;&lt;/DbtrAcct&gt;&lt;DbtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/DbtrAgt&gt;&lt;CdtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088100&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/CdtrAgt&gt;&lt;Cdtr&gt;&lt;Nm&gt;Creditor
+                        Name 02
+                        äöüß&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;StrtNm&gt;Cdtr02
+                        street äöüß&lt;/StrtNm&gt;&lt;BldgNm&gt;Cdtr02
+                        bldg&lt;/BldgNm&gt;&lt;Flr&gt;23&lt;/Flr&gt;&lt;Room&gt;45&lt;/Room&gt;&lt;PstCd&gt;C02&lt;/PstCd&gt;&lt;TwnNm&gt;Zurich&lt;/TwnNm&gt;&lt;Ctry&gt;LI&lt;/Ctry&gt;&lt;/PstlAdr&gt;&lt;/Cdtr&gt;&lt;CdtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;LI21088100002324013AA&lt;/IBAN&gt;&lt;/Id&gt;&lt;/CdtrAcct&gt;&lt;Purp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/Purp&gt;&lt;RmtInf&gt;&lt;Strd&gt;&lt;CdtrRefInf&gt;&lt;Tp&gt;&lt;CdOrPrtry&gt;&lt;Cd&gt;SCOR&lt;/Cd&gt;&lt;/CdOrPrtry&gt;&lt;/Tp&gt;&lt;Ref&gt;Structured
+                        RmtInf 02
+                        äöüß&lt;/Ref&gt;&lt;/CdtrRefInf&gt;&lt;/Strd&gt;&lt;/RmtInf&gt;&lt;/CdtTrfTxInf&gt;
+                    </ar:OrgTx>
+                </ar:OutTx>
+            </ar:FullTxInf>
+            <ar:InSttlmInf>
+                <ar:BIC>COBACHZHXXX</ar:BIC>
+                <ar:IBAN>CH3408836100003300006</ar:IBAN>
+                <ar:NatBkCd>08836</ar:NatBkCd>
+                <ar:Acc>313100003300</ar:Acc>
+                <ar:Amt Ccy="CHF">7.49</ar:Amt>
+                <ar:ValDt>2024-10-31</ar:ValDt>
+                <ar:TxCnt>3</ar:TxCnt>
+                <ar:BkType>DEBIT</ar:BkType>
+            </ar:InSttlmInf>
+            <ar:OutSttlmInf>
+                <ar:Acc>313100000902</ar:Acc>
+                <ar:Amt Ccy="CHF">1.00</ar:Amt>
+                <ar:ValDt>2024-10-31</ar:ValDt>
+                <ar:TxCnt>1</ar:TxCnt>
+                <ar:BkType>CREDIT</ar:BkType>
+            </ar:OutSttlmInf>
+            <ar:ClrSettInf>
+                <ar:PSR>NOT_CREATED</ar:PSR>
+            </ar:ClrSettInf>
+            <ar:GenProcInf>
+                <ar:TxStat>993890</ar:TxStat>
+                <ar:NmRemBp>COBA IP-B SIC bulk</ar:NmRemBp>
+                <ar:NmRem>Coba IP-B SIC Pain1b</ar:NmRem>
+                <ar:NmRoutBp>SIX Instant Payments</ar:NmRoutBp>
+                <ar:NmRout>SIC IP-B SIX OUT P8</ar:NmRout>
+                <ar:OrgDlvrMed>PAPER</ar:OrgDlvrMed>
+                <ar:Timing>
+                    <ar:FileRecvDtTm>2024-10-31T09:10:13</ar:FileRecvDtTm>
+                    <ar:ExctDt>2024-10-31</ar:ExctDt>
+                    <ar:FileCreDtTm>2024-10-31T09:11:04</ar:FileCreDtTm>
+                </ar:Timing>
+                <ar:DispoInf>
+                    <ar:DispoType>INPUT</ar:DispoType>
+                    <ar:Result>POS</ar:Result>
+                    <ar:Req1DtTm>2024-10-31T09:10:51</ar:Req1DtTm>
+                    <ar:ReplDtTm>2024-10-31T09:10:52</ar:ReplDtTm>
+                </ar:DispoInf>
+                <ar:Embgo>
+                    <ar:EmbgoType>INPUT</ar:EmbgoType>
+                    <ar:Result>NO_HIT</ar:Result>
+                    <ar:Req1DtTm>2024-10-31T09:11:00</ar:Req1DtTm>
+                    <ar:Repl>
+                        <ar:ReplDtTm>2024-10-31T09:11:03</ar:ReplDtTm>
+                        <ar:ReplCode>NO_HIT</ar:ReplCode>
+                    </ar:Repl>
+                </ar:Embgo>
+                <ar:Frd>
+                    <ar:FrdType>INPUT</ar:FrdType>
+                    <ar:Req1DtTm>2024-10-31T09:10:57</ar:Req1DtTm>
+                    <ar:Repl>
+                        <ar:ReplDtTm>2024-10-31T09:10:58</ar:ReplDtTm>
+                        <ar:ReplCode>OK</ar:ReplCode>
+                    </ar:Repl>
+                </ar:Frd>
+                <ar:RiskFltr>
+                    <ar:Result>NO_HIT</ar:Result>
+                </ar:RiskFltr>
+                <ar:FltrFlg>
+                    <ar:Result>NO_HIT</ar:Result>
+                </ar:FltrFlg>
+                <ar:ProcHist>
+                    <ar:DtTm>2024-10-31T09:11:57Z</ar:DtTm>
+                    <ar:Inf>No CSM confirmation received within 00:00:25.
+                        Investigation message send to CSM for Instant Payment
+                        with clearing reference number 20241031000002600000002.
+                    </ar:Inf>
+                </ar:ProcHist>
+                <ar:ProcHist>
+                    <ar:DtTm>2024-10-31T09:11:03Z</ar:DtTm>
+                    <ar:Inf>Embargo reply received in state &apos;NO_HIT&apos;
+                        with reference 20241031000002600000002.
+                    </ar:Inf>
+                </ar:ProcHist>
+                <ar:AckNakInf>
+                    <ar:Status>ACK</ar:Status>
+                    <ar:RecvDtTm>2024-10-31T09:12:52</ar:RecvDtTm>
+                </ar:AckNakInf>
+                <ar:AccExistChk>POS</ar:AccExistChk>
+                <ar:FATF7Chk>NO_CHK</ar:FATF7Chk>
+            </ar:GenProcInf>
+            <ar:FXInfo>
+                <ar:SrcCcy>CHF</ar:SrcCcy>
+            </ar:FXInfo>
+            <ar:InstrPrty>NORM</ar:InstrPrty>
+        </ar:PayInf>
+        <ar:PayInf>
+            <ar:InFile>
+                <ar:Nm>ZAA2EWL_IP1</ar:Nm>
+                <ar:Id>562926210001</ar:Id>
+                <ar:FileRef>
+                    <ar:FileId>c9b4276b-523e-4c58-b9bc-8d26eba</ar:FileId>
+                </ar:FileRef>
+                <ar:FmtGrpNm>SIC_INST</ar:FmtGrpNm>
+                <ar:SbmttrId>TZAAK002</ar:SbmttrId>
+                <ar:SndngSys>127</ar:SndngSys>
+            </ar:InFile>
+            <ar:OutFile>
+                <ar:Nm>COBA_P202BOX06_SIC_IP</ar:Nm>
+                <ar:Id>562926530000</ar:Id>
+                <ar:FmtGrpNm>SIC_INST</ar:FmtGrpNm>
+            </ar:OutFile>
+            <ar:InOrd>
+                <ar:LogFmtNm>sic_inst_pain.001.001.09_six</ar:LogFmtNm>
+                <ar:Area>
+                    <ar:Nm>internal</ar:Nm>
+                    <ar:Type>INT</ar:Type>
+                </ar:Area>
+                <ar:OrdType>CT</ar:OrdType>
+                <ar:InstgAgt>
+                    <ar:NatBkCd>088360</ar:NatBkCd>
+                </ar:InstgAgt>
+                <ar:InstdAgt>
+                    <ar:BIC>COBADEFF</ar:BIC>
+                    <ar:NatBkCd>088100</ar:NatBkCd>
+                </ar:InstdAgt>
+                <ar:OrdRef>
+                    <ar:OrdId>4eee2df6-1078-4947-a96e-24ad876</ar:OrdId>
+                    <ar:TechOrdId>257033260000</ar:TechOrdId>
+                    <ar:ClrRefNumOrd>202410310000034</ar:ClrRefNumOrd>
+                </ar:OrdRef>
+                <ar:ClrSysId>SIP</ar:ClrSysId>
+                <ar:Amt Ccy="CHF">7.49</ar:Amt>
+                <ar:NbOfTxs>3</ar:NbOfTxs>
+                <ar:OrgAmt Ccy="CHF">7.49</ar:OrgAmt>
+                <ar:OrgNbOfTxs>3</ar:OrgNbOfTxs>
+            </ar:InOrd>
+            <ar:OutOrd>
+                <ar:LogFmtNm>sic_inst_pacs.008.001.08_six</ar:LogFmtNm>
+                <ar:Area>
+                    <ar:Nm>external</ar:Nm>
+                    <ar:Type>EXT</ar:Type>
+                </ar:Area>
+                <ar:OrdType>CT</ar:OrdType>
+                <ar:OrdRef>
+                    <ar:OrdId>IPBCOBADEFF202410310000036</ar:OrdId>
+                    <ar:TechOrdId>257033280000</ar:TechOrdId>
+                    <ar:ClrRefNumOrd>202410310000036</ar:ClrRefNumOrd>
+                </ar:OrdRef>
+                <ar:ClrSysId>SIP</ar:ClrSysId>
+                <ar:Amt Ccy="CHF">3.99</ar:Amt>
+                <ar:NbOfTxs>1</ar:NbOfTxs>
+            </ar:OutOrd>
+            <ar:Subm>
+                <ar:IBAN>CH3408836100003300006</ar:IBAN>
+                <ar:NatAcc>100003300006</ar:NatAcc>
+                <ar:SubmAcctInf>
+                    <ar:Ccy>CHF</ar:Ccy>
+                </ar:SubmAcctInf>
+                <ar:AgtNatBkCd>088360</ar:AgtNatBkCd>
+                <ar:NmAdrCtry>
+                    <ar:Nm>Donald Trump</ar:Nm>
+                    <ar:StrcdPstlAdr>
+                        <mx8.1.8:StrtNm>Ocean Blvd</mx8.1.8:StrtNm>
+                        <mx8.1.8:TwnNm>Palm Beach</mx8.1.8:TwnNm>
+                        <mx8.1.8:Ctry>US</mx8.1.8:Ctry>
+                    </ar:StrcdPstlAdr>
+                </ar:NmAdrCtry>
+                <ar:Role>DBTR</ar:Role>
+            </ar:Subm>
+            <ar:OrgSubm>
+                <ar:SubmAcctInf>
+                    <ar:Ccy>CHF</ar:Ccy>
+                </ar:SubmAcctInf>
+                <ar:NmAdrCtry>
+                    <ar:Nm>Donald Trump</ar:Nm>
+                    <ar:StrcdPstlAdr>
+                        <mx8.1.8:StrtNm>Ocean Blvd</mx8.1.8:StrtNm>
+                        <mx8.1.8:TwnNm>Palm Beach</mx8.1.8:TwnNm>
+                        <mx8.1.8:Ctry>US</mx8.1.8:Ctry>
+                    </ar:StrcdPstlAdr>
+                </ar:NmAdrCtry>
+                <ar:Role>DBTR</ar:Role>
+            </ar:OrgSubm>
+            <ar:InitgPty>
+                <ar:NmAdrCtry>
+                    <ar:ISO2019>
+                        <ar:Id>
+                            <mx8.1.8:OrgId>
+                                <mx8.1.8:Othr>
+                                    <mx8.1.8:Id>OrgtrId12344</mx8.1.8:Id>
+                                </mx8.1.8:Othr>
+                            </mx8.1.8:OrgId>
+                        </ar:Id>
+                    </ar:ISO2019>
+                </ar:NmAdrCtry>
+            </ar:InitgPty>
+            <ar:Recv>
+                <ar:IBAN>LI21088100002324013AA</ar:IBAN>
+                <ar:AgtNatBkCd>088100</ar:AgtNatBkCd>
+                <ar:NmAdr>Creditor Name 01 äöüß|Cdtr01 street äöüß|C01 Zurich|LI|&lt;PstlAdr&gt;&lt;StrtNm&gt;Cdtr01 street äöüß&lt;/StrtNm&gt;&lt;BldgNm&gt;Cdtr01 bldg&lt;/BldgNm&gt;&lt;Flr&gt;23&lt;/Flr&gt;&lt;Roo</ar:NmAdr>
+                <ar:Role>CDTR</ar:Role>
+                <ar:RecvAgtInf>
+                    <ar:ClrSysMmbId>
+                        <ar:ClrSysId>CHSIC</ar:ClrSysId>
+                        <ar:MmbId>088360</ar:MmbId>
+                    </ar:ClrSysMmbId>
+                </ar:RecvAgtInf>
+            </ar:Recv>
+            <ar:TxRef>
+                <ar:EndToEndId>a862e03b-b20c-4032-92a9-fd374e8</ar:EndToEndId>
+                <ar:TxId>COBADEFF311024000010310000001</ar:TxId>
+                <ar:InstrIdExt>441ef580-85e7-4</ar:InstrIdExt>
+                <ar:InstrIdInt>EUX3110000058154</ar:InstrIdInt>
+                <ar:ClrRefNumTx>20241031000003400000001</ar:ClrRefNumTx>
+                <ar:UETR>f8fcb868-f07b-444c-885c-b32cc7ae2596</ar:UETR>
+                <ar:OrgnlUETR>f8fcb868-f07b-444c-885c-b32cc7ae2596</ar:OrgnlUETR>
+                <ar:MsgId>4eee2df6-1078-4947-a96e-24ad876</ar:MsgId>
+            </ar:TxRef>
+            <ar:CtgyPurp>SALA</ar:CtgyPurp>
+            <ar:Purp>SALA</ar:Purp>
+            <ar:TxCd>
+                <ar:InTxCd>76000</ar:InTxCd>
+                <ar:OutTxCd>00000</ar:OutTxCd>
+            </ar:TxCd>
+            <ar:Prdct>SIC-Inst</ar:Prdct>
+            <ar:Amt Ccy="CHF">3.99</ar:Amt>
+            <ar:RmtInf>
+                <ar:ISO2019>
+                    <ar:Strd
+                            xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.002.001.10">
+                        <mx8.1.8:CdtrRefInf>
+                            <mx8.1.8:Tp>
+                                <mx8.1.8:CdOrPrtry>
+                                    <mx8.1.8:Cd>SCOR</mx8.1.8:Cd>
+                                </mx8.1.8:CdOrPrtry>
+                            </mx8.1.8:Tp>
+                            <mx8.1.8:Ref>Structured RmtInf 01 äöüß</mx8.1.8:Ref>
+                        </mx8.1.8:CdtrRefInf>
+                    </ar:Strd>
+                </ar:ISO2019>
+            </ar:RmtInf>
+            <ar:DlvrdValDt>2024-10-31</ar:DlvrdValDt>
+            <ar:DlvrdExctDt>2024-10-31</ar:DlvrdExctDt>
+            <ar:TxType>CREDIT</ar:TxType>
+            <ar:LclInstrm>INST</ar:LclInstrm>
+            <ar:FullTxInf>
+                <ar:InTx>
+                    <ar:OrgTx>
+                        &lt;PmtInf&gt;&lt;PmtInfId&gt;4eee2df6-1078-4947-a96e-24ad876&lt;/PmtInfId&gt;&lt;PmtMtd&gt;TRF&lt;/PmtMtd&gt;&lt;BtchBookg&gt;true&lt;/BtchBookg&gt;&lt;NbOfTxs&gt;3&lt;/NbOfTxs&gt;&lt;CtrlSum&gt;10.49&lt;/CtrlSum&gt;&lt;PmtTpInf&gt;&lt;LclInstrm&gt;&lt;Cd&gt;INST&lt;/Cd&gt;&lt;/LclInstrm&gt;&lt;CtgyPurp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/CtgyPurp&gt;&lt;/PmtTpInf&gt;&lt;ReqdExctnDt&gt;&lt;DtTm&gt;2024-10-31T08:18:26&lt;/DtTm&gt;&lt;/ReqdExctnDt&gt;&lt;Dbtr&gt;&lt;Nm&gt;Debtor
+                        Name äöüßä
+                        IPB-CH&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;StrtNm&gt;Debtor
+                        Street äöüßä&lt;/StrtNm&gt;&lt;BldgNm&gt;Dbtr
+                        bldg&lt;/BldgNm&gt;&lt;Flr&gt;7&lt;/Flr&gt;&lt;Room&gt;58b&lt;/Room&gt;&lt;PstCd&gt;D01&lt;/PstCd&gt;&lt;TwnNm&gt;Bern&lt;/TwnNm&gt;&lt;Ctry&gt;CH&lt;/Ctry&gt;&lt;/PstlAdr&gt;&lt;/Dbtr&gt;&lt;DbtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;CH3408836100003300006&lt;/IBAN&gt;&lt;/Id&gt;&lt;Ccy&gt;CHF&lt;/Ccy&gt;&lt;/DbtrAcct&gt;&lt;DbtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/DbtrAgt&gt;&lt;ChrgBr&gt;SLEV&lt;/ChrgBr&gt;&lt;/PmtInf&gt;&lt;PmtInf&gt;&lt;PmtInfId&gt;4eee2df6-1078-4947-a96e-24ad876&lt;/PmtInfId&gt;&lt;PmtMtd&gt;TRF&lt;/PmtMtd&gt;&lt;BtchBookg&gt;true&lt;/BtchBookg&gt;&lt;NbOfTxs&gt;3&lt;/NbOfTxs&gt;&lt;CtrlSum&gt;10.49&lt;/CtrlSum&gt;&lt;PmtTpInf&gt;&lt;LclInstrm&gt;&lt;Cd&gt;INST&lt;/Cd&gt;&lt;/LclInstrm&gt;&lt;CtgyPurp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/CtgyPurp&gt;&lt;/PmtTpInf&gt;&lt;ReqdExctnDt&gt;&lt;DtTm&gt;2024-10-31T08:18:26&lt;/DtTm&gt;&lt;/ReqdExctnDt&gt;&lt;Dbtr&gt;&lt;Nm&gt;Debtor
+                        Name äöüßä
+                        IPB-CH&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;StrtNm&gt;Debtor
+                        Street äöüßä&lt;/StrtNm&gt;&lt;BldgNm&gt;Dbtr
+                        bldg&lt;/BldgNm&gt;&lt;Flr&gt;7&lt;/Flr&gt;&lt;Room&gt;58b&lt;/Room&gt;&lt;PstCd&gt;D01&lt;/PstCd&gt;&lt;TwnNm&gt;Bern&lt;/TwnNm&gt;&lt;Ctry&gt;CH&lt;/Ctry&gt;&lt;/PstlAdr&gt;&lt;/Dbtr&gt;&lt;DbtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;CH3408836100003300006&lt;/IBAN&gt;&lt;/Id&gt;&lt;Ccy&gt;CHF&lt;/Ccy&gt;&lt;/DbtrAcct&gt;&lt;DbtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/DbtrAgt&gt;&lt;ChrgBr&gt;SLEV&lt;/ChrgBr&gt;&lt;CdtTrfTxInf&gt;&lt;PmtId&gt;&lt;InstrId&gt;441ef580-85e7-4&lt;/InstrId&gt;&lt;EndToEndId&gt;a862e03b-b20c-4032-92a9-fd374e8&lt;/EndToEndId&gt;&lt;/PmtId&gt;&lt;Amt&gt;&lt;InstdAmt
+                        Ccy=&quot;CHF&quot;&gt;3.99&lt;/InstdAmt&gt;&lt;/Amt&gt;&lt;CdtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088108&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/CdtrAgt&gt;&lt;Cdtr&gt;&lt;Nm&gt;Creditor
+                        Name 01
+                        äöüß&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;StrtNm&gt;Cdtr01
+                        street äöüß&lt;/StrtNm&gt;&lt;BldgNm&gt;Cdtr01
+                        bldg&lt;/BldgNm&gt;&lt;Flr&gt;23&lt;/Flr&gt;&lt;Room&gt;45&lt;/Room&gt;&lt;PstCd&gt;C01&lt;/PstCd&gt;&lt;TwnNm&gt;Zurich&lt;/TwnNm&gt;&lt;Ctry&gt;LI&lt;/Ctry&gt;&lt;/PstlAdr&gt;&lt;/Cdtr&gt;&lt;CdtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;LI21088100002324013AA&lt;/IBAN&gt;&lt;/Id&gt;&lt;/CdtrAcct&gt;&lt;Purp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/Purp&gt;&lt;RmtInf&gt;&lt;Strd&gt;&lt;CdtrRefInf&gt;&lt;Tp&gt;&lt;CdOrPrtry&gt;&lt;Cd&gt;SCOR&lt;/Cd&gt;&lt;/CdOrPrtry&gt;&lt;/Tp&gt;&lt;Ref&gt;Structured
+                        RmtInf 01
+                        äöüß&lt;/Ref&gt;&lt;/CdtrRefInf&gt;&lt;/Strd&gt;&lt;/RmtInf&gt;&lt;/CdtTrfTxInf&gt;&lt;/PmtInf&gt;
+                    </ar:OrgTx>
+                </ar:InTx>
+                <ar:OutTx>
+                    <ar:OrgTx>
+                        &lt;GrpHdr&gt;&lt;MsgId&gt;IPBCOBADEFF202410310000036&lt;/MsgId&gt;&lt;CreDtTm&gt;2024-10-31T09:18:38.893+01:00&lt;/CreDtTm&gt;&lt;NbOfTxs&gt;1&lt;/NbOfTxs&gt;&lt;TtlIntrBkSttlmAmt
+                        Ccy=&quot;CHF&quot;&gt;3.99&lt;/TtlIntrBkSttlmAmt&gt;&lt;SttlmInf&gt;&lt;SttlmMtd&gt;CLRG&lt;/SttlmMtd&gt;&lt;ClrSys&gt;&lt;Cd&gt;SIP&lt;/Cd&gt;&lt;/ClrSys&gt;&lt;/SttlmInf&gt;&lt;/GrpHdr&gt;&lt;CdtTrfTxInf&gt;&lt;PmtId&gt;&lt;InstrId&gt;EUX3110000058154&lt;/InstrId&gt;&lt;EndToEndId&gt;a862e03b-b20c-4032-92a9-fd374e8&lt;/EndToEndId&gt;&lt;TxId&gt;EUX3110000058154&lt;/TxId&gt;&lt;UETR&gt;f8fcb868-f07b-444c-885c-b32cc7ae2596&lt;/UETR&gt;&lt;/PmtId&gt;&lt;PmtTpInf&gt;&lt;LclInstrm&gt;&lt;Prtry&gt;IPCPMT&lt;/Prtry&gt;&lt;/LclInstrm&gt;&lt;CtgyPurp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/CtgyPurp&gt;&lt;/PmtTpInf&gt;&lt;IntrBkSttlmAmt
+                        Ccy=&quot;CHF&quot;&gt;3.99&lt;/IntrBkSttlmAmt&gt;&lt;IntrBkSttlmDt&gt;2024-10-31&lt;/IntrBkSttlmDt&gt;&lt;AccptncDtTm&gt;2024-10-31T08:18:38.908Z&lt;/AccptncDtTm&gt;&lt;ChrgBr&gt;SHAR&lt;/ChrgBr&gt;&lt;InstgAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/InstgAgt&gt;&lt;InstdAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088100&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/InstdAgt&gt;&lt;Dbtr&gt;&lt;Nm&gt;Donald
+                        Trump&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;Ctry&gt;US&lt;/Ctry&gt;&lt;AdrLine&gt;Ocean
+                        Blvd&lt;/AdrLine&gt;&lt;AdrLine&gt;Palm
+                        Beach&lt;/AdrLine&gt;&lt;/PstlAdr&gt;&lt;/Dbtr&gt;&lt;DbtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;CH3408836100003300006&lt;/IBAN&gt;&lt;/Id&gt;&lt;/DbtrAcct&gt;&lt;DbtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/DbtrAgt&gt;&lt;CdtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088100&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/CdtrAgt&gt;&lt;Cdtr&gt;&lt;Nm&gt;Creditor
+                        Name 01
+                        äöüß&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;StrtNm&gt;Cdtr01
+                        street äöüß&lt;/StrtNm&gt;&lt;BldgNm&gt;Cdtr01
+                        bldg&lt;/BldgNm&gt;&lt;Flr&gt;23&lt;/Flr&gt;&lt;Room&gt;45&lt;/Room&gt;&lt;PstCd&gt;C01&lt;/PstCd&gt;&lt;TwnNm&gt;Zurich&lt;/TwnNm&gt;&lt;Ctry&gt;LI&lt;/Ctry&gt;&lt;/PstlAdr&gt;&lt;/Cdtr&gt;&lt;CdtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;LI21088100002324013AA&lt;/IBAN&gt;&lt;/Id&gt;&lt;/CdtrAcct&gt;&lt;Purp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/Purp&gt;&lt;RmtInf&gt;&lt;Strd&gt;&lt;CdtrRefInf&gt;&lt;Tp&gt;&lt;CdOrPrtry&gt;&lt;Cd&gt;SCOR&lt;/Cd&gt;&lt;/CdOrPrtry&gt;&lt;/Tp&gt;&lt;Ref&gt;Structured
+                        RmtInf 01
+                        äöüß&lt;/Ref&gt;&lt;/CdtrRefInf&gt;&lt;/Strd&gt;&lt;/RmtInf&gt;&lt;/CdtTrfTxInf&gt;
+                    </ar:OrgTx>
+                </ar:OutTx>
+            </ar:FullTxInf>
+            <ar:InSttlmInf>
+                <ar:BIC>COBACHZHXXX</ar:BIC>
+                <ar:IBAN>CH3408836100003300006</ar:IBAN>
+                <ar:NatBkCd>08836</ar:NatBkCd>
+                <ar:Acc>313100003300</ar:Acc>
+                <ar:Amt Ccy="CHF">7.49</ar:Amt>
+                <ar:ValDt>2024-10-31</ar:ValDt>
+                <ar:TxCnt>3</ar:TxCnt>
+                <ar:BkType>DEBIT</ar:BkType>
+            </ar:InSttlmInf>
+            <ar:OutSttlmInf>
+                <ar:Acc>313100000902</ar:Acc>
+                <ar:Amt Ccy="CHF">3.99</ar:Amt>
+                <ar:ValDt>2024-10-31</ar:ValDt>
+                <ar:TxCnt>1</ar:TxCnt>
+                <ar:BkType>CREDIT</ar:BkType>
+            </ar:OutSttlmInf>
+            <ar:ClrSettInf>
+                <ar:PSR>NOT_CREATED</ar:PSR>
+            </ar:ClrSettInf>
+            <ar:GenProcInf>
+                <ar:TxStat>993890</ar:TxStat>
+                <ar:NmRemBp>COBA IP-B SIC bulk</ar:NmRemBp>
+                <ar:NmRem>Coba IP-B SIC Pain1b</ar:NmRem>
+                <ar:NmRoutBp>SIX Instant Payments</ar:NmRoutBp>
+                <ar:NmRout>SIC IP-B SIX OUT P8</ar:NmRout>
+                <ar:OrgDlvrMed>PAPER</ar:OrgDlvrMed>
+                <ar:Timing>
+                    <ar:FileRecvDtTm>2024-10-31T09:18:33</ar:FileRecvDtTm>
+                    <ar:ExctDt>2024-10-31</ar:ExctDt>
+                    <ar:FileCreDtTm>2024-10-31T09:18:39</ar:FileCreDtTm>
+                </ar:Timing>
+                <ar:DispoInf>
+                    <ar:DispoType>INPUT</ar:DispoType>
+                    <ar:Result>POS</ar:Result>
+                    <ar:Req1DtTm>2024-10-31T09:18:34</ar:Req1DtTm>
+                    <ar:ReplDtTm>2024-10-31T09:18:35</ar:ReplDtTm>
+                </ar:DispoInf>
+                <ar:Embgo>
+                    <ar:EmbgoType>INPUT</ar:EmbgoType>
+                    <ar:Result>NO_HIT</ar:Result>
+                    <ar:Req1DtTm>2024-10-31T09:18:37</ar:Req1DtTm>
+                    <ar:Repl>
+                        <ar:ReplDtTm>2024-10-31T09:18:38</ar:ReplDtTm>
+                        <ar:ReplCode>NO_HIT</ar:ReplCode>
+                    </ar:Repl>
+                </ar:Embgo>
+                <ar:Frd>
+                    <ar:FrdType>INPUT</ar:FrdType>
+                    <ar:Req1DtTm>2024-10-31T09:18:36</ar:Req1DtTm>
+                    <ar:Repl>
+                        <ar:ReplDtTm>2024-10-31T09:18:37</ar:ReplDtTm>
+                        <ar:ReplCode>OK</ar:ReplCode>
+                    </ar:Repl>
+                </ar:Frd>
+                <ar:RiskFltr>
+                    <ar:Result>NO_HIT</ar:Result>
+                </ar:RiskFltr>
+                <ar:FltrFlg>
+                    <ar:Result>NO_HIT</ar:Result>
+                </ar:FltrFlg>
+                <ar:ProcHist>
+                    <ar:DtTm>2024-10-31T09:18:38Z</ar:DtTm>
+                    <ar:Inf>Embargo reply received in state &apos;NO_HIT&apos;
+                        with reference 20241031000003400000001.
+                    </ar:Inf>
+                </ar:ProcHist>
+                <ar:AckNakInf>
+                    <ar:Status>ACK</ar:Status>
+                    <ar:RecvDtTm>2024-10-31T09:18:39</ar:RecvDtTm>
+                </ar:AckNakInf>
+                <ar:AccExistChk>POS</ar:AccExistChk>
+                <ar:FATF7Chk>NO_CHK</ar:FATF7Chk>
+            </ar:GenProcInf>
+            <ar:FXInfo>
+                <ar:SrcCcy>CHF</ar:SrcCcy>
+            </ar:FXInfo>
+            <ar:InstrPrty>NORM</ar:InstrPrty>
+        </ar:PayInf>
+        <ar:PayInf>
+            <ar:InFile>
+                <ar:Nm>ZAA2EWL_IP1</ar:Nm>
+                <ar:Id>562926210001</ar:Id>
+                <ar:FileRef>
+                    <ar:FileId>c9b4276b-523e-4c58-b9bc-8d26eba</ar:FileId>
+                </ar:FileRef>
+                <ar:FmtGrpNm>SIC_INST</ar:FmtGrpNm>
+                <ar:SbmttrId>TZAAK002</ar:SbmttrId>
+                <ar:SndngSys>127</ar:SndngSys>
+            </ar:InFile>
+            <ar:OutFile>
+                <ar:Nm>COBA_P202BOX06_SIC_IP</ar:Nm>
+                <ar:Id>562926540000</ar:Id>
+                <ar:FmtGrpNm>SIC_INST</ar:FmtGrpNm>
+            </ar:OutFile>
+            <ar:InOrd>
+                <ar:LogFmtNm>sic_inst_pain.001.001.09_six</ar:LogFmtNm>
+                <ar:Area>
+                    <ar:Nm>internal</ar:Nm>
+                    <ar:Type>INT</ar:Type>
+                </ar:Area>
+                <ar:OrdType>CT</ar:OrdType>
+                <ar:InstgAgt>
+                    <ar:NatBkCd>088360</ar:NatBkCd>
+                </ar:InstgAgt>
+                <ar:InstdAgt>
+                    <ar:BIC>COBADEFF</ar:BIC>
+                    <ar:NatBkCd>088100</ar:NatBkCd>
+                </ar:InstdAgt>
+                <ar:OrdRef>
+                    <ar:OrdId>4eee2df6-1078-4947-a96e-24ad876</ar:OrdId>
+                    <ar:TechOrdId>257033260000</ar:TechOrdId>
+                    <ar:ClrRefNumOrd>202410310000034</ar:ClrRefNumOrd>
+                </ar:OrdRef>
+                <ar:ClrSysId>SIP</ar:ClrSysId>
+                <ar:Amt Ccy="CHF">7.49</ar:Amt>
+                <ar:NbOfTxs>3</ar:NbOfTxs>
+                <ar:OrgAmt Ccy="CHF">7.49</ar:OrgAmt>
+                <ar:OrgNbOfTxs>3</ar:OrgNbOfTxs>
+            </ar:InOrd>
+            <ar:OutOrd>
+                <ar:LogFmtNm>sic_inst_pacs.008.001.08_six</ar:LogFmtNm>
+                <ar:Area>
+                    <ar:Nm>external</ar:Nm>
+                    <ar:Type>EXT</ar:Type>
+                </ar:Area>
+                <ar:OrdType>CT</ar:OrdType>
+                <ar:OrdRef>
+                    <ar:OrdId>IPBCOBADEFF202410310000037</ar:OrdId>
+                    <ar:TechOrdId>257033290000</ar:TechOrdId>
+                    <ar:ClrRefNumOrd>202410310000037</ar:ClrRefNumOrd>
+                </ar:OrdRef>
+                <ar:ClrSysId>SIP</ar:ClrSysId>
+                <ar:Amt Ccy="CHF">1.00</ar:Amt>
+                <ar:NbOfTxs>1</ar:NbOfTxs>
+            </ar:OutOrd>
+            <ar:Subm>
+                <ar:IBAN>CH3408836100003300006</ar:IBAN>
+                <ar:NatAcc>100003300006</ar:NatAcc>
+                <ar:SubmAcctInf>
+                    <ar:Ccy>CHF</ar:Ccy>
+                </ar:SubmAcctInf>
+                <ar:AgtNatBkCd>088360</ar:AgtNatBkCd>
+                <ar:NmAdrCtry>
+                    <ar:Nm>Donald Trump</ar:Nm>
+                    <ar:StrcdPstlAdr>
+                        <mx8.1.8:StrtNm>Ocean Blvd</mx8.1.8:StrtNm>
+                        <mx8.1.8:TwnNm>Palm Beach</mx8.1.8:TwnNm>
+                        <mx8.1.8:Ctry>US</mx8.1.8:Ctry>
+                    </ar:StrcdPstlAdr>
+                </ar:NmAdrCtry>
+                <ar:Role>DBTR</ar:Role>
+            </ar:Subm>
+            <ar:OrgSubm>
+                <ar:SubmAcctInf>
+                    <ar:Ccy>CHF</ar:Ccy>
+                </ar:SubmAcctInf>
+                <ar:NmAdrCtry>
+                    <ar:Nm>Donald Trump</ar:Nm>
+                    <ar:StrcdPstlAdr>
+                        <mx8.1.8:StrtNm>Ocean Blvd</mx8.1.8:StrtNm>
+                        <mx8.1.8:TwnNm>Palm Beach</mx8.1.8:TwnNm>
+                        <mx8.1.8:Ctry>US</mx8.1.8:Ctry>
+                    </ar:StrcdPstlAdr>
+                </ar:NmAdrCtry>
+                <ar:Role>DBTR</ar:Role>
+            </ar:OrgSubm>
+            <ar:InitgPty>
+                <ar:NmAdrCtry>
+                    <ar:ISO2019>
+                        <ar:Id>
+                            <mx8.1.8:OrgId>
+                                <mx8.1.8:Othr>
+                                    <mx8.1.8:Id>OrgtrId12344</mx8.1.8:Id>
+                                </mx8.1.8:Othr>
+                            </mx8.1.8:OrgId>
+                        </ar:Id>
+                    </ar:ISO2019>
+                </ar:NmAdrCtry>
+            </ar:InitgPty>
+            <ar:Recv>
+                <ar:IBAN>LI21088100002324013AA</ar:IBAN>
+                <ar:AgtNatBkCd>088100</ar:AgtNatBkCd>
+                <ar:NmAdr>Creditor Name 02 äöüß|Cdtr02 street äöüß|C02 Zurich|LI|&lt;PstlAdr&gt;&lt;StrtNm&gt;Cdtr02 street äöüß&lt;/StrtNm&gt;&lt;BldgNm&gt;Cdtr02 bldg&lt;/BldgNm&gt;&lt;Flr&gt;23&lt;/Flr&gt;&lt;Roo</ar:NmAdr>
+                <ar:Role>CDTR</ar:Role>
+                <ar:RecvAgtInf>
+                    <ar:ClrSysMmbId>
+                        <ar:ClrSysId>CHSIC</ar:ClrSysId>
+                        <ar:MmbId>088360</ar:MmbId>
+                    </ar:ClrSysMmbId>
+                </ar:RecvAgtInf>
+            </ar:Recv>
+            <ar:TxRef>
+                <ar:EndToEndId>ccf350e6-265f-49dc-9df1-9299e8c</ar:EndToEndId>
+                <ar:TxId>COBADEFF311024000010310000002</ar:TxId>
+                <ar:InstrIdExt>441ef580-85e7-4</ar:InstrIdExt>
+                <ar:InstrIdInt>EUX3110000058155</ar:InstrIdInt>
+                <ar:ClrRefNumTx>20241031000003400000002</ar:ClrRefNumTx>
+                <ar:UETR>465c1dd1-fc5d-41d3-91af-b555bfefc9c2</ar:UETR>
+                <ar:OrgnlUETR>465c1dd1-fc5d-41d3-91af-b555bfefc9c2</ar:OrgnlUETR>
+                <ar:MsgId>4eee2df6-1078-4947-a96e-24ad876</ar:MsgId>
+            </ar:TxRef>
+            <ar:CtgyPurp>SALA</ar:CtgyPurp>
+            <ar:Purp>SALA</ar:Purp>
+            <ar:TxCd>
+                <ar:InTxCd>76000</ar:InTxCd>
+                <ar:OutTxCd>00000</ar:OutTxCd>
+            </ar:TxCd>
+            <ar:Prdct>SIC-Inst</ar:Prdct>
+            <ar:Amt Ccy="CHF">1.00</ar:Amt>
+            <ar:RmtInf>
+                <ar:ISO2019>
+                    <ar:Strd
+                            xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.002.001.10">
+                        <mx8.1.8:CdtrRefInf>
+                            <mx8.1.8:Tp>
+                                <mx8.1.8:CdOrPrtry>
+                                    <mx8.1.8:Cd>SCOR</mx8.1.8:Cd>
+                                </mx8.1.8:CdOrPrtry>
+                            </mx8.1.8:Tp>
+                            <mx8.1.8:Ref>Structured RmtInf 02 äöüß</mx8.1.8:Ref>
+                        </mx8.1.8:CdtrRefInf>
+                    </ar:Strd>
+                </ar:ISO2019>
+            </ar:RmtInf>
+            <ar:DlvrdValDt>2024-10-31</ar:DlvrdValDt>
+            <ar:DlvrdExctDt>2024-10-31</ar:DlvrdExctDt>
+            <ar:TxType>CREDIT</ar:TxType>
+            <ar:LclInstrm>INST</ar:LclInstrm>
+            <ar:FullTxInf>
+                <ar:InTx>
+                    <ar:OrgTx>
+                        &lt;PmtInf&gt;&lt;PmtInfId&gt;4eee2df6-1078-4947-a96e-24ad876&lt;/PmtInfId&gt;&lt;PmtMtd&gt;TRF&lt;/PmtMtd&gt;&lt;BtchBookg&gt;true&lt;/BtchBookg&gt;&lt;NbOfTxs&gt;3&lt;/NbOfTxs&gt;&lt;CtrlSum&gt;10.49&lt;/CtrlSum&gt;&lt;PmtTpInf&gt;&lt;LclInstrm&gt;&lt;Cd&gt;INST&lt;/Cd&gt;&lt;/LclInstrm&gt;&lt;CtgyPurp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/CtgyPurp&gt;&lt;/PmtTpInf&gt;&lt;ReqdExctnDt&gt;&lt;DtTm&gt;2024-10-31T08:18:26&lt;/DtTm&gt;&lt;/ReqdExctnDt&gt;&lt;Dbtr&gt;&lt;Nm&gt;Debtor
+                        Name äöüßä
+                        IPB-CH&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;StrtNm&gt;Debtor
+                        Street äöüßä&lt;/StrtNm&gt;&lt;BldgNm&gt;Dbtr
+                        bldg&lt;/BldgNm&gt;&lt;Flr&gt;7&lt;/Flr&gt;&lt;Room&gt;58b&lt;/Room&gt;&lt;PstCd&gt;D01&lt;/PstCd&gt;&lt;TwnNm&gt;Bern&lt;/TwnNm&gt;&lt;Ctry&gt;CH&lt;/Ctry&gt;&lt;/PstlAdr&gt;&lt;/Dbtr&gt;&lt;DbtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;CH3408836100003300006&lt;/IBAN&gt;&lt;/Id&gt;&lt;Ccy&gt;CHF&lt;/Ccy&gt;&lt;/DbtrAcct&gt;&lt;DbtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/DbtrAgt&gt;&lt;ChrgBr&gt;SLEV&lt;/ChrgBr&gt;&lt;/PmtInf&gt;&lt;PmtInf&gt;&lt;PmtInfId&gt;4eee2df6-1078-4947-a96e-24ad876&lt;/PmtInfId&gt;&lt;PmtMtd&gt;TRF&lt;/PmtMtd&gt;&lt;BtchBookg&gt;true&lt;/BtchBookg&gt;&lt;NbOfTxs&gt;3&lt;/NbOfTxs&gt;&lt;CtrlSum&gt;10.49&lt;/CtrlSum&gt;&lt;PmtTpInf&gt;&lt;LclInstrm&gt;&lt;Cd&gt;INST&lt;/Cd&gt;&lt;/LclInstrm&gt;&lt;CtgyPurp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/CtgyPurp&gt;&lt;/PmtTpInf&gt;&lt;ReqdExctnDt&gt;&lt;DtTm&gt;2024-10-31T08:18:26&lt;/DtTm&gt;&lt;/ReqdExctnDt&gt;&lt;Dbtr&gt;&lt;Nm&gt;Debtor
+                        Name äöüßä
+                        IPB-CH&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;StrtNm&gt;Debtor
+                        Street äöüßä&lt;/StrtNm&gt;&lt;BldgNm&gt;Dbtr
+                        bldg&lt;/BldgNm&gt;&lt;Flr&gt;7&lt;/Flr&gt;&lt;Room&gt;58b&lt;/Room&gt;&lt;PstCd&gt;D01&lt;/PstCd&gt;&lt;TwnNm&gt;Bern&lt;/TwnNm&gt;&lt;Ctry&gt;CH&lt;/Ctry&gt;&lt;/PstlAdr&gt;&lt;/Dbtr&gt;&lt;DbtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;CH3408836100003300006&lt;/IBAN&gt;&lt;/Id&gt;&lt;Ccy&gt;CHF&lt;/Ccy&gt;&lt;/DbtrAcct&gt;&lt;DbtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/DbtrAgt&gt;&lt;ChrgBr&gt;SLEV&lt;/ChrgBr&gt;&lt;CdtTrfTxInf&gt;&lt;PmtId&gt;&lt;InstrId&gt;441ef580-85e7-4&lt;/InstrId&gt;&lt;EndToEndId&gt;ccf350e6-265f-49dc-9df1-9299e8c&lt;/EndToEndId&gt;&lt;/PmtId&gt;&lt;Amt&gt;&lt;InstdAmt
+                        Ccy=&quot;CHF&quot;&gt;1.0&lt;/InstdAmt&gt;&lt;/Amt&gt;&lt;CdtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088108&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/CdtrAgt&gt;&lt;Cdtr&gt;&lt;Nm&gt;Creditor
+                        Name 02
+                        äöüß&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;StrtNm&gt;Cdtr02
+                        street äöüß&lt;/StrtNm&gt;&lt;BldgNm&gt;Cdtr02
+                        bldg&lt;/BldgNm&gt;&lt;Flr&gt;23&lt;/Flr&gt;&lt;Room&gt;45&lt;/Room&gt;&lt;PstCd&gt;C02&lt;/PstCd&gt;&lt;TwnNm&gt;Zurich&lt;/TwnNm&gt;&lt;Ctry&gt;LI&lt;/Ctry&gt;&lt;/PstlAdr&gt;&lt;/Cdtr&gt;&lt;CdtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;LI21088100002324013AA&lt;/IBAN&gt;&lt;/Id&gt;&lt;/CdtrAcct&gt;&lt;Purp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/Purp&gt;&lt;RmtInf&gt;&lt;Strd&gt;&lt;CdtrRefInf&gt;&lt;Tp&gt;&lt;CdOrPrtry&gt;&lt;Cd&gt;SCOR&lt;/Cd&gt;&lt;/CdOrPrtry&gt;&lt;/Tp&gt;&lt;Ref&gt;Structured
+                        RmtInf 02
+                        äöüß&lt;/Ref&gt;&lt;/CdtrRefInf&gt;&lt;/Strd&gt;&lt;/RmtInf&gt;&lt;/CdtTrfTxInf&gt;&lt;/PmtInf&gt;
+                    </ar:OrgTx>
+                </ar:InTx>
+                <ar:OutTx>
+                    <ar:OrgTx>
+                        &lt;GrpHdr&gt;&lt;MsgId&gt;IPBCOBADEFF202410310000037&lt;/MsgId&gt;&lt;CreDtTm&gt;2024-10-31T09:18:39.034+01:00&lt;/CreDtTm&gt;&lt;NbOfTxs&gt;1&lt;/NbOfTxs&gt;&lt;TtlIntrBkSttlmAmt
+                        Ccy=&quot;CHF&quot;&gt;1.00&lt;/TtlIntrBkSttlmAmt&gt;&lt;SttlmInf&gt;&lt;SttlmMtd&gt;CLRG&lt;/SttlmMtd&gt;&lt;ClrSys&gt;&lt;Cd&gt;SIP&lt;/Cd&gt;&lt;/ClrSys&gt;&lt;/SttlmInf&gt;&lt;/GrpHdr&gt;&lt;CdtTrfTxInf&gt;&lt;PmtId&gt;&lt;InstrId&gt;EUX3110000058155&lt;/InstrId&gt;&lt;EndToEndId&gt;ccf350e6-265f-49dc-9df1-9299e8c&lt;/EndToEndId&gt;&lt;TxId&gt;EUX3110000058155&lt;/TxId&gt;&lt;UETR&gt;465c1dd1-fc5d-41d3-91af-b555bfefc9c2&lt;/UETR&gt;&lt;/PmtId&gt;&lt;PmtTpInf&gt;&lt;LclInstrm&gt;&lt;Prtry&gt;IPCPMT&lt;/Prtry&gt;&lt;/LclInstrm&gt;&lt;CtgyPurp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/CtgyPurp&gt;&lt;/PmtTpInf&gt;&lt;IntrBkSttlmAmt
+                        Ccy=&quot;CHF&quot;&gt;1.00&lt;/IntrBkSttlmAmt&gt;&lt;IntrBkSttlmDt&gt;2024-10-31&lt;/IntrBkSttlmDt&gt;&lt;AccptncDtTm&gt;2024-10-31T08:18:39.044Z&lt;/AccptncDtTm&gt;&lt;ChrgBr&gt;SHAR&lt;/ChrgBr&gt;&lt;InstgAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/InstgAgt&gt;&lt;InstdAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088100&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/InstdAgt&gt;&lt;Dbtr&gt;&lt;Nm&gt;Donald
+                        Trump&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;Ctry&gt;US&lt;/Ctry&gt;&lt;AdrLine&gt;Ocean
+                        Blvd&lt;/AdrLine&gt;&lt;AdrLine&gt;Palm
+                        Beach&lt;/AdrLine&gt;&lt;/PstlAdr&gt;&lt;/Dbtr&gt;&lt;DbtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;CH3408836100003300006&lt;/IBAN&gt;&lt;/Id&gt;&lt;/DbtrAcct&gt;&lt;DbtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/DbtrAgt&gt;&lt;CdtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088100&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/CdtrAgt&gt;&lt;Cdtr&gt;&lt;Nm&gt;Creditor
+                        Name 02
+                        äöüß&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;StrtNm&gt;Cdtr02
+                        street äöüß&lt;/StrtNm&gt;&lt;BldgNm&gt;Cdtr02
+                        bldg&lt;/BldgNm&gt;&lt;Flr&gt;23&lt;/Flr&gt;&lt;Room&gt;45&lt;/Room&gt;&lt;PstCd&gt;C02&lt;/PstCd&gt;&lt;TwnNm&gt;Zurich&lt;/TwnNm&gt;&lt;Ctry&gt;LI&lt;/Ctry&gt;&lt;/PstlAdr&gt;&lt;/Cdtr&gt;&lt;CdtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;LI21088100002324013AA&lt;/IBAN&gt;&lt;/Id&gt;&lt;/CdtrAcct&gt;&lt;Purp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/Purp&gt;&lt;RmtInf&gt;&lt;Strd&gt;&lt;CdtrRefInf&gt;&lt;Tp&gt;&lt;CdOrPrtry&gt;&lt;Cd&gt;SCOR&lt;/Cd&gt;&lt;/CdOrPrtry&gt;&lt;/Tp&gt;&lt;Ref&gt;Structured
+                        RmtInf 02
+                        äöüß&lt;/Ref&gt;&lt;/CdtrRefInf&gt;&lt;/Strd&gt;&lt;/RmtInf&gt;&lt;/CdtTrfTxInf&gt;
+                    </ar:OrgTx>
+                </ar:OutTx>
+            </ar:FullTxInf>
+            <ar:InSttlmInf>
+                <ar:BIC>COBACHZHXXX</ar:BIC>
+                <ar:IBAN>CH3408836100003300006</ar:IBAN>
+                <ar:NatBkCd>08836</ar:NatBkCd>
+                <ar:Acc>313100003300</ar:Acc>
+                <ar:Amt Ccy="CHF">7.49</ar:Amt>
+                <ar:ValDt>2024-10-31</ar:ValDt>
+                <ar:TxCnt>3</ar:TxCnt>
+                <ar:BkType>DEBIT</ar:BkType>
+            </ar:InSttlmInf>
+            <ar:OutSttlmInf>
+                <ar:Acc>313100000902</ar:Acc>
+                <ar:Amt Ccy="CHF">1.00</ar:Amt>
+                <ar:ValDt>2024-10-31</ar:ValDt>
+                <ar:TxCnt>1</ar:TxCnt>
+                <ar:BkType>CREDIT</ar:BkType>
+            </ar:OutSttlmInf>
+            <ar:ClrSettInf>
+                <ar:PSR>NOT_CREATED</ar:PSR>
+            </ar:ClrSettInf>
+            <ar:GenProcInf>
+                <ar:TxStat>993890</ar:TxStat>
+                <ar:NmRemBp>COBA IP-B SIC bulk</ar:NmRemBp>
+                <ar:NmRem>Coba IP-B SIC Pain1b</ar:NmRem>
+                <ar:NmRoutBp>SIX Instant Payments</ar:NmRoutBp>
+                <ar:NmRout>SIC IP-B SIX OUT P8</ar:NmRout>
+                <ar:OrgDlvrMed>PAPER</ar:OrgDlvrMed>
+                <ar:Timing>
+                    <ar:FileRecvDtTm>2024-10-31T09:18:33</ar:FileRecvDtTm>
+                    <ar:ExctDt>2024-10-31</ar:ExctDt>
+                    <ar:FileCreDtTm>2024-10-31T09:18:39</ar:FileCreDtTm>
+                </ar:Timing>
+                <ar:DispoInf>
+                    <ar:DispoType>INPUT</ar:DispoType>
+                    <ar:Result>POS</ar:Result>
+                    <ar:Req1DtTm>2024-10-31T09:18:34</ar:Req1DtTm>
+                    <ar:ReplDtTm>2024-10-31T09:18:35</ar:ReplDtTm>
+                </ar:DispoInf>
+                <ar:Embgo>
+                    <ar:EmbgoType>INPUT</ar:EmbgoType>
+                    <ar:Result>NO_HIT</ar:Result>
+                    <ar:Req1DtTm>2024-10-31T09:18:37</ar:Req1DtTm>
+                    <ar:Repl>
+                        <ar:ReplDtTm>2024-10-31T09:18:38</ar:ReplDtTm>
+                        <ar:ReplCode>NO_HIT</ar:ReplCode>
+                    </ar:Repl>
+                </ar:Embgo>
+                <ar:Frd>
+                    <ar:FrdType>INPUT</ar:FrdType>
+                    <ar:Req1DtTm>2024-10-31T09:18:36</ar:Req1DtTm>
+                    <ar:Repl>
+                        <ar:ReplDtTm>2024-10-31T09:18:37</ar:ReplDtTm>
+                        <ar:ReplCode>OK</ar:ReplCode>
+                    </ar:Repl>
+                </ar:Frd>
+                <ar:RiskFltr>
+                    <ar:Result>NO_HIT</ar:Result>
+                </ar:RiskFltr>
+                <ar:FltrFlg>
+                    <ar:Result>NO_HIT</ar:Result>
+                </ar:FltrFlg>
+                <ar:ProcHist>
+                    <ar:DtTm>2024-10-31T09:18:38Z</ar:DtTm>
+                    <ar:Inf>Embargo reply received in state &apos;NO_HIT&apos;
+                        with reference 20241031000003400000002.
+                    </ar:Inf>
+                </ar:ProcHist>
+                <ar:AckNakInf>
+                    <ar:Status>ACK</ar:Status>
+                    <ar:RecvDtTm>2024-10-31T09:18:40</ar:RecvDtTm>
+                </ar:AckNakInf>
+                <ar:AccExistChk>POS</ar:AccExistChk>
+                <ar:FATF7Chk>NO_CHK</ar:FATF7Chk>
+            </ar:GenProcInf>
+            <ar:FXInfo>
+                <ar:SrcCcy>CHF</ar:SrcCcy>
+            </ar:FXInfo>
+            <ar:InstrPrty>NORM</ar:InstrPrty>
+        </ar:PayInf>
+        <ar:PayInf>
+            <ar:InFile>
+                <ar:Nm>ZAA2EWL_IP1</ar:Nm>
+                <ar:Id>562926950000</ar:Id>
+                <ar:FileRef>
+                    <ar:FileId>4e2b1887-14c9-4198-be04-22be788</ar:FileId>
+                </ar:FileRef>
+                <ar:FmtGrpNm>SIC_INST</ar:FmtGrpNm>
+                <ar:SbmttrId>TZAAK002</ar:SbmttrId>
+                <ar:SndngSys>127</ar:SndngSys>
+            </ar:InFile>
+            <ar:OutFile>
+                <ar:Nm>COBA_P202BOX06_SIC_IP</ar:Nm>
+                <ar:Id>562927020000</ar:Id>
+                <ar:FmtGrpNm>SIC_INST</ar:FmtGrpNm>
+            </ar:OutFile>
+            <ar:InOrd>
+                <ar:LogFmtNm>sic_inst_pain.001.001.09_six</ar:LogFmtNm>
+                <ar:Area>
+                    <ar:Nm>internal</ar:Nm>
+                    <ar:Type>INT</ar:Type>
+                </ar:Area>
+                <ar:OrdType>CT</ar:OrdType>
+                <ar:InstgAgt>
+                    <ar:NatBkCd>088360</ar:NatBkCd>
+                </ar:InstgAgt>
+                <ar:InstdAgt>
+                    <ar:BIC>COBADEFF</ar:BIC>
+                    <ar:NatBkCd>088100</ar:NatBkCd>
+                </ar:InstdAgt>
+                <ar:OrdRef>
+                    <ar:OrdId>11f0a988-5d02-4116-af52-a5e9002</ar:OrdId>
+                    <ar:TechOrdId>257033320000</ar:TechOrdId>
+                    <ar:ClrRefNumOrd>202410310000042</ar:ClrRefNumOrd>
+                </ar:OrdRef>
+                <ar:ClrSysId>SIP</ar:ClrSysId>
+                <ar:Amt Ccy="CHF">7.49</ar:Amt>
+                <ar:NbOfTxs>3</ar:NbOfTxs>
+                <ar:OrgAmt Ccy="CHF">7.49</ar:OrgAmt>
+                <ar:OrgNbOfTxs>3</ar:OrgNbOfTxs>
+            </ar:InOrd>
+            <ar:OutOrd>
+                <ar:LogFmtNm>sic_inst_pacs.008.001.08_six</ar:LogFmtNm>
+                <ar:Area>
+                    <ar:Nm>external</ar:Nm>
+                    <ar:Type>EXT</ar:Type>
+                </ar:Area>
+                <ar:OrdType>CT</ar:OrdType>
+                <ar:OrdRef>
+                    <ar:OrdId>IPBCOBADEFF202410310000044</ar:OrdId>
+                    <ar:TechOrdId>257033340000</ar:TechOrdId>
+                    <ar:ClrRefNumOrd>202410310000044</ar:ClrRefNumOrd>
+                </ar:OrdRef>
+                <ar:ClrSysId>SIP</ar:ClrSysId>
+                <ar:Amt Ccy="CHF">3.99</ar:Amt>
+                <ar:NbOfTxs>1</ar:NbOfTxs>
+            </ar:OutOrd>
+            <ar:Subm>
+                <ar:IBAN>CH3408836100003300006</ar:IBAN>
+                <ar:NatAcc>100003300006</ar:NatAcc>
+                <ar:SubmAcctInf>
+                    <ar:Ccy>CHF</ar:Ccy>
+                </ar:SubmAcctInf>
+                <ar:AgtNatBkCd>088360</ar:AgtNatBkCd>
+                <ar:NmAdrCtry>
+                    <ar:Nm>Donald Trump</ar:Nm>
+                    <ar:StrcdPstlAdr>
+                        <mx8.1.8:StrtNm>Ocean Blvd</mx8.1.8:StrtNm>
+                        <mx8.1.8:TwnNm>Palm Beach</mx8.1.8:TwnNm>
+                        <mx8.1.8:Ctry>US</mx8.1.8:Ctry>
+                    </ar:StrcdPstlAdr>
+                </ar:NmAdrCtry>
+                <ar:Role>DBTR</ar:Role>
+            </ar:Subm>
+            <ar:OrgSubm>
+                <ar:SubmAcctInf>
+                    <ar:Ccy>CHF</ar:Ccy>
+                </ar:SubmAcctInf>
+                <ar:NmAdrCtry>
+                    <ar:Nm>Donald Trump</ar:Nm>
+                    <ar:StrcdPstlAdr>
+                        <mx8.1.8:StrtNm>Ocean Blvd</mx8.1.8:StrtNm>
+                        <mx8.1.8:TwnNm>Palm Beach</mx8.1.8:TwnNm>
+                        <mx8.1.8:Ctry>US</mx8.1.8:Ctry>
+                    </ar:StrcdPstlAdr>
+                </ar:NmAdrCtry>
+                <ar:Role>DBTR</ar:Role>
+            </ar:OrgSubm>
+            <ar:InitgPty>
+                <ar:NmAdrCtry>
+                    <ar:ISO2019>
+                        <ar:Id>
+                            <mx8.1.8:OrgId>
+                                <mx8.1.8:Othr>
+                                    <mx8.1.8:Id>OrgtrId12344</mx8.1.8:Id>
+                                </mx8.1.8:Othr>
+                            </mx8.1.8:OrgId>
+                        </ar:Id>
+                    </ar:ISO2019>
+                </ar:NmAdrCtry>
+            </ar:InitgPty>
+            <ar:Recv>
+                <ar:IBAN>LI21088100002324013AA</ar:IBAN>
+                <ar:AgtNatBkCd>088100</ar:AgtNatBkCd>
+                <ar:NmAdr>Creditor Name 01 äöüß|Cdtr01 street äöüß|C01 Zurich|LI|&lt;PstlAdr&gt;&lt;StrtNm&gt;Cdtr01 street äöüß&lt;/StrtNm&gt;&lt;BldgNm&gt;Cdtr01 bldg&lt;/BldgNm&gt;&lt;Flr&gt;23&lt;/Flr&gt;&lt;Roo</ar:NmAdr>
+                <ar:Role>CDTR</ar:Role>
+                <ar:RecvAgtInf>
+                    <ar:ClrSysMmbId>
+                        <ar:ClrSysId>CHSIC</ar:ClrSysId>
+                        <ar:MmbId>088360</ar:MmbId>
+                    </ar:ClrSysMmbId>
+                </ar:RecvAgtInf>
+            </ar:Recv>
+            <ar:TxRef>
+                <ar:EndToEndId>635a6069-4a68-4fc5-ab68-e728808</ar:EndToEndId>
+                <ar:TxId>COBADEFF311024000010510000001</ar:TxId>
+                <ar:InstrIdExt>d1daba5d-6de7-4</ar:InstrIdExt>
+                <ar:InstrIdInt>EUX3110000058156</ar:InstrIdInt>
+                <ar:ClrRefNumTx>20241031000004200000001</ar:ClrRefNumTx>
+                <ar:UETR>a83aa164-e896-4710-b5bf-707b0dcc2cf6</ar:UETR>
+                <ar:OrgnlUETR>a83aa164-e896-4710-b5bf-707b0dcc2cf6</ar:OrgnlUETR>
+                <ar:MsgId>11f0a988-5d02-4116-af52-a5e9002</ar:MsgId>
+            </ar:TxRef>
+            <ar:CtgyPurp>SALA</ar:CtgyPurp>
+            <ar:Purp>SALA</ar:Purp>
+            <ar:TxCd>
+                <ar:InTxCd>76000</ar:InTxCd>
+                <ar:OutTxCd>00000</ar:OutTxCd>
+            </ar:TxCd>
+            <ar:Prdct>SIC-Inst</ar:Prdct>
+            <ar:Amt Ccy="CHF">3.99</ar:Amt>
+            <ar:RmtInf>
+                <ar:ISO2019>
+                    <ar:Strd
+                            xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.002.001.10">
+                        <mx8.1.8:CdtrRefInf>
+                            <mx8.1.8:Tp>
+                                <mx8.1.8:CdOrPrtry>
+                                    <mx8.1.8:Cd>SCOR</mx8.1.8:Cd>
+                                </mx8.1.8:CdOrPrtry>
+                            </mx8.1.8:Tp>
+                            <mx8.1.8:Ref>Structured RmtInf 01 äöüß</mx8.1.8:Ref>
+                        </mx8.1.8:CdtrRefInf>
+                    </ar:Strd>
+                </ar:ISO2019>
+            </ar:RmtInf>
+            <ar:DlvrdValDt>2024-10-31</ar:DlvrdValDt>
+            <ar:DlvrdExctDt>2024-10-31</ar:DlvrdExctDt>
+            <ar:TxType>CREDIT</ar:TxType>
+            <ar:LclInstrm>INST</ar:LclInstrm>
+            <ar:FullTxInf>
+                <ar:InTx>
+                    <ar:OrgTx>
+                        &lt;PmtInf&gt;&lt;PmtInfId&gt;11f0a988-5d02-4116-af52-a5e9002&lt;/PmtInfId&gt;&lt;PmtMtd&gt;TRF&lt;/PmtMtd&gt;&lt;BtchBookg&gt;true&lt;/BtchBookg&gt;&lt;NbOfTxs&gt;3&lt;/NbOfTxs&gt;&lt;CtrlSum&gt;10.49&lt;/CtrlSum&gt;&lt;PmtTpInf&gt;&lt;LclInstrm&gt;&lt;Cd&gt;INST&lt;/Cd&gt;&lt;/LclInstrm&gt;&lt;CtgyPurp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/CtgyPurp&gt;&lt;/PmtTpInf&gt;&lt;ReqdExctnDt&gt;&lt;DtTm&gt;2024-10-31T08:37:44&lt;/DtTm&gt;&lt;/ReqdExctnDt&gt;&lt;Dbtr&gt;&lt;Nm&gt;Debtor
+                        Name äöüßä
+                        IPB-CH&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;StrtNm&gt;Debtor
+                        Street äöüßä&lt;/StrtNm&gt;&lt;BldgNm&gt;Dbtr
+                        bldg&lt;/BldgNm&gt;&lt;Flr&gt;7&lt;/Flr&gt;&lt;Room&gt;58b&lt;/Room&gt;&lt;PstCd&gt;D01&lt;/PstCd&gt;&lt;TwnNm&gt;Bern&lt;/TwnNm&gt;&lt;Ctry&gt;CH&lt;/Ctry&gt;&lt;/PstlAdr&gt;&lt;/Dbtr&gt;&lt;DbtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;CH3408836100003300006&lt;/IBAN&gt;&lt;/Id&gt;&lt;Ccy&gt;CHF&lt;/Ccy&gt;&lt;/DbtrAcct&gt;&lt;DbtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/DbtrAgt&gt;&lt;ChrgBr&gt;SLEV&lt;/ChrgBr&gt;&lt;/PmtInf&gt;&lt;PmtInf&gt;&lt;PmtInfId&gt;11f0a988-5d02-4116-af52-a5e9002&lt;/PmtInfId&gt;&lt;PmtMtd&gt;TRF&lt;/PmtMtd&gt;&lt;BtchBookg&gt;true&lt;/BtchBookg&gt;&lt;NbOfTxs&gt;3&lt;/NbOfTxs&gt;&lt;CtrlSum&gt;10.49&lt;/CtrlSum&gt;&lt;PmtTpInf&gt;&lt;LclInstrm&gt;&lt;Cd&gt;INST&lt;/Cd&gt;&lt;/LclInstrm&gt;&lt;CtgyPurp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/CtgyPurp&gt;&lt;/PmtTpInf&gt;&lt;ReqdExctnDt&gt;&lt;DtTm&gt;2024-10-31T08:37:44&lt;/DtTm&gt;&lt;/ReqdExctnDt&gt;&lt;Dbtr&gt;&lt;Nm&gt;Debtor
+                        Name äöüßä
+                        IPB-CH&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;StrtNm&gt;Debtor
+                        Street äöüßä&lt;/StrtNm&gt;&lt;BldgNm&gt;Dbtr
+                        bldg&lt;/BldgNm&gt;&lt;Flr&gt;7&lt;/Flr&gt;&lt;Room&gt;58b&lt;/Room&gt;&lt;PstCd&gt;D01&lt;/PstCd&gt;&lt;TwnNm&gt;Bern&lt;/TwnNm&gt;&lt;Ctry&gt;CH&lt;/Ctry&gt;&lt;/PstlAdr&gt;&lt;/Dbtr&gt;&lt;DbtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;CH3408836100003300006&lt;/IBAN&gt;&lt;/Id&gt;&lt;Ccy&gt;CHF&lt;/Ccy&gt;&lt;/DbtrAcct&gt;&lt;DbtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/DbtrAgt&gt;&lt;ChrgBr&gt;SLEV&lt;/ChrgBr&gt;&lt;CdtTrfTxInf&gt;&lt;PmtId&gt;&lt;InstrId&gt;d1daba5d-6de7-4&lt;/InstrId&gt;&lt;EndToEndId&gt;635a6069-4a68-4fc5-ab68-e728808&lt;/EndToEndId&gt;&lt;/PmtId&gt;&lt;Amt&gt;&lt;InstdAmt
+                        Ccy=&quot;CHF&quot;&gt;3.99&lt;/InstdAmt&gt;&lt;/Amt&gt;&lt;CdtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088108&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/CdtrAgt&gt;&lt;Cdtr&gt;&lt;Nm&gt;Creditor
+                        Name 01
+                        äöüß&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;StrtNm&gt;Cdtr01
+                        street äöüß&lt;/StrtNm&gt;&lt;BldgNm&gt;Cdtr01
+                        bldg&lt;/BldgNm&gt;&lt;Flr&gt;23&lt;/Flr&gt;&lt;Room&gt;45&lt;/Room&gt;&lt;PstCd&gt;C01&lt;/PstCd&gt;&lt;TwnNm&gt;Zurich&lt;/TwnNm&gt;&lt;Ctry&gt;LI&lt;/Ctry&gt;&lt;/PstlAdr&gt;&lt;/Cdtr&gt;&lt;CdtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;LI21088100002324013AA&lt;/IBAN&gt;&lt;/Id&gt;&lt;/CdtrAcct&gt;&lt;Purp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/Purp&gt;&lt;RmtInf&gt;&lt;Strd&gt;&lt;CdtrRefInf&gt;&lt;Tp&gt;&lt;CdOrPrtry&gt;&lt;Cd&gt;SCOR&lt;/Cd&gt;&lt;/CdOrPrtry&gt;&lt;/Tp&gt;&lt;Ref&gt;Structured
+                        RmtInf 01
+                        äöüß&lt;/Ref&gt;&lt;/CdtrRefInf&gt;&lt;/Strd&gt;&lt;/RmtInf&gt;&lt;/CdtTrfTxInf&gt;&lt;/PmtInf&gt;
+                    </ar:OrgTx>
+                </ar:InTx>
+                <ar:OutTx>
+                    <ar:OrgTx>
+                        &lt;GrpHdr&gt;&lt;MsgId&gt;IPBCOBADEFF202410310000044&lt;/MsgId&gt;&lt;CreDtTm&gt;2024-10-31T09:37:55.407+01:00&lt;/CreDtTm&gt;&lt;NbOfTxs&gt;1&lt;/NbOfTxs&gt;&lt;TtlIntrBkSttlmAmt
+                        Ccy=&quot;CHF&quot;&gt;3.99&lt;/TtlIntrBkSttlmAmt&gt;&lt;SttlmInf&gt;&lt;SttlmMtd&gt;CLRG&lt;/SttlmMtd&gt;&lt;ClrSys&gt;&lt;Cd&gt;SIP&lt;/Cd&gt;&lt;/ClrSys&gt;&lt;/SttlmInf&gt;&lt;/GrpHdr&gt;&lt;CdtTrfTxInf&gt;&lt;PmtId&gt;&lt;InstrId&gt;EUX3110000058156&lt;/InstrId&gt;&lt;EndToEndId&gt;635a6069-4a68-4fc5-ab68-e728808&lt;/EndToEndId&gt;&lt;TxId&gt;EUX3110000058156&lt;/TxId&gt;&lt;UETR&gt;a83aa164-e896-4710-b5bf-707b0dcc2cf6&lt;/UETR&gt;&lt;/PmtId&gt;&lt;PmtTpInf&gt;&lt;LclInstrm&gt;&lt;Prtry&gt;IPCPMT&lt;/Prtry&gt;&lt;/LclInstrm&gt;&lt;CtgyPurp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/CtgyPurp&gt;&lt;/PmtTpInf&gt;&lt;IntrBkSttlmAmt
+                        Ccy=&quot;CHF&quot;&gt;3.99&lt;/IntrBkSttlmAmt&gt;&lt;IntrBkSttlmDt&gt;2024-10-31&lt;/IntrBkSttlmDt&gt;&lt;AccptncDtTm&gt;2024-10-31T08:37:55.417Z&lt;/AccptncDtTm&gt;&lt;ChrgBr&gt;SHAR&lt;/ChrgBr&gt;&lt;InstgAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/InstgAgt&gt;&lt;InstdAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088100&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/InstdAgt&gt;&lt;Dbtr&gt;&lt;Nm&gt;Donald
+                        Trump&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;Ctry&gt;US&lt;/Ctry&gt;&lt;AdrLine&gt;Ocean
+                        Blvd&lt;/AdrLine&gt;&lt;AdrLine&gt;Palm
+                        Beach&lt;/AdrLine&gt;&lt;/PstlAdr&gt;&lt;/Dbtr&gt;&lt;DbtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;CH3408836100003300006&lt;/IBAN&gt;&lt;/Id&gt;&lt;/DbtrAcct&gt;&lt;DbtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/DbtrAgt&gt;&lt;CdtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088100&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/CdtrAgt&gt;&lt;Cdtr&gt;&lt;Nm&gt;Creditor
+                        Name 01
+                        äöüß&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;StrtNm&gt;Cdtr01
+                        street äöüß&lt;/StrtNm&gt;&lt;BldgNm&gt;Cdtr01
+                        bldg&lt;/BldgNm&gt;&lt;Flr&gt;23&lt;/Flr&gt;&lt;Room&gt;45&lt;/Room&gt;&lt;PstCd&gt;C01&lt;/PstCd&gt;&lt;TwnNm&gt;Zurich&lt;/TwnNm&gt;&lt;Ctry&gt;LI&lt;/Ctry&gt;&lt;/PstlAdr&gt;&lt;/Cdtr&gt;&lt;CdtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;LI21088100002324013AA&lt;/IBAN&gt;&lt;/Id&gt;&lt;/CdtrAcct&gt;&lt;Purp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/Purp&gt;&lt;RmtInf&gt;&lt;Strd&gt;&lt;CdtrRefInf&gt;&lt;Tp&gt;&lt;CdOrPrtry&gt;&lt;Cd&gt;SCOR&lt;/Cd&gt;&lt;/CdOrPrtry&gt;&lt;/Tp&gt;&lt;Ref&gt;Structured
+                        RmtInf 01
+                        äöüß&lt;/Ref&gt;&lt;/CdtrRefInf&gt;&lt;/Strd&gt;&lt;/RmtInf&gt;&lt;/CdtTrfTxInf&gt;
+                    </ar:OrgTx>
+                </ar:OutTx>
+            </ar:FullTxInf>
+            <ar:InSttlmInf>
+                <ar:BIC>COBACHZHXXX</ar:BIC>
+                <ar:IBAN>CH3408836100003300006</ar:IBAN>
+                <ar:NatBkCd>08836</ar:NatBkCd>
+                <ar:Acc>313100003300</ar:Acc>
+                <ar:Amt Ccy="CHF">7.49</ar:Amt>
+                <ar:ValDt>2024-10-31</ar:ValDt>
+                <ar:TxCnt>3</ar:TxCnt>
+                <ar:BkType>DEBIT</ar:BkType>
+            </ar:InSttlmInf>
+            <ar:OutSttlmInf>
+                <ar:Acc>313100000902</ar:Acc>
+                <ar:Amt Ccy="CHF">3.99</ar:Amt>
+                <ar:ValDt>2024-10-31</ar:ValDt>
+                <ar:TxCnt>1</ar:TxCnt>
+                <ar:BkType>CREDIT</ar:BkType>
+            </ar:OutSttlmInf>
+            <ar:ClrSettInf>
+                <ar:PSR>NOT_CREATED</ar:PSR>
+            </ar:ClrSettInf>
+            <ar:GenProcInf>
+                <ar:TxStat>993890</ar:TxStat>
+                <ar:NmRemBp>COBA IP-B SIC bulk</ar:NmRemBp>
+                <ar:NmRem>Coba IP-B SIC Pain1b</ar:NmRem>
+                <ar:NmRoutBp>SIX Instant Payments</ar:NmRoutBp>
+                <ar:NmRout>SIC IP-B SIX OUT P8</ar:NmRout>
+                <ar:OrgDlvrMed>PAPER</ar:OrgDlvrMed>
+                <ar:Timing>
+                    <ar:FileRecvDtTm>2024-10-31T09:37:50</ar:FileRecvDtTm>
+                    <ar:ExctDt>2024-10-31</ar:ExctDt>
+                    <ar:FileCreDtTm>2024-10-31T09:37:55</ar:FileCreDtTm>
+                </ar:Timing>
+                <ar:DispoInf>
+                    <ar:DispoType>INPUT</ar:DispoType>
+                    <ar:Result>POS</ar:Result>
+                    <ar:Req1DtTm>2024-10-31T09:37:51</ar:Req1DtTm>
+                    <ar:ReplDtTm>2024-10-31T09:37:52</ar:ReplDtTm>
+                </ar:DispoInf>
+                <ar:Embgo>
+                    <ar:EmbgoType>INPUT</ar:EmbgoType>
+                    <ar:Result>NO_HIT</ar:Result>
+                    <ar:Req1DtTm>2024-10-31T09:37:54</ar:Req1DtTm>
+                    <ar:Repl>
+                        <ar:ReplDtTm>2024-10-31T09:37:55</ar:ReplDtTm>
+                        <ar:ReplCode>NO_HIT</ar:ReplCode>
+                    </ar:Repl>
+                </ar:Embgo>
+                <ar:Frd>
+                    <ar:FrdType>INPUT</ar:FrdType>
+                    <ar:Req1DtTm>2024-10-31T09:37:53</ar:Req1DtTm>
+                    <ar:Repl>
+                        <ar:ReplDtTm>2024-10-31T09:37:53</ar:ReplDtTm>
+                        <ar:ReplCode>OK</ar:ReplCode>
+                    </ar:Repl>
+                </ar:Frd>
+                <ar:RiskFltr>
+                    <ar:Result>NO_HIT</ar:Result>
+                </ar:RiskFltr>
+                <ar:FltrFlg>
+                    <ar:Result>NO_HIT</ar:Result>
+                </ar:FltrFlg>
+                <ar:ProcHist>
+                    <ar:DtTm>2024-10-31T09:37:55Z</ar:DtTm>
+                    <ar:Inf>Embargo reply received in state &apos;NO_HIT&apos;
+                        with reference 20241031000004200000001.
+                    </ar:Inf>
+                </ar:ProcHist>
+                <ar:AckNakInf>
+                    <ar:Status>ACK</ar:Status>
+                    <ar:RecvDtTm>2024-10-31T09:37:55</ar:RecvDtTm>
+                </ar:AckNakInf>
+                <ar:AccExistChk>POS</ar:AccExistChk>
+                <ar:FATF7Chk>NO_CHK</ar:FATF7Chk>
+            </ar:GenProcInf>
+            <ar:FXInfo>
+                <ar:SrcCcy>CHF</ar:SrcCcy>
+            </ar:FXInfo>
+            <ar:InstrPrty>NORM</ar:InstrPrty>
+        </ar:PayInf>
+        <ar:PayInf>
+            <ar:InFile>
+                <ar:Nm>ZAA2EWL_IP1</ar:Nm>
+                <ar:Id>562926950000</ar:Id>
+                <ar:FileRef>
+                    <ar:FileId>4e2b1887-14c9-4198-be04-22be788</ar:FileId>
+                </ar:FileRef>
+                <ar:FmtGrpNm>SIC_INST</ar:FmtGrpNm>
+                <ar:SbmttrId>TZAAK002</ar:SbmttrId>
+                <ar:SndngSys>127</ar:SndngSys>
+            </ar:InFile>
+            <ar:OutFile>
+                <ar:Nm>COBA_P202BOX06_SIC_IP</ar:Nm>
+                <ar:Id>562927030000</ar:Id>
+                <ar:FmtGrpNm>SIC_INST</ar:FmtGrpNm>
+            </ar:OutFile>
+            <ar:InOrd>
+                <ar:LogFmtNm>sic_inst_pain.001.001.09_six</ar:LogFmtNm>
+                <ar:Area>
+                    <ar:Nm>internal</ar:Nm>
+                    <ar:Type>INT</ar:Type>
+                </ar:Area>
+                <ar:OrdType>CT</ar:OrdType>
+                <ar:InstgAgt>
+                    <ar:NatBkCd>088360</ar:NatBkCd>
+                </ar:InstgAgt>
+                <ar:InstdAgt>
+                    <ar:BIC>COBADEFF</ar:BIC>
+                    <ar:NatBkCd>088100</ar:NatBkCd>
+                </ar:InstdAgt>
+                <ar:OrdRef>
+                    <ar:OrdId>11f0a988-5d02-4116-af52-a5e9002</ar:OrdId>
+                    <ar:TechOrdId>257033320000</ar:TechOrdId>
+                    <ar:ClrRefNumOrd>202410310000042</ar:ClrRefNumOrd>
+                </ar:OrdRef>
+                <ar:ClrSysId>SIP</ar:ClrSysId>
+                <ar:Amt Ccy="CHF">7.49</ar:Amt>
+                <ar:NbOfTxs>3</ar:NbOfTxs>
+                <ar:OrgAmt Ccy="CHF">7.49</ar:OrgAmt>
+                <ar:OrgNbOfTxs>3</ar:OrgNbOfTxs>
+            </ar:InOrd>
+            <ar:OutOrd>
+                <ar:LogFmtNm>sic_inst_pacs.008.001.08_six</ar:LogFmtNm>
+                <ar:Area>
+                    <ar:Nm>external</ar:Nm>
+                    <ar:Type>EXT</ar:Type>
+                </ar:Area>
+                <ar:OrdType>CT</ar:OrdType>
+                <ar:OrdRef>
+                    <ar:OrdId>IPBCOBADEFF202410310000045</ar:OrdId>
+                    <ar:TechOrdId>257033350000</ar:TechOrdId>
+                    <ar:ClrRefNumOrd>202410310000045</ar:ClrRefNumOrd>
+                </ar:OrdRef>
+                <ar:ClrSysId>SIP</ar:ClrSysId>
+                <ar:Amt Ccy="CHF">1.00</ar:Amt>
+                <ar:NbOfTxs>1</ar:NbOfTxs>
+            </ar:OutOrd>
+            <ar:Subm>
+                <ar:IBAN>CH3408836100003300006</ar:IBAN>
+                <ar:NatAcc>100003300006</ar:NatAcc>
+                <ar:SubmAcctInf>
+                    <ar:Ccy>CHF</ar:Ccy>
+                </ar:SubmAcctInf>
+                <ar:AgtNatBkCd>088360</ar:AgtNatBkCd>
+                <ar:NmAdrCtry>
+                    <ar:Nm>Donald Trump</ar:Nm>
+                    <ar:StrcdPstlAdr>
+                        <mx8.1.8:StrtNm>Ocean Blvd</mx8.1.8:StrtNm>
+                        <mx8.1.8:TwnNm>Palm Beach</mx8.1.8:TwnNm>
+                        <mx8.1.8:Ctry>US</mx8.1.8:Ctry>
+                    </ar:StrcdPstlAdr>
+                </ar:NmAdrCtry>
+                <ar:Role>DBTR</ar:Role>
+            </ar:Subm>
+            <ar:OrgSubm>
+                <ar:SubmAcctInf>
+                    <ar:Ccy>CHF</ar:Ccy>
+                </ar:SubmAcctInf>
+                <ar:NmAdrCtry>
+                    <ar:Nm>Donald Trump</ar:Nm>
+                    <ar:StrcdPstlAdr>
+                        <mx8.1.8:StrtNm>Ocean Blvd</mx8.1.8:StrtNm>
+                        <mx8.1.8:TwnNm>Palm Beach</mx8.1.8:TwnNm>
+                        <mx8.1.8:Ctry>US</mx8.1.8:Ctry>
+                    </ar:StrcdPstlAdr>
+                </ar:NmAdrCtry>
+                <ar:Role>DBTR</ar:Role>
+            </ar:OrgSubm>
+            <ar:InitgPty>
+                <ar:NmAdrCtry>
+                    <ar:ISO2019>
+                        <ar:Id>
+                            <mx8.1.8:OrgId>
+                                <mx8.1.8:Othr>
+                                    <mx8.1.8:Id>OrgtrId12344</mx8.1.8:Id>
+                                </mx8.1.8:Othr>
+                            </mx8.1.8:OrgId>
+                        </ar:Id>
+                    </ar:ISO2019>
+                </ar:NmAdrCtry>
+            </ar:InitgPty>
+            <ar:Recv>
+                <ar:IBAN>LI21088100002324013AA</ar:IBAN>
+                <ar:AgtNatBkCd>088100</ar:AgtNatBkCd>
+                <ar:NmAdr>Creditor Name 02 äöüß|Cdtr02 street äöüß|C02 Zurich|LI|&lt;PstlAdr&gt;&lt;StrtNm&gt;Cdtr02 street äöüß&lt;/StrtNm&gt;&lt;BldgNm&gt;Cdtr02 bldg&lt;/BldgNm&gt;&lt;Flr&gt;23&lt;/Flr&gt;&lt;Roo</ar:NmAdr>
+                <ar:Role>CDTR</ar:Role>
+                <ar:RecvAgtInf>
+                    <ar:ClrSysMmbId>
+                        <ar:ClrSysId>CHSIC</ar:ClrSysId>
+                        <ar:MmbId>088360</ar:MmbId>
+                    </ar:ClrSysMmbId>
+                </ar:RecvAgtInf>
+            </ar:Recv>
+            <ar:TxRef>
+                <ar:EndToEndId>c8d6ccb1-97ad-4bfc-9cd0-052e094</ar:EndToEndId>
+                <ar:TxId>COBADEFF311024000010510000002</ar:TxId>
+                <ar:InstrIdExt>d1daba5d-6de7-4</ar:InstrIdExt>
+                <ar:InstrIdInt>EUX3110000058157</ar:InstrIdInt>
+                <ar:ClrRefNumTx>20241031000004200000002</ar:ClrRefNumTx>
+                <ar:UETR>432adc0b-de24-44cb-9f7a-b94744430ba1</ar:UETR>
+                <ar:OrgnlUETR>432adc0b-de24-44cb-9f7a-b94744430ba1</ar:OrgnlUETR>
+                <ar:MsgId>11f0a988-5d02-4116-af52-a5e9002</ar:MsgId>
+            </ar:TxRef>
+            <ar:CtgyPurp>SALA</ar:CtgyPurp>
+            <ar:Purp>SALA</ar:Purp>
+            <ar:TxCd>
+                <ar:InTxCd>76000</ar:InTxCd>
+                <ar:OutTxCd>00000</ar:OutTxCd>
+            </ar:TxCd>
+            <ar:Prdct>SIC-Inst</ar:Prdct>
+            <ar:Amt Ccy="CHF">1.00</ar:Amt>
+            <ar:RmtInf>
+                <ar:ISO2019>
+                    <ar:Strd
+                            xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.002.001.10">
+                        <mx8.1.8:CdtrRefInf>
+                            <mx8.1.8:Tp>
+                                <mx8.1.8:CdOrPrtry>
+                                    <mx8.1.8:Cd>SCOR</mx8.1.8:Cd>
+                                </mx8.1.8:CdOrPrtry>
+                            </mx8.1.8:Tp>
+                            <mx8.1.8:Ref>Structured RmtInf 02 äöüß</mx8.1.8:Ref>
+                        </mx8.1.8:CdtrRefInf>
+                    </ar:Strd>
+                </ar:ISO2019>
+            </ar:RmtInf>
+            <ar:DlvrdValDt>2024-10-31</ar:DlvrdValDt>
+            <ar:DlvrdExctDt>2024-10-31</ar:DlvrdExctDt>
+            <ar:TxType>CREDIT</ar:TxType>
+            <ar:LclInstrm>INST</ar:LclInstrm>
+            <ar:FullTxInf>
+                <ar:InTx>
+                    <ar:OrgTx>
+                        &lt;PmtInf&gt;&lt;PmtInfId&gt;11f0a988-5d02-4116-af52-a5e9002&lt;/PmtInfId&gt;&lt;PmtMtd&gt;TRF&lt;/PmtMtd&gt;&lt;BtchBookg&gt;true&lt;/BtchBookg&gt;&lt;NbOfTxs&gt;3&lt;/NbOfTxs&gt;&lt;CtrlSum&gt;10.49&lt;/CtrlSum&gt;&lt;PmtTpInf&gt;&lt;LclInstrm&gt;&lt;Cd&gt;INST&lt;/Cd&gt;&lt;/LclInstrm&gt;&lt;CtgyPurp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/CtgyPurp&gt;&lt;/PmtTpInf&gt;&lt;ReqdExctnDt&gt;&lt;DtTm&gt;2024-10-31T08:37:44&lt;/DtTm&gt;&lt;/ReqdExctnDt&gt;&lt;Dbtr&gt;&lt;Nm&gt;Debtor
+                        Name äöüßä
+                        IPB-CH&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;StrtNm&gt;Debtor
+                        Street äöüßä&lt;/StrtNm&gt;&lt;BldgNm&gt;Dbtr
+                        bldg&lt;/BldgNm&gt;&lt;Flr&gt;7&lt;/Flr&gt;&lt;Room&gt;58b&lt;/Room&gt;&lt;PstCd&gt;D01&lt;/PstCd&gt;&lt;TwnNm&gt;Bern&lt;/TwnNm&gt;&lt;Ctry&gt;CH&lt;/Ctry&gt;&lt;/PstlAdr&gt;&lt;/Dbtr&gt;&lt;DbtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;CH3408836100003300006&lt;/IBAN&gt;&lt;/Id&gt;&lt;Ccy&gt;CHF&lt;/Ccy&gt;&lt;/DbtrAcct&gt;&lt;DbtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/DbtrAgt&gt;&lt;ChrgBr&gt;SLEV&lt;/ChrgBr&gt;&lt;/PmtInf&gt;&lt;PmtInf&gt;&lt;PmtInfId&gt;11f0a988-5d02-4116-af52-a5e9002&lt;/PmtInfId&gt;&lt;PmtMtd&gt;TRF&lt;/PmtMtd&gt;&lt;BtchBookg&gt;true&lt;/BtchBookg&gt;&lt;NbOfTxs&gt;3&lt;/NbOfTxs&gt;&lt;CtrlSum&gt;10.49&lt;/CtrlSum&gt;&lt;PmtTpInf&gt;&lt;LclInstrm&gt;&lt;Cd&gt;INST&lt;/Cd&gt;&lt;/LclInstrm&gt;&lt;CtgyPurp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/CtgyPurp&gt;&lt;/PmtTpInf&gt;&lt;ReqdExctnDt&gt;&lt;DtTm&gt;2024-10-31T08:37:44&lt;/DtTm&gt;&lt;/ReqdExctnDt&gt;&lt;Dbtr&gt;&lt;Nm&gt;Debtor
+                        Name äöüßä
+                        IPB-CH&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;StrtNm&gt;Debtor
+                        Street äöüßä&lt;/StrtNm&gt;&lt;BldgNm&gt;Dbtr
+                        bldg&lt;/BldgNm&gt;&lt;Flr&gt;7&lt;/Flr&gt;&lt;Room&gt;58b&lt;/Room&gt;&lt;PstCd&gt;D01&lt;/PstCd&gt;&lt;TwnNm&gt;Bern&lt;/TwnNm&gt;&lt;Ctry&gt;CH&lt;/Ctry&gt;&lt;/PstlAdr&gt;&lt;/Dbtr&gt;&lt;DbtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;CH3408836100003300006&lt;/IBAN&gt;&lt;/Id&gt;&lt;Ccy&gt;CHF&lt;/Ccy&gt;&lt;/DbtrAcct&gt;&lt;DbtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/DbtrAgt&gt;&lt;ChrgBr&gt;SLEV&lt;/ChrgBr&gt;&lt;CdtTrfTxInf&gt;&lt;PmtId&gt;&lt;InstrId&gt;d1daba5d-6de7-4&lt;/InstrId&gt;&lt;EndToEndId&gt;c8d6ccb1-97ad-4bfc-9cd0-052e094&lt;/EndToEndId&gt;&lt;/PmtId&gt;&lt;Amt&gt;&lt;InstdAmt
+                        Ccy=&quot;CHF&quot;&gt;1.0&lt;/InstdAmt&gt;&lt;/Amt&gt;&lt;CdtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088108&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/CdtrAgt&gt;&lt;Cdtr&gt;&lt;Nm&gt;Creditor
+                        Name 02
+                        äöüß&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;StrtNm&gt;Cdtr02
+                        street äöüß&lt;/StrtNm&gt;&lt;BldgNm&gt;Cdtr02
+                        bldg&lt;/BldgNm&gt;&lt;Flr&gt;23&lt;/Flr&gt;&lt;Room&gt;45&lt;/Room&gt;&lt;PstCd&gt;C02&lt;/PstCd&gt;&lt;TwnNm&gt;Zurich&lt;/TwnNm&gt;&lt;Ctry&gt;LI&lt;/Ctry&gt;&lt;/PstlAdr&gt;&lt;/Cdtr&gt;&lt;CdtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;LI21088100002324013AA&lt;/IBAN&gt;&lt;/Id&gt;&lt;/CdtrAcct&gt;&lt;Purp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/Purp&gt;&lt;RmtInf&gt;&lt;Strd&gt;&lt;CdtrRefInf&gt;&lt;Tp&gt;&lt;CdOrPrtry&gt;&lt;Cd&gt;SCOR&lt;/Cd&gt;&lt;/CdOrPrtry&gt;&lt;/Tp&gt;&lt;Ref&gt;Structured
+                        RmtInf 02
+                        äöüß&lt;/Ref&gt;&lt;/CdtrRefInf&gt;&lt;/Strd&gt;&lt;/RmtInf&gt;&lt;/CdtTrfTxInf&gt;&lt;/PmtInf&gt;
+                    </ar:OrgTx>
+                </ar:InTx>
+                <ar:OutTx>
+                    <ar:OrgTx>
+                        &lt;GrpHdr&gt;&lt;MsgId&gt;IPBCOBADEFF202410310000045&lt;/MsgId&gt;&lt;CreDtTm&gt;2024-10-31T09:37:55.589+01:00&lt;/CreDtTm&gt;&lt;NbOfTxs&gt;1&lt;/NbOfTxs&gt;&lt;TtlIntrBkSttlmAmt
+                        Ccy=&quot;CHF&quot;&gt;1.00&lt;/TtlIntrBkSttlmAmt&gt;&lt;SttlmInf&gt;&lt;SttlmMtd&gt;CLRG&lt;/SttlmMtd&gt;&lt;ClrSys&gt;&lt;Cd&gt;SIP&lt;/Cd&gt;&lt;/ClrSys&gt;&lt;/SttlmInf&gt;&lt;/GrpHdr&gt;&lt;CdtTrfTxInf&gt;&lt;PmtId&gt;&lt;InstrId&gt;EUX3110000058157&lt;/InstrId&gt;&lt;EndToEndId&gt;c8d6ccb1-97ad-4bfc-9cd0-052e094&lt;/EndToEndId&gt;&lt;TxId&gt;EUX3110000058157&lt;/TxId&gt;&lt;UETR&gt;432adc0b-de24-44cb-9f7a-b94744430ba1&lt;/UETR&gt;&lt;/PmtId&gt;&lt;PmtTpInf&gt;&lt;LclInstrm&gt;&lt;Prtry&gt;IPCPMT&lt;/Prtry&gt;&lt;/LclInstrm&gt;&lt;CtgyPurp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/CtgyPurp&gt;&lt;/PmtTpInf&gt;&lt;IntrBkSttlmAmt
+                        Ccy=&quot;CHF&quot;&gt;1.00&lt;/IntrBkSttlmAmt&gt;&lt;IntrBkSttlmDt&gt;2024-10-31&lt;/IntrBkSttlmDt&gt;&lt;AccptncDtTm&gt;2024-10-31T08:37:55.607Z&lt;/AccptncDtTm&gt;&lt;ChrgBr&gt;SHAR&lt;/ChrgBr&gt;&lt;InstgAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/InstgAgt&gt;&lt;InstdAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088100&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/InstdAgt&gt;&lt;Dbtr&gt;&lt;Nm&gt;Donald
+                        Trump&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;Ctry&gt;US&lt;/Ctry&gt;&lt;AdrLine&gt;Ocean
+                        Blvd&lt;/AdrLine&gt;&lt;AdrLine&gt;Palm
+                        Beach&lt;/AdrLine&gt;&lt;/PstlAdr&gt;&lt;/Dbtr&gt;&lt;DbtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;CH3408836100003300006&lt;/IBAN&gt;&lt;/Id&gt;&lt;/DbtrAcct&gt;&lt;DbtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/DbtrAgt&gt;&lt;CdtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088100&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/CdtrAgt&gt;&lt;Cdtr&gt;&lt;Nm&gt;Creditor
+                        Name 02
+                        äöüß&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;StrtNm&gt;Cdtr02
+                        street äöüß&lt;/StrtNm&gt;&lt;BldgNm&gt;Cdtr02
+                        bldg&lt;/BldgNm&gt;&lt;Flr&gt;23&lt;/Flr&gt;&lt;Room&gt;45&lt;/Room&gt;&lt;PstCd&gt;C02&lt;/PstCd&gt;&lt;TwnNm&gt;Zurich&lt;/TwnNm&gt;&lt;Ctry&gt;LI&lt;/Ctry&gt;&lt;/PstlAdr&gt;&lt;/Cdtr&gt;&lt;CdtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;LI21088100002324013AA&lt;/IBAN&gt;&lt;/Id&gt;&lt;/CdtrAcct&gt;&lt;Purp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/Purp&gt;&lt;RmtInf&gt;&lt;Strd&gt;&lt;CdtrRefInf&gt;&lt;Tp&gt;&lt;CdOrPrtry&gt;&lt;Cd&gt;SCOR&lt;/Cd&gt;&lt;/CdOrPrtry&gt;&lt;/Tp&gt;&lt;Ref&gt;Structured
+                        RmtInf 02
+                        äöüß&lt;/Ref&gt;&lt;/CdtrRefInf&gt;&lt;/Strd&gt;&lt;/RmtInf&gt;&lt;/CdtTrfTxInf&gt;
+                    </ar:OrgTx>
+                </ar:OutTx>
+            </ar:FullTxInf>
+            <ar:InSttlmInf>
+                <ar:BIC>COBACHZHXXX</ar:BIC>
+                <ar:IBAN>CH3408836100003300006</ar:IBAN>
+                <ar:NatBkCd>08836</ar:NatBkCd>
+                <ar:Acc>313100003300</ar:Acc>
+                <ar:Amt Ccy="CHF">7.49</ar:Amt>
+                <ar:ValDt>2024-10-31</ar:ValDt>
+                <ar:TxCnt>3</ar:TxCnt>
+                <ar:BkType>DEBIT</ar:BkType>
+            </ar:InSttlmInf>
+            <ar:OutSttlmInf>
+                <ar:Acc>313100000902</ar:Acc>
+                <ar:Amt Ccy="CHF">1.00</ar:Amt>
+                <ar:ValDt>2024-10-31</ar:ValDt>
+                <ar:TxCnt>1</ar:TxCnt>
+                <ar:BkType>CREDIT</ar:BkType>
+            </ar:OutSttlmInf>
+            <ar:ClrSettInf>
+                <ar:PSR>NOT_CREATED</ar:PSR>
+            </ar:ClrSettInf>
+            <ar:GenProcInf>
+                <ar:TxStat>993890</ar:TxStat>
+                <ar:NmRemBp>COBA IP-B SIC bulk</ar:NmRemBp>
+                <ar:NmRem>Coba IP-B SIC Pain1b</ar:NmRem>
+                <ar:NmRoutBp>SIX Instant Payments</ar:NmRoutBp>
+                <ar:NmRout>SIC IP-B SIX OUT P8</ar:NmRout>
+                <ar:OrgDlvrMed>PAPER</ar:OrgDlvrMed>
+                <ar:Timing>
+                    <ar:FileRecvDtTm>2024-10-31T09:37:50</ar:FileRecvDtTm>
+                    <ar:ExctDt>2024-10-31</ar:ExctDt>
+                    <ar:FileCreDtTm>2024-10-31T09:37:55</ar:FileCreDtTm>
+                </ar:Timing>
+                <ar:DispoInf>
+                    <ar:DispoType>INPUT</ar:DispoType>
+                    <ar:Result>POS</ar:Result>
+                    <ar:Req1DtTm>2024-10-31T09:37:51</ar:Req1DtTm>
+                    <ar:ReplDtTm>2024-10-31T09:37:52</ar:ReplDtTm>
+                </ar:DispoInf>
+                <ar:Embgo>
+                    <ar:EmbgoType>INPUT</ar:EmbgoType>
+                    <ar:Result>NO_HIT</ar:Result>
+                    <ar:Req1DtTm>2024-10-31T09:37:54</ar:Req1DtTm>
+                    <ar:Repl>
+                        <ar:ReplDtTm>2024-10-31T09:37:55</ar:ReplDtTm>
+                        <ar:ReplCode>NO_HIT</ar:ReplCode>
+                    </ar:Repl>
+                </ar:Embgo>
+                <ar:Frd>
+                    <ar:FrdType>INPUT</ar:FrdType>
+                    <ar:Req1DtTm>2024-10-31T09:37:53</ar:Req1DtTm>
+                    <ar:Repl>
+                        <ar:ReplDtTm>2024-10-31T09:37:54</ar:ReplDtTm>
+                        <ar:ReplCode>OK</ar:ReplCode>
+                    </ar:Repl>
+                </ar:Frd>
+                <ar:RiskFltr>
+                    <ar:Result>NO_HIT</ar:Result>
+                </ar:RiskFltr>
+                <ar:FltrFlg>
+                    <ar:Result>NO_HIT</ar:Result>
+                </ar:FltrFlg>
+                <ar:ProcHist>
+                    <ar:DtTm>2024-10-31T09:37:55Z</ar:DtTm>
+                    <ar:Inf>Embargo reply received in state &apos;NO_HIT&apos;
+                        with reference 20241031000004200000002.
+                    </ar:Inf>
+                </ar:ProcHist>
+                <ar:AckNakInf>
+                    <ar:Status>ACK</ar:Status>
+                    <ar:RecvDtTm>2024-10-31T09:37:56</ar:RecvDtTm>
+                </ar:AckNakInf>
+                <ar:AccExistChk>POS</ar:AccExistChk>
+                <ar:FATF7Chk>NO_CHK</ar:FATF7Chk>
+            </ar:GenProcInf>
+            <ar:FXInfo>
+                <ar:SrcCcy>CHF</ar:SrcCcy>
+            </ar:FXInfo>
+            <ar:InstrPrty>NORM</ar:InstrPrty>
+        </ar:PayInf>
+        <ar:PayInf>
+            <ar:InFile>
+                <ar:Nm>ZAA2EWL_IP1</ar:Nm>
+                <ar:Id>562928580000</ar:Id>
+                <ar:FileRef>
+                    <ar:FileId>MSG202410311057148685090410</ar:FileId>
+                </ar:FileRef>
+                <ar:FmtGrpNm>SIC_INST</ar:FmtGrpNm>
+                <ar:SbmttrId>TZAAK002</ar:SbmttrId>
+                <ar:SndngSys>127</ar:SndngSys>
+            </ar:InFile>
+            <ar:OutFile>
+                <ar:Nm>COBA_P202BOX06_SIC_IP</ar:Nm>
+                <ar:Id>562928640000</ar:Id>
+                <ar:FmtGrpNm>SIC_INST</ar:FmtGrpNm>
+            </ar:OutFile>
+            <ar:InOrd>
+                <ar:LogFmtNm>sic_inst_pain.001.001.09_six</ar:LogFmtNm>
+                <ar:Area>
+                    <ar:Nm>internal</ar:Nm>
+                    <ar:Type>INT</ar:Type>
+                </ar:Area>
+                <ar:OrdType>CT</ar:OrdType>
+                <ar:InstgAgt>
+                    <ar:NatBkCd>088360</ar:NatBkCd>
+                </ar:InstgAgt>
+                <ar:InstdAgt>
+                    <ar:BIC>COBADEFF</ar:BIC>
+                    <ar:NatBkCd>088100</ar:NatBkCd>
+                </ar:InstdAgt>
+                <ar:OrdRef>
+                    <ar:OrdId>PMT202410311057148685090410</ar:OrdId>
+                    <ar:TechOrdId>257033380000</ar:TechOrdId>
+                    <ar:ClrRefNumOrd>202410310000050</ar:ClrRefNumOrd>
+                </ar:OrdRef>
+                <ar:ClrSysId>SIP</ar:ClrSysId>
+                <ar:Amt Ccy="CHF">10.23</ar:Amt>
+                <ar:NbOfTxs>1</ar:NbOfTxs>
+                <ar:OrgAmt Ccy="CHF">10.23</ar:OrgAmt>
+                <ar:OrgNbOfTxs>1</ar:OrgNbOfTxs>
+            </ar:InOrd>
+            <ar:OutOrd>
+                <ar:LogFmtNm>sic_inst_pacs.008.001.08_six</ar:LogFmtNm>
+                <ar:Area>
+                    <ar:Nm>external</ar:Nm>
+                    <ar:Type>EXT</ar:Type>
+                </ar:Area>
+                <ar:OrdType>CT</ar:OrdType>
+                <ar:OrdRef>
+                    <ar:OrdId>IPBCOBADEFF202410310000051</ar:OrdId>
+                    <ar:TechOrdId>257033390000</ar:TechOrdId>
+                    <ar:ClrRefNumOrd>202410310000051</ar:ClrRefNumOrd>
+                </ar:OrdRef>
+                <ar:ClrSysId>SIP</ar:ClrSysId>
+                <ar:Amt Ccy="CHF">10.23</ar:Amt>
+                <ar:NbOfTxs>1</ar:NbOfTxs>
+            </ar:OutOrd>
+            <ar:Subm>
+                <ar:IBAN>CH4608836100001702006</ar:IBAN>
+                <ar:NatAcc>100001702006</ar:NatAcc>
+                <ar:SubmAcctInf>
+                    <ar:Ccy>CHF</ar:Ccy>
+                </ar:SubmAcctInf>
+                <ar:AgtNatBkCd>088360</ar:AgtNatBkCd>
+                <ar:NmAdrCtry>
+                    <ar:Nm>Taylor Swift</ar:Nm>
+                    <ar:StrcdPstlAdr>
+                        <mx8.1.8:StrtNm>ALLALL001000017 Addr line 2</mx8.1.8:StrtNm>
+                        <mx8.1.8:TwnNm>ALLALL001000017 Addr line 3</mx8.1.8:TwnNm>
+                        <mx8.1.8:Ctry>CH</mx8.1.8:Ctry>
+                    </ar:StrcdPstlAdr>
+                </ar:NmAdrCtry>
+                <ar:Role>DBTR</ar:Role>
+            </ar:Subm>
+            <ar:OrgSubm>
+                <ar:SubmAcctInf>
+                    <ar:Ccy>CHF</ar:Ccy>
+                </ar:SubmAcctInf>
+                <ar:NmAdrCtry>
+                    <ar:Nm>Taylor Swift</ar:Nm>
+                    <ar:StrcdPstlAdr>
+                        <mx8.1.8:StrtNm>ALLALL001000017 Addr line 2</mx8.1.8:StrtNm>
+                        <mx8.1.8:TwnNm>ALLALL001000017 Addr line 3</mx8.1.8:TwnNm>
+                        <mx8.1.8:Ctry>CH</mx8.1.8:Ctry>
+                    </ar:StrcdPstlAdr>
+                </ar:NmAdrCtry>
+                <ar:Role>DBTR</ar:Role>
+            </ar:OrgSubm>
+            <ar:InitgPty>
+                <ar:NmAdrCtry>
+                    <ar:Nm>InitgPty Name IPB-CH</ar:Nm>
+                </ar:NmAdrCtry>
+            </ar:InitgPty>
+            <ar:Recv>
+                <ar:IBAN>LI21088100002324013AA</ar:IBAN>
+                <ar:AgtNatBkCd>088100</ar:AgtNatBkCd>
+                <ar:NmAdr>Creditor Name 01 äöüß|Cdtr01 street äöüß|C01 Zurich|LI|&lt;PstlAdr&gt;&lt;StrtNm&gt;Cdtr01 street äöüß&lt;/StrtNm&gt;&lt;BldgNm&gt;Cdtr01 bldg&lt;/BldgNm&gt;&lt;Flr&gt;23&lt;/Flr&gt;&lt;Roo</ar:NmAdr>
+                <ar:Role>CDTR</ar:Role>
+                <ar:RecvAgtInf>
+                    <ar:ClrSysMmbId>
+                        <ar:ClrSysId>CHSIC</ar:ClrSysId>
+                        <ar:MmbId>088360</ar:MmbId>
+                    </ar:ClrSysMmbId>
+                </ar:RecvAgtInf>
+            </ar:Recv>
+            <ar:TxRef>
+                <ar:EndToEndId>EndToEndId-IPB-CH-BB-001</ar:EndToEndId>
+                <ar:TxId>COBADEFF311024000015110000001</ar:TxId>
+                <ar:InstrIdExt>20240327-InstrId-CH-BB-001</ar:InstrIdExt>
+                <ar:InstrIdInt>EUX3110000058202</ar:InstrIdInt>
+                <ar:ClrRefNumTx>20241031000005000000001</ar:ClrRefNumTx>
+                <ar:UETR>c25d9d93-e527-454b-b295-d1d85aea4278</ar:UETR>
+                <ar:OrgnlUETR>c25d9d93-e527-454b-b295-d1d85aea4278</ar:OrgnlUETR>
+                <ar:MsgId>PMT202410311057148685090410</ar:MsgId>
+            </ar:TxRef>
+            <ar:CtgyPurp>SALA</ar:CtgyPurp>
+            <ar:Purp>SALA</ar:Purp>
+            <ar:TxCd>
+                <ar:InTxCd>76000</ar:InTxCd>
+                <ar:OutTxCd>00000</ar:OutTxCd>
+            </ar:TxCd>
+            <ar:Prdct>SIC-Inst</ar:Prdct>
+            <ar:Amt Ccy="CHF">10.23</ar:Amt>
+            <ar:RmtInf>
+                <ar:ISO2019>
+                    <ar:Strd
+                            xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.002.001.10">
+                        <mx8.1.8:CdtrRefInf>
+                            <mx8.1.8:Tp>
+                                <mx8.1.8:CdOrPrtry>
+                                    <mx8.1.8:Cd>SCOR</mx8.1.8:Cd>
+                                </mx8.1.8:CdOrPrtry>
+                            </mx8.1.8:Tp>
+                            <mx8.1.8:Ref>Structured RmtInf 01 äöüß</mx8.1.8:Ref>
+                        </mx8.1.8:CdtrRefInf>
+                    </ar:Strd>
+                </ar:ISO2019>
+            </ar:RmtInf>
+            <ar:DlvrdValDt>2024-10-31</ar:DlvrdValDt>
+            <ar:DlvrdExctDt>2024-10-31</ar:DlvrdExctDt>
+            <ar:TxType>CREDIT</ar:TxType>
+            <ar:LclInstrm>INST</ar:LclInstrm>
+            <ar:FullTxInf>
+                <ar:InTx>
+                    <ar:OrgTx>
+                        &lt;PmtInf&gt;&lt;PmtInfId&gt;PMT202410311057148685090410&lt;/PmtInfId&gt;&lt;PmtMtd&gt;TRF&lt;/PmtMtd&gt;&lt;BtchBookg&gt;true&lt;/BtchBookg&gt;&lt;NbOfTxs&gt;1&lt;/NbOfTxs&gt;&lt;CtrlSum&gt;10.23&lt;/CtrlSum&gt;&lt;PmtTpInf&gt;&lt;LclInstrm&gt;&lt;Cd&gt;INST&lt;/Cd&gt;&lt;/LclInstrm&gt;&lt;CtgyPurp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/CtgyPurp&gt;&lt;/PmtTpInf&gt;&lt;ReqdExctnDt&gt;&lt;DtTm&gt;2024-10-31T10:00:40&lt;/DtTm&gt;&lt;/ReqdExctnDt&gt;&lt;Dbtr&gt;&lt;Nm&gt;Debtor
+                        Name äöüßä
+                        IPB-CH&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;StrtNm&gt;Debtor
+                        Street äöüßä&lt;/StrtNm&gt;&lt;BldgNm&gt;Dbtr
+                        bldg&lt;/BldgNm&gt;&lt;Flr&gt;7&lt;/Flr&gt;&lt;Room&gt;58b&lt;/Room&gt;&lt;PstCd&gt;D01&lt;/PstCd&gt;&lt;TwnNm&gt;Bern&lt;/TwnNm&gt;&lt;Ctry&gt;CH&lt;/Ctry&gt;&lt;/PstlAdr&gt;&lt;/Dbtr&gt;&lt;DbtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;CH4608836100001702006&lt;/IBAN&gt;&lt;/Id&gt;&lt;Ccy&gt;CHF&lt;/Ccy&gt;&lt;/DbtrAcct&gt;&lt;DbtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/DbtrAgt&gt;&lt;ChrgBr&gt;SLEV&lt;/ChrgBr&gt;&lt;/PmtInf&gt;&lt;PmtInf&gt;&lt;PmtInfId&gt;PMT202410311057148685090410&lt;/PmtInfId&gt;&lt;PmtMtd&gt;TRF&lt;/PmtMtd&gt;&lt;BtchBookg&gt;true&lt;/BtchBookg&gt;&lt;NbOfTxs&gt;1&lt;/NbOfTxs&gt;&lt;CtrlSum&gt;10.23&lt;/CtrlSum&gt;&lt;PmtTpInf&gt;&lt;LclInstrm&gt;&lt;Cd&gt;INST&lt;/Cd&gt;&lt;/LclInstrm&gt;&lt;CtgyPurp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/CtgyPurp&gt;&lt;/PmtTpInf&gt;&lt;ReqdExctnDt&gt;&lt;DtTm&gt;2024-10-31T10:00:40&lt;/DtTm&gt;&lt;/ReqdExctnDt&gt;&lt;Dbtr&gt;&lt;Nm&gt;Debtor
+                        Name äöüßä
+                        IPB-CH&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;StrtNm&gt;Debtor
+                        Street äöüßä&lt;/StrtNm&gt;&lt;BldgNm&gt;Dbtr
+                        bldg&lt;/BldgNm&gt;&lt;Flr&gt;7&lt;/Flr&gt;&lt;Room&gt;58b&lt;/Room&gt;&lt;PstCd&gt;D01&lt;/PstCd&gt;&lt;TwnNm&gt;Bern&lt;/TwnNm&gt;&lt;Ctry&gt;CH&lt;/Ctry&gt;&lt;/PstlAdr&gt;&lt;/Dbtr&gt;&lt;DbtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;CH4608836100001702006&lt;/IBAN&gt;&lt;/Id&gt;&lt;Ccy&gt;CHF&lt;/Ccy&gt;&lt;/DbtrAcct&gt;&lt;DbtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/DbtrAgt&gt;&lt;ChrgBr&gt;SLEV&lt;/ChrgBr&gt;&lt;CdtTrfTxInf&gt;&lt;PmtId&gt;&lt;InstrId&gt;20240327-InstrId-CH-BB-001&lt;/InstrId&gt;&lt;EndToEndId&gt;EndToEndId-IPB-CH-BB-001&lt;/EndToEndId&gt;&lt;/PmtId&gt;&lt;Amt&gt;&lt;InstdAmt
+                        Ccy=&quot;CHF&quot;&gt;10.23&lt;/InstdAmt&gt;&lt;/Amt&gt;&lt;CdtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088108&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/CdtrAgt&gt;&lt;Cdtr&gt;&lt;Nm&gt;Creditor
+                        Name 01
+                        äöüß&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;StrtNm&gt;Cdtr01
+                        street äöüß&lt;/StrtNm&gt;&lt;BldgNm&gt;Cdtr01
+                        bldg&lt;/BldgNm&gt;&lt;Flr&gt;23&lt;/Flr&gt;&lt;Room&gt;45&lt;/Room&gt;&lt;PstCd&gt;C01&lt;/PstCd&gt;&lt;TwnNm&gt;Zurich&lt;/TwnNm&gt;&lt;Ctry&gt;LI&lt;/Ctry&gt;&lt;/PstlAdr&gt;&lt;/Cdtr&gt;&lt;CdtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;LI21088100002324013AA&lt;/IBAN&gt;&lt;/Id&gt;&lt;/CdtrAcct&gt;&lt;Purp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/Purp&gt;&lt;RmtInf&gt;&lt;Strd&gt;&lt;CdtrRefInf&gt;&lt;Tp&gt;&lt;CdOrPrtry&gt;&lt;Cd&gt;SCOR&lt;/Cd&gt;&lt;/CdOrPrtry&gt;&lt;/Tp&gt;&lt;Ref&gt;Structured
+                        RmtInf 01
+                        äöüß&lt;/Ref&gt;&lt;/CdtrRefInf&gt;&lt;/Strd&gt;&lt;/RmtInf&gt;&lt;/CdtTrfTxInf&gt;&lt;/PmtInf&gt;
+                    </ar:OrgTx>
+                </ar:InTx>
+                <ar:OutTx>
+                    <ar:OrgTx>
+                        &lt;GrpHdr&gt;&lt;MsgId&gt;IPBCOBADEFF202410310000051&lt;/MsgId&gt;&lt;CreDtTm&gt;2024-10-31T10:59:06.256+01:00&lt;/CreDtTm&gt;&lt;NbOfTxs&gt;1&lt;/NbOfTxs&gt;&lt;TtlIntrBkSttlmAmt
+                        Ccy=&quot;CHF&quot;&gt;10.23&lt;/TtlIntrBkSttlmAmt&gt;&lt;SttlmInf&gt;&lt;SttlmMtd&gt;CLRG&lt;/SttlmMtd&gt;&lt;ClrSys&gt;&lt;Cd&gt;SIP&lt;/Cd&gt;&lt;/ClrSys&gt;&lt;/SttlmInf&gt;&lt;/GrpHdr&gt;&lt;CdtTrfTxInf&gt;&lt;PmtId&gt;&lt;InstrId&gt;EUX3110000058202&lt;/InstrId&gt;&lt;EndToEndId&gt;EndToEndId-IPB-CH-BB-001&lt;/EndToEndId&gt;&lt;TxId&gt;EUX3110000058202&lt;/TxId&gt;&lt;UETR&gt;c25d9d93-e527-454b-b295-d1d85aea4278&lt;/UETR&gt;&lt;/PmtId&gt;&lt;PmtTpInf&gt;&lt;LclInstrm&gt;&lt;Prtry&gt;IPCPMT&lt;/Prtry&gt;&lt;/LclInstrm&gt;&lt;CtgyPurp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/CtgyPurp&gt;&lt;/PmtTpInf&gt;&lt;IntrBkSttlmAmt
+                        Ccy=&quot;CHF&quot;&gt;10.23&lt;/IntrBkSttlmAmt&gt;&lt;IntrBkSttlmDt&gt;2024-10-31&lt;/IntrBkSttlmDt&gt;&lt;AccptncDtTm&gt;2024-10-31T09:59:06.347Z&lt;/AccptncDtTm&gt;&lt;ChrgBr&gt;SHAR&lt;/ChrgBr&gt;&lt;InstgAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/InstgAgt&gt;&lt;InstdAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088100&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/InstdAgt&gt;&lt;Dbtr&gt;&lt;Nm&gt;Taylor
+                        Swift&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;Ctry&gt;CH&lt;/Ctry&gt;&lt;AdrLine&gt;ALLALL001000017
+                        Addr line
+                        2&lt;/AdrLine&gt;&lt;AdrLine&gt;ALLALL001000017 Addr
+                        line
+                        3&lt;/AdrLine&gt;&lt;/PstlAdr&gt;&lt;/Dbtr&gt;&lt;DbtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;CH4608836100001702006&lt;/IBAN&gt;&lt;/Id&gt;&lt;/DbtrAcct&gt;&lt;DbtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088360&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/DbtrAgt&gt;&lt;CdtrAgt&gt;&lt;FinInstnId&gt;&lt;ClrSysMmbId&gt;&lt;ClrSysId&gt;&lt;Cd&gt;CHSIC&lt;/Cd&gt;&lt;/ClrSysId&gt;&lt;MmbId&gt;088100&lt;/MmbId&gt;&lt;/ClrSysMmbId&gt;&lt;/FinInstnId&gt;&lt;/CdtrAgt&gt;&lt;Cdtr&gt;&lt;Nm&gt;Creditor
+                        Name 01
+                        äöüß&lt;/Nm&gt;&lt;PstlAdr&gt;&lt;StrtNm&gt;Cdtr01
+                        street äöüß&lt;/StrtNm&gt;&lt;BldgNm&gt;Cdtr01
+                        bldg&lt;/BldgNm&gt;&lt;Flr&gt;23&lt;/Flr&gt;&lt;Room&gt;45&lt;/Room&gt;&lt;PstCd&gt;C01&lt;/PstCd&gt;&lt;TwnNm&gt;Zurich&lt;/TwnNm&gt;&lt;Ctry&gt;LI&lt;/Ctry&gt;&lt;/PstlAdr&gt;&lt;/Cdtr&gt;&lt;CdtrAcct&gt;&lt;Id&gt;&lt;IBAN&gt;LI21088100002324013AA&lt;/IBAN&gt;&lt;/Id&gt;&lt;/CdtrAcct&gt;&lt;Purp&gt;&lt;Cd&gt;SALA&lt;/Cd&gt;&lt;/Purp&gt;&lt;RmtInf&gt;&lt;Strd&gt;&lt;CdtrRefInf&gt;&lt;Tp&gt;&lt;CdOrPrtry&gt;&lt;Cd&gt;SCOR&lt;/Cd&gt;&lt;/CdOrPrtry&gt;&lt;/Tp&gt;&lt;Ref&gt;Structured
+                        RmtInf 01
+                        äöüß&lt;/Ref&gt;&lt;/CdtrRefInf&gt;&lt;/Strd&gt;&lt;/RmtInf&gt;&lt;/CdtTrfTxInf&gt;
+                    </ar:OrgTx>
+                </ar:OutTx>
+            </ar:FullTxInf>
+            <ar:InSttlmInf>
+                <ar:BIC>COBACHZHXXX</ar:BIC>
+                <ar:IBAN>CH4608836100001702006</ar:IBAN>
+                <ar:NatBkCd>08836</ar:NatBkCd>
+                <ar:Acc>313100001702</ar:Acc>
+                <ar:Amt Ccy="CHF">10.23</ar:Amt>
+                <ar:ValDt>2024-10-31</ar:ValDt>
+                <ar:TxCnt>1</ar:TxCnt>
+                <ar:BkType>DEBIT</ar:BkType>
+            </ar:InSttlmInf>
+            <ar:OutSttlmInf>
+                <ar:Acc>313100000902</ar:Acc>
+                <ar:Amt Ccy="CHF">10.23</ar:Amt>
+                <ar:ValDt>2024-10-31</ar:ValDt>
+                <ar:TxCnt>1</ar:TxCnt>
+                <ar:BkType>CREDIT</ar:BkType>
+            </ar:OutSttlmInf>
+            <ar:ClrSettInf>
+                <ar:PSR>NOT_CREATED</ar:PSR>
+            </ar:ClrSettInf>
+            <ar:GenProcInf>
+                <ar:TxStat>993890</ar:TxStat>
+                <ar:NmRemBp>COBA IP-B SIC bulk</ar:NmRemBp>
+                <ar:NmRem>Coba IP-B SIC Pain1b</ar:NmRem>
+                <ar:NmRoutBp>SIX Instant Payments</ar:NmRoutBp>
+                <ar:NmRout>SIC IP-B SIX OUT P8</ar:NmRout>
+                <ar:OrgDlvrMed>PAPER</ar:OrgDlvrMed>
+                <ar:Timing>
+                    <ar:FileRecvDtTm>2024-10-31T10:57:59</ar:FileRecvDtTm>
+                    <ar:ExctDt>2024-10-31</ar:ExctDt>
+                    <ar:FileCreDtTm>2024-10-31T10:59:06</ar:FileCreDtTm>
+                </ar:Timing>
+                <ar:DispoInf>
+                    <ar:DispoType>INPUT</ar:DispoType>
+                    <ar:Result>POS</ar:Result>
+                    <ar:Req1DtTm>2024-10-31T10:58:52</ar:Req1DtTm>
+                    <ar:ReplDtTm>2024-10-31T10:58:53</ar:ReplDtTm>
+                </ar:DispoInf>
+                <ar:Embgo>
+                    <ar:EmbgoType>INPUT</ar:EmbgoType>
+                    <ar:Result>NO_HIT</ar:Result>
+                    <ar:Req1DtTm>2024-10-31T10:59:03</ar:Req1DtTm>
+                    <ar:Repl>
+                        <ar:ReplDtTm>2024-10-31T10:59:04</ar:ReplDtTm>
+                        <ar:ReplCode>NO_HIT</ar:ReplCode>
+                    </ar:Repl>
+                </ar:Embgo>
+                <ar:Frd>
+                    <ar:FrdType>INPUT</ar:FrdType>
+                    <ar:Req1DtTm>2024-10-31T10:58:59</ar:Req1DtTm>
+                    <ar:Repl>
+                        <ar:ReplDtTm>2024-10-31T10:59:01</ar:ReplDtTm>
+                        <ar:ReplCode>OK</ar:ReplCode>
+                    </ar:Repl>
+                </ar:Frd>
+                <ar:RiskFltr>
+                    <ar:Result>NO_HIT</ar:Result>
+                </ar:RiskFltr>
+                <ar:FltrFlg>
+                    <ar:Result>NO_HIT</ar:Result>
+                </ar:FltrFlg>
+                <ar:ProcHist>
+                    <ar:DtTm>2024-10-31T10:59:04Z</ar:DtTm>
+                    <ar:Inf>Embargo reply received in state &apos;NO_HIT&apos;
+                        with reference 20241031000005000000001.
+                    </ar:Inf>
+                </ar:ProcHist>
+                <ar:AckNakInf>
+                    <ar:Status>ACK</ar:Status>
+                    <ar:RecvDtTm>2024-10-31T10:59:07</ar:RecvDtTm>
+                </ar:AckNakInf>
+                <ar:AccExistChk>POS</ar:AccExistChk>
+                <ar:FATF7Chk>NO_CHK</ar:FATF7Chk>
+            </ar:GenProcInf>
+            <ar:FXInfo>
+                <ar:SrcCcy>CHF</ar:SrcCcy>
+            </ar:FXInfo>
+            <ar:InstrPrty>NORM</ar:InstrPrty>
+        </ar:PayInf>
+        <ar:NbOfTxs>158</ar:NbOfTxs>
+    </ar:ZVSPaymentArchive>
+</ar:Document>

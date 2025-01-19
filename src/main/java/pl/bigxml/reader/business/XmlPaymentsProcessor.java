@@ -3,6 +3,7 @@ package pl.bigxml.reader.business;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+import pl.bigxml.reader.config.XmlReaderConfig;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
@@ -15,6 +16,8 @@ import static pl.bigxml.reader.utils.NanoToSeconds.toSeconds;
 @Component
 @RequiredArgsConstructor
 public class XmlPaymentsProcessor {
+
+    private final XmlReaderConfig readerConfig;
 
     public void process(String pathToXmlFile, int chunkSize, ProcessingCallback processingCallback) throws Exception {
         XMLInputFactory factory = XMLInputFactory.newInstance();
@@ -29,8 +32,8 @@ public class XmlPaymentsProcessor {
         while (xmlStreamReader.hasNext()) {
             int event = xmlStreamReader.next();
 
-            if (event == XMLStreamConstants.START_ELEMENT && "PayInf".equals(xmlStreamReader.getLocalName())) {
-                String payInfElement = readElement(xmlStreamReader, "PayInf");
+            if (event == XMLStreamConstants.START_ELEMENT && readerConfig.getBodyNodeLocalName().equals(xmlStreamReader.getLocalName())) {
+                String payInfElement = readElement(xmlStreamReader, readerConfig.getBodyNodeLocalName());
                 currentChunk.append(payInfElement).append("\n");
                 count++;
                 currentCount++;

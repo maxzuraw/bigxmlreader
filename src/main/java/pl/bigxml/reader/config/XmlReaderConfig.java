@@ -10,5 +10,6 @@ public class XmlReaderConfig {
     private boolean namespaceAware;
     private String bodyNodeLocalName;
     private String bodyNodeNamespaceUri;
+    private int chunkSize;
 
 }

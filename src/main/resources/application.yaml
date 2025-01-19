@@ -8,5 +8,6 @@ bigxmlreader:
     column-separator: ';'
   xml-reader:
     namespace-aware: true
+    chunk-size: 1
     body-node-local-name: PayInf
     body-node-namespace-uri: http://www.equens.com/zvs/archive/transaction
