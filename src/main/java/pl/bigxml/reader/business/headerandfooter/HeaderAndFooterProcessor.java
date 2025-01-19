@@ -8,8 +8,6 @@ import pl.bigxml.reader.domain.Appearance;
 import pl.bigxml.reader.domain.HeaderFooterConfig;
 import pl.bigxml.reader.domain.PathConfigMaps;
 import pl.bigxml.reader.domain.PathTracker;
-import pl.bigxml.reader.domain.PayInfo;
-import pl.bigxml.reader.domain.Processing;
 import pl.bigxml.reader.domain.ResultHolder;
 
 import javax.xml.stream.XMLInputFactory;
@@ -40,7 +38,6 @@ public class HeaderAndFooterProcessor {
 
         PathTracker pathTracker = new PathTracker();
         ResultHolder resultHolder = new ResultHolder();
-        PayInfo payInfo = null;
 
         StringBuilder header = new StringBuilder();
         StringBuilder footer = new StringBuilder();
@@ -62,13 +59,7 @@ public class HeaderAndFooterProcessor {
                     if (!insidePayInf) {
                         appendStartElement(xmlStreamReader, currentSection);
                     }
-
                     pathTracker.addNextElement(localName);
-
-                    headerFooterConfig = pathConfigPerPath.get(pathTracker.getFullTrack());
-                    if (isPayInfo(headerFooterConfig)) {
-                        payInfo = new PayInfo();
-                    }
                     break;
                 case XMLStreamConstants.CHARACTERS:
                     headerFooterConfig = pathConfigPerPath.get(pathTracker.getFullTrack());
@@ -82,14 +73,10 @@ public class HeaderAndFooterProcessor {
                     }
                     break;
                 case XMLStreamConstants.END_ELEMENT:
-                    headerFooterConfig = pathConfigPerPath.get(pathTracker.getFullTrack());
                     String lastElement = pathTracker.getLastElement();
                     if (lastElement.equals(xmlStreamReader.getLocalName())) {
                         log.debug(pathTracker.getFullTrack());
                         pathTracker.removeLastElement();
-                    }
-                    if (isPayInfo(headerFooterConfig)) {
-                        resultHolder.addToList(payInfo);
                     }
 
                     if (xmlReaderProperties.getBodyNodeLocalName().equals(xmlStreamReader.getLocalName())
@@ -106,7 +93,6 @@ public class HeaderAndFooterProcessor {
                         currentSection.append("<!--").append(xmlStreamReader.getText()).append("-->");
                     }
                     break;
-
             }
         }
         resultHolder.getHeader().append(header);
@@ -115,20 +101,12 @@ public class HeaderAndFooterProcessor {
         return resultHolder;
     }
 
-    private static boolean isPayInfo(HeaderFooterConfig headerFooterConfig) {
-        return headerFooterConfig != null &&
-                headerFooterConfig.getFullQualifiedClassName().equals(PayInfo.class.getCanonicalName()) &&
-                headerFooterConfig.getProcessing().equals(Processing.INCLUDE) &&
-                headerFooterConfig.getAppearance().equals(Appearance.LIST);
-    }
-
     private static void appendStartElement(XMLStreamReader reader, StringBuilder builder) {
         builder.append("<");
         if (reader.getPrefix() != null && !reader.getPrefix().isEmpty()) {
             builder.append(reader.getPrefix()).append(":");
         }
         builder.append(reader.getLocalName());
-
         for (int i = 0; i < reader.getNamespaceCount(); i++) {
             builder.append(" xmlns");
             if (reader.getNamespacePrefix(i) != null) {
@@ -136,7 +114,6 @@ public class HeaderAndFooterProcessor {
             }
             builder.append("=\"").append(reader.getNamespaceURI(i)).append("\"");
         }
-
         for (int i = 0; i < reader.getAttributeCount(); i++) {
             builder.append(" ")
                     .append(reader.getAttributePrefix(i) != null && !reader.getAttributePrefix(i).isEmpty()
@@ -147,7 +124,6 @@ public class HeaderAndFooterProcessor {
                     .append(reader.getAttributeValue(i))
                     .append("\"");
         }
-
         builder.append(">");
     }
 

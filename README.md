@@ -17,7 +17,6 @@ Document.ZVSPaymentArchive.ArchDt;java.time.LocalDate;archivizationDate;MAP;INCL
 Document.ZVSPaymentArchive.ArchFileNum;Integer;archivizationNumber;MAP;INCLUDE
 Document.ZVSPaymentArchive.IsLastArchFile;Boolean;isLastArchiveFile;MAP;INCLUDE
 Document.ZVSPaymentArchive.NbOfTxs;Integer;numberOfTransactions;MAP;INCLUDE
-Document.ZVSPaymentArchive.PayInf;pl.bigxml.reader.domain.PayInfo;;LIST;EXCLUDE
 ```
 
 ### Columns
