@@ -19,6 +19,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Map;
 
+import static pl.bigxml.reader.business.ElementReader.*;
+
 @Slf4j
 @Component
 @RequiredArgsConstructor
@@ -56,7 +58,12 @@ public class HeaderFooterProcessor {
                         currentSection = footer;
                     }
                     if (!insidePayInf) {
-                        appendStartElement(xmlStreamReader, currentSection);
+                        currentSection.append("<");
+                        appendPrefixIfExists(xmlStreamReader, currentSection);
+                        currentSection.append(xmlStreamReader.getLocalName());
+                        appendNamespacesIfExists(xmlStreamReader, currentSection);
+                        appendAttributesIfExists(xmlStreamReader, currentSection);
+                        currentSection.append(">");
                     }
                     pathTracker.addNextElement(localName);
                     break;
@@ -102,32 +109,6 @@ public class HeaderFooterProcessor {
     private boolean isElementBodyNode(XMLStreamReader xmlStreamReader) {
         return xmlReaderProperties.getBodyNodeLocalName().equals(xmlStreamReader.getLocalName())
                 && xmlReaderProperties.getBodyNodeNamespaceUri().equals(xmlStreamReader.getNamespaceURI());
-    }
-
-    private static void appendStartElement(XMLStreamReader reader, StringBuilder builder) {
-        builder.append("<");
-        if (reader.getPrefix() != null && !reader.getPrefix().isEmpty()) {
-            builder.append(reader.getPrefix()).append(":");
-        }
-        builder.append(reader.getLocalName());
-        for (int i = 0; i < reader.getNamespaceCount(); i++) {
-            builder.append(" xmlns");
-            if (reader.getNamespacePrefix(i) != null) {
-                builder.append(":").append(reader.getNamespacePrefix(i));
-            }
-            builder.append("=\"").append(reader.getNamespaceURI(i)).append("\"");
-        }
-        for (int i = 0; i < reader.getAttributeCount(); i++) {
-            builder.append(" ")
-                    .append(reader.getAttributePrefix(i) != null && !reader.getAttributePrefix(i).isEmpty()
-                            ? reader.getAttributePrefix(i) + ":"
-                            : "")
-                    .append(reader.getAttributeLocalName(i))
-                    .append("=\"")
-                    .append(reader.getAttributeValue(i))
-                    .append("\"");
-        }
-        builder.append(">");
     }
 
     private static String cleanUpFooter(StringBuilder footer) {

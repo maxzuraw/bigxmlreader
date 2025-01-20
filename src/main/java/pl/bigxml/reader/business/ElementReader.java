@@ -57,13 +57,13 @@ public class ElementReader {
         return elementBuilder.toString();
     }
 
-    private static void appendPrefixIfExists(XMLStreamReader reader, StringBuilder builder) {
+    public static void appendPrefixIfExists(XMLStreamReader reader, StringBuilder builder) {
         if (reader.getPrefix() != null && !reader.getPrefix().isEmpty()) {
             builder.append(reader.getPrefix()).append(":");
         }
     }
 
-    private static void appendNamespacesIfExists(XMLStreamReader reader, StringBuilder builder) {
+    public static void appendNamespacesIfExists(XMLStreamReader reader, StringBuilder builder) {
         for (int i = 0; i < reader.getNamespaceCount(); i++) {
             builder.append(" xmlns");
             if (reader.getNamespacePrefix(i) != null && Objects.equals(reader.getLocalName(), "Document")) {
@@ -73,7 +73,7 @@ public class ElementReader {
         }
     }
 
-    private static void appendAttributesIfExists(XMLStreamReader reader, StringBuilder builder) {
+    public static void appendAttributesIfExists(XMLStreamReader reader, StringBuilder builder) {
         for (int i = 0; i < reader.getAttributeCount(); i++) {
             builder.append(" ")
                     .append(reader.getAttributePrefix(i) != null && !reader.getAttributePrefix(i).isEmpty()
