@@ -7,6 +7,6 @@ import lombok.Data;
 @Builder
 public class MappingsConfig {
     private String xmlPath;
-    private String fullQualifiedClassName;
+    private String classCanonicalName;
     private String targetName;
 }

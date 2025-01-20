@@ -23,7 +23,7 @@ Document.ZVSPaymentArchive.NbOfTxs;Integer;numberOfTransactions;MAP;INCLUDE
 
 ```shell
 [0] - xml path, without namespace
-[1] - target class 
+[1] - target class (canonicalName)
 [2] - target name of the key
 ```
 
@@ -40,7 +40,7 @@ Document.ZVSPaymentArchive.PayInf.DlvrdExctDt;java.time.LocalDate;delivered_exec
 
 ```shell
 [0] - xml path, without namespace
-[1] - target class 
+[1] - target class (canonicalName)
 [2] - target name of the property
 ```
 

@@ -5,6 +5,7 @@ import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
@@ -27,11 +28,13 @@ public class MappingsFileReader {
     @Value("classpath:payment_mappings.csv")
     private Resource paymentsMappingsFile;
 
-    public List<MappingsConfig> readHeaderFooterMappings() throws Exception {
+    @SneakyThrows
+    public List<MappingsConfig> readHeaderFooterMappings() {
         return read(headerFooterMappingsFile);
     }
 
-    public List<MappingsConfig> readPaymentMappings() throws Exception {
+    @SneakyThrows
+    public List<MappingsConfig> readPaymentMappings() {
         return read(paymentsMappingsFile);
     }
 
@@ -49,7 +52,7 @@ public class MappingsFileReader {
             while ((line = reader.readNext()) != null) {
                 MappingsConfig mappingsConfig = MappingsConfig.builder()
                         .xmlPath(line[0])
-                        .fullQualifiedClassName(line[1])
+                        .classCanonicalName(line[1])
                         .targetName(line[2])
                         .build();
                 result.add(mappingsConfig);

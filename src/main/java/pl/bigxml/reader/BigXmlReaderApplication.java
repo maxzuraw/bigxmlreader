@@ -22,6 +22,7 @@ import pl.bigxml.reader.domain.MappingsConfig;
 import pl.bigxml.reader.exceptions.CommandLineArgumentsCountMissmatchException;
 
 import java.util.List;
+import java.util.Map;
 
 import static pl.bigxml.reader.utils.NanoToSeconds.toSeconds;
 
@@ -73,7 +74,6 @@ public class BigXmlReaderApplication implements CommandLineRunner {
 
 
 		// 3. Third processing: map payments and store them somewhere
-
 		List<MappingsConfig> paymentsConfig = mappingsFileReader.readPaymentMappings();
 		SinglePaymentMapper singlePaymentMapper = new SinglePaymentMapper(paymentsConfig, headerFooter);
 		valuesProcessor.process(
@@ -82,5 +82,19 @@ public class BigXmlReaderApplication implements CommandLineRunner {
 				singlePaymentMapper,
 				new StorageCallback()
 		);
+
+
+		readHeaderFooterMapValues(headerFooter);
+	}
+
+	private void readHeaderFooterMapValues(HeaderFooter headerFooter) throws ClassNotFoundException {
+		var mappingsConfigs = mappingsFileReader.readHeaderFooterMappings();
+		ConfigurationMaps maps = new ConfigurationMaps(mappingsConfigs);
+		Map<String, MappingsConfig> configurationPerTargetField = maps.getConfigurationPerTargetField();
+		for (Map.Entry<String, MappingsConfig> entry : configurationPerTargetField.entrySet()) {
+			Class<?> clazz = Class.forName(entry.getValue().getClassCanonicalName());
+			Object value = headerFooter.getFromMap(entry.getKey(), clazz);
+			log.info("HeaderFooter. Key: {}, Value: {}, Class: {}", entry.getKey(), value, value.getClass().getCanonicalName());
+		}
 	}
 }
