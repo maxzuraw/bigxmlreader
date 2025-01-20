@@ -16,10 +16,9 @@ import pl.bigxml.reader.business.payments.StorageCallback;
 import pl.bigxml.reader.config.CsvReaderProperties;
 import pl.bigxml.reader.config.XmlChunkWriterProperties;
 import pl.bigxml.reader.config.XmlReaderProperties;
-import pl.bigxml.reader.domain.HeaderFooterConfig;
+import pl.bigxml.reader.domain.MappingsConfig;
 import pl.bigxml.reader.domain.PathConfigMaps;
-import pl.bigxml.reader.domain.PayinfoMappingConfig;
-import pl.bigxml.reader.domain.ResultHolder;
+import pl.bigxml.reader.domain.HeaderFooter;
 import pl.bigxml.reader.exceptions.CommandLineArgumentsCountMissmatchException;
 
 import java.util.List;
@@ -36,8 +35,7 @@ import static pl.bigxml.reader.utils.NanoToSeconds.toSeconds;
 @RequiredArgsConstructor
 public class BigXmlReaderApplication implements CommandLineRunner {
 
-	private final HeaderFooterConfigFileReader headerFooterConfigFileReader;
-	private final PayinfoMappingConfigFileReader payinfoMappingConfigFileReader;
+	private final MappingsFileReader mappingsFileReader;
 	private final XmlReaderProperties xmlReaderProperties;
 	private final XmlChunkWriterProperties xmlChunkWriterProperties;
 
@@ -55,13 +53,13 @@ public class BigXmlReaderApplication implements CommandLineRunner {
 		if (args.length < 1) {
 			throw new CommandLineArgumentsCountMissmatchException();
 		}
-		List<HeaderFooterConfig> configs = headerFooterConfigFileReader.read();
-		PathConfigMaps pathConfigMaps = new PathConfigMaps(configs);
+		List<MappingsConfig> headerFooterMappings = mappingsFileReader.readHeaderFooterMappings();
+		PathConfigMaps pathConfigMaps = new PathConfigMaps(headerFooterMappings);
 
 
 		// 1. First processing: get header and footer as strings & get header values
 		long startTime = System.nanoTime();
-		ResultHolder resultHolder = headerAndFooterProcessor.read(args[0], pathConfigMaps);
+		HeaderFooter headerFooter = headerAndFooterProcessor.read(args[0], pathConfigMaps);
 		long stopTime = System.nanoTime();
 		log.info("Processing for header/footer string and header values done in seconds: {}", toSeconds(stopTime - startTime));
 
@@ -69,8 +67,8 @@ public class BigXmlReaderApplication implements CommandLineRunner {
 		// 2. Second processing: chunk xml into smaller xmls
 		startTime = System.nanoTime();
 		chunksProcessor.process(args[0], xmlReaderProperties.getChunkSize(), new ChunkProcessingCallback(
-				resultHolder.getHeader().toString(),
-				resultHolder.getFooter().toString(),
+				headerFooter.getHeader().toString(),
+				headerFooter.getFooter().toString(),
 				xmlChunkWriterProperties.getTargetFolder(),
 				xmlChunkWriterProperties.getTargetFilePrefix())
 		);
@@ -79,29 +77,16 @@ public class BigXmlReaderApplication implements CommandLineRunner {
 
 
 		// 3. Third processing: map payments and store them somewhere
-		List<PayinfoMappingConfig> payinfoConfigs = payinfoMappingConfigFileReader.read();
+		List<MappingsConfig> paymentsConfig = mappingsFileReader.readPaymentMappings();
 		paymentsProcessor.process(
 				args[0],
 				xmlReaderProperties.getChunkSize(),
 				new SinglePaymentMapper(
-						payinfoConfigs,
-						resultHolder.getHeader().toString(),
-						resultHolder.getFooter().toString()
+						paymentsConfig,
+						headerFooter.getHeader().toString(),
+						headerFooter.getFooter().toString()
 				),
 				new StorageCallback()
 		);
-
-
-		// NOTE: write some header values to show how to access them
-		writeSomeHeaderValues(pathConfigMaps, resultHolder);
-	}
-
-	private static void writeSomeHeaderValues(PathConfigMaps pathConfigMaps, ResultHolder resultHolder) throws ClassNotFoundException {
-		HeaderFooterConfig headerFooterConfig = pathConfigMaps.getResultMap().get("versionInterface");
-		var version = resultHolder.getMapValueByKey(headerFooterConfig.getTargetName(), Class.forName(headerFooterConfig.getFullQualifiedClassName()));
-		log.info("{}", version);
-		headerFooterConfig = pathConfigMaps.getResultMap().get("archivizationDate");
-		var archivizationDate = resultHolder.getMapValueByKey(headerFooterConfig.getTargetName(), Class.forName(headerFooterConfig.getFullQualifiedClassName()));
-		log.info("{}", archivizationDate);
 	}
 }

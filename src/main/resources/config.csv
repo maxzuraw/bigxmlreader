@@ -1,6 +1,0 @@
-Document.ZVSPaymentArchive.VersionInterface;java.lang.String;versionInterface;MAP;INCLUDE
-Document.ZVSPaymentArchive.DeliveringSystem;java.lang.String;delivery;MAP;INCLUDE
-Document.ZVSPaymentArchive.ArchDt;java.time.LocalDate;archivizationDate;MAP;INCLUDE
-Document.ZVSPaymentArchive.ArchFileNum;Integer;archivizationNumber;MAP;INCLUDE
-Document.ZVSPaymentArchive.IsLastArchFile;Boolean;isLastArchiveFile;MAP;INCLUDE
-Document.ZVSPaymentArchive.NbOfTxs;Integer;numberOfTransactions;MAP;INCLUDE

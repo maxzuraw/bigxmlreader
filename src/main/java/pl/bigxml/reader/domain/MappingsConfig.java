@@ -5,10 +5,8 @@ import lombok.Data;
 
 @Data
 @Builder
-public class HeaderFooterConfig {
+public class MappingsConfig {
     private String xmlPath;
     private String fullQualifiedClassName;
     private String targetName;
-    private Appearance appearance;
-    private Processing processing;
 }

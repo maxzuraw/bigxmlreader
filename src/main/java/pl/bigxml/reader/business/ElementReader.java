@@ -8,7 +8,7 @@ import javax.xml.stream.XMLStreamReader;
 import java.util.Objects;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class BodyElementReader {
+public class ElementReader {
 
     public static String readElement(XMLStreamReader reader, String elementName) throws Exception {
         StringBuilder elementBuilder = new StringBuilder();

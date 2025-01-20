@@ -3,7 +3,7 @@ package pl.bigxml.reader.business.payments;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-import pl.bigxml.reader.business.BodyElementReader;
+import pl.bigxml.reader.business.ElementReader;
 import pl.bigxml.reader.config.XmlReaderProperties;
 import pl.bigxml.reader.domain.Payment;
 
@@ -32,7 +32,7 @@ public class PaymentsProcessor {
         while (xmlStreamReader.hasNext()) {
             int event = xmlStreamReader.next();
             if (event == XMLStreamConstants.START_ELEMENT && readerConfig.getBodyNodeLocalName().equals(xmlStreamReader.getLocalName())) {
-                String payInfElement = BodyElementReader.readElement(xmlStreamReader, readerConfig.getBodyNodeLocalName());
+                String payInfElement = ElementReader.readElement(xmlStreamReader, readerConfig.getBodyNodeLocalName());
                 Payment payment = singlePaymentMapper.apply(payInfElement);
                 if (payment != null) {
                     payments.add(payment);

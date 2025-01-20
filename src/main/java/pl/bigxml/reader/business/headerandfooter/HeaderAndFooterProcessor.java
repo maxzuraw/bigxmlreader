@@ -4,11 +4,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import pl.bigxml.reader.config.XmlReaderProperties;
-import pl.bigxml.reader.domain.Appearance;
-import pl.bigxml.reader.domain.HeaderFooterConfig;
 import pl.bigxml.reader.domain.PathConfigMaps;
-import pl.bigxml.reader.domain.PathTracker;
-import pl.bigxml.reader.domain.ResultHolder;
+import pl.bigxml.reader.domain.HeaderFooter;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
@@ -16,7 +13,6 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.Map;
 
 @Slf4j
 @Component
@@ -25,29 +21,23 @@ public class HeaderAndFooterProcessor {
 
     private final XmlReaderProperties xmlReaderProperties;
 
-    public ResultHolder read(String pathToXmlFile, PathConfigMaps pathConfigMaps) throws FileNotFoundException, XMLStreamException {
+    public HeaderFooter read(String pathToXmlFile, PathConfigMaps pathConfigMaps) throws FileNotFoundException, XMLStreamException {
         return processXmlForValues(pathToXmlFile, pathConfigMaps);
     }
 
-    private ResultHolder processXmlForValues(String pathToXmlFile, PathConfigMaps pathConfigMaps) throws FileNotFoundException, XMLStreamException {
-        Map<String, HeaderFooterConfig> pathConfigPerPath = pathConfigMaps.getConfigMap();
-
+    private HeaderFooter processXmlForValues(String pathToXmlFile, PathConfigMaps pathConfigMaps) throws FileNotFoundException, XMLStreamException {
         XMLInputFactory factory = XMLInputFactory.newInstance();
         factory.setProperty(XMLInputFactory.IS_NAMESPACE_AWARE, xmlReaderProperties.isNamespaceAware());
         XMLStreamReader xmlStreamReader = factory.createXMLStreamReader(new FileReader(pathToXmlFile));
 
-        PathTracker pathTracker = new PathTracker();
-        ResultHolder resultHolder = new ResultHolder();
+        HeaderFooter headerFooter = new HeaderFooter();
 
         StringBuilder header = new StringBuilder();
         StringBuilder footer = new StringBuilder();
         StringBuilder currentSection = header;
-
         boolean insidePayInf = false;
-
         while(xmlStreamReader.hasNext()) {
             int event = xmlStreamReader.next();
-            HeaderFooterConfig headerFooterConfig = null;
             switch(event) {
                 case XMLStreamConstants.START_ELEMENT:
                     String localName = xmlStreamReader.getLocalName();
@@ -59,26 +49,13 @@ public class HeaderAndFooterProcessor {
                     if (!insidePayInf) {
                         appendStartElement(xmlStreamReader, currentSection);
                     }
-                    pathTracker.addNextElement(localName);
                     break;
                 case XMLStreamConstants.CHARACTERS:
-                    headerFooterConfig = pathConfigPerPath.get(pathTracker.getFullTrack());
-                    if (headerFooterConfig != null) {
-                        if (Appearance.MAP.equals(headerFooterConfig.getAppearance())) {
-                            resultHolder.putInMap(headerFooterConfig.getTargetName(), xmlStreamReader.getText().trim());
-                        }
-                    }
                     if (!insidePayInf) {
                         currentSection.append(xmlStreamReader.getText());
                     }
                     break;
                 case XMLStreamConstants.END_ELEMENT:
-                    String lastElement = pathTracker.getLastElement();
-                    if (lastElement.equals(xmlStreamReader.getLocalName())) {
-                        log.debug(pathTracker.getFullTrack());
-                        pathTracker.removeLastElement();
-                    }
-
                     if (xmlReaderProperties.getBodyNodeLocalName().equals(xmlStreamReader.getLocalName())
                             && xmlReaderProperties.getBodyNodeNamespaceUri().equals(xmlStreamReader.getNamespaceURI())) {
                         insidePayInf = false;
@@ -86,7 +63,6 @@ public class HeaderAndFooterProcessor {
                         currentSection.append("</").append(xmlStreamReader.getPrefix()).append(":")
                                 .append(xmlStreamReader.getLocalName()).append(">");
                     }
-
                     break;
                 case XMLStreamConstants.COMMENT:
                     if (!insidePayInf) {
@@ -95,10 +71,10 @@ public class HeaderAndFooterProcessor {
                     break;
             }
         }
-        resultHolder.getHeader().append(header);
+        headerFooter.getHeader().append(header);
         String cleanedUpFooter = cleanUpFooter(footer);
-        resultHolder.getFooter().append(cleanedUpFooter);
-        return resultHolder;
+        headerFooter.getFooter().append(cleanedUpFooter);
+        return headerFooter;
     }
 
     private static void appendStartElement(XMLStreamReader reader, StringBuilder builder) {

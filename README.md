@@ -24,9 +24,7 @@ Document.ZVSPaymentArchive.NbOfTxs;Integer;numberOfTransactions;MAP;INCLUDE
 ```shell
 [0] - xml path, without namespace
 [1] - target class 
-[2] - target name of the field (only makes sense when using MAP)
-[3] - Appearance - MAP or LIST, if MAP -> result will be placed into MAP with key of value [4], if LIST if will be placed in list
-[4] - Processing - INCLUDE or EXCLUDE: INCLUDE -> it will be included in result object, EXCLUDE -> it will be excluded from result object
+[2] - target name of the key
 ```
 
 ## payinfo_mapping.csv
@@ -34,17 +32,16 @@ Document.ZVSPaymentArchive.NbOfTxs;Integer;numberOfTransactions;MAP;INCLUDE
 example:
 
 ```shell
-PayInf.Amt;amount
-PayInf.Amt.[Ccy];currency
-PayInf.DlvrdExctDt;delivered_execution_date
-PayInf.InSttlmInf.Amt;input_settlement_info_amount
-PayInf.InSttlmInf.Amt.[Ccy];input_settlement_info_currency
+Document.ZVSPaymentArchive.PayInf.Amt;java.math.BigDecimal;amount
+Document.ZVSPaymentArchive.PayInf.Amt.[Ccy];java.lang.String;currency
+Document.ZVSPaymentArchive.PayInf.DlvrdExctDt;java.time.LocalDate;delivered_execution_date
 ```
 ### Columns
 
 ```shell
 [0] - xml path, without namespace
-[1] - target property 
+[1] - target class 
+[2] - target name of the property
 ```
 
 # App arguments when starting app

@@ -9,11 +9,11 @@ import java.util.Map;
 @Getter
 public class PathConfigMaps {
 
-    private final Map<String, HeaderFooterConfig> configMap = new HashMap<>();
-    private final Map<String, HeaderFooterConfig> resultMap = new HashMap<>();
+    private final Map<String, MappingsConfig> configMap = new HashMap<>();
+    private final Map<String, MappingsConfig> resultMap = new HashMap<>();
 
-    public PathConfigMaps(List<HeaderFooterConfig> headerFooterConfigs) {
-        for(HeaderFooterConfig pc : headerFooterConfigs) {
+    public PathConfigMaps(List<MappingsConfig> mappingsConfigs) {
+        for(MappingsConfig pc : mappingsConfigs) {
             configMap.put(pc.getXmlPath(), pc);
             resultMap.put(pc.getTargetName(), pc);
         }

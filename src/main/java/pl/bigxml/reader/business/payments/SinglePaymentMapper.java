@@ -1,10 +1,9 @@
 package pl.bigxml.reader.business.payments;
 
-import com.ctc.wstx.exc.WstxUnexpectedCharException;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
+import pl.bigxml.reader.domain.MappingsConfig;
 import pl.bigxml.reader.domain.PathTracker;
-import pl.bigxml.reader.domain.PayinfoMappingConfig;
 import pl.bigxml.reader.domain.Payment;
 
 import javax.xml.stream.XMLInputFactory;
@@ -17,11 +16,11 @@ import java.util.function.Function;
 @Slf4j
 public class SinglePaymentMapper implements Function<String, Payment> {
 
-    private final List<PayinfoMappingConfig> configs;
+    private final List<MappingsConfig> configs;
     private final String header;
     private final String footer;
 
-    public SinglePaymentMapper(List<PayinfoMappingConfig> configs, String header, String footer) {
+    public SinglePaymentMapper(List<MappingsConfig> configs, String header, String footer) {
         this.configs = configs;
         this.header = header;
         this.footer = footer;
