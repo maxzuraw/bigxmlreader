@@ -23,7 +23,12 @@ public class PaymentsProcessor {
 
     private final XmlReaderProperties readerConfig;
 
-    public void process(String pathToXmlFile, int chunkSize, SinglePaymentMapper singlePaymentMapper, StorageCallback storageCallback) throws Exception {
+    public void process(
+            String pathToXmlFile,
+            int chunkSize,
+            SinglePaymentMapper singlePaymentMapper,
+            StorageCallback storageCallback
+    ) throws Exception {
         XMLInputFactory factory = XMLInputFactory.newInstance();
         XMLStreamReader xmlStreamReader = factory.createXMLStreamReader(new FileReader(pathToXmlFile));
         List<Payment> payments = new ArrayList<>();
