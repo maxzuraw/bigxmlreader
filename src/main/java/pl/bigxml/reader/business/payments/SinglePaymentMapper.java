@@ -1,6 +1,9 @@
 package pl.bigxml.reader.business.payments;
 
+import com.ctc.wstx.exc.WstxUnexpectedCharException;
 import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
+import pl.bigxml.reader.domain.PathTracker;
 import pl.bigxml.reader.domain.PayinfoMappingConfig;
 import pl.bigxml.reader.domain.Payment;
 
@@ -11,37 +14,58 @@ import java.io.StringReader;
 import java.util.List;
 import java.util.function.Function;
 
+@Slf4j
 public class SinglePaymentMapper implements Function<String, Payment> {
 
     private final List<PayinfoMappingConfig> configs;
+    private final String header;
+    private final String footer;
 
-    public SinglePaymentMapper(List<PayinfoMappingConfig> configs) {
+    public SinglePaymentMapper(List<PayinfoMappingConfig> configs, String header, String footer) {
         this.configs = configs;
+        this.header = header;
+        this.footer = footer;
     }
 
     @SneakyThrows
     @Override
     public Payment apply(String s) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(header);
+        sb.append(s);
+        sb.append(footer);
+
         XMLInputFactory factory = XMLInputFactory.newInstance();
-        factory.setProperty(XMLInputFactory.IS_NAMESPACE_AWARE, false);
-        XMLStreamReader reader = factory.createXMLStreamReader(new StringReader(s));
+        factory.setProperty(XMLInputFactory.IS_NAMESPACE_AWARE, true);
+        XMLStreamReader reader = factory.createXMLStreamReader(new StringReader(sb.toString()));
+
+        Payment payment = Payment.builder().build();
+        PathTracker pathTracker = new PathTracker();
 
         while (reader.hasNext()) {
             int event = reader.next();
             if (event == XMLStreamConstants.START_ELEMENT) {
+                pathTracker.addNextElement(reader.getLocalName());
                 System.out.println("Start Element: " + reader.getLocalName());
-            } else if (event == XMLStreamConstants.ATTRIBUTE) {
-                System.out.println("Attribute Element: " + reader.getLocalName());
+                for (int i =0; i < reader.getAttributeCount(); i++) {
+                    String attributeName = reader.getAttributeLocalName(i);
+                    String attributeValue = reader.getAttributeValue(i);
+                    String attributeNameAdjusted = "[" + attributeName + "]";
+                    var fullTrack = pathTracker.getFullTrack();
+                    String fullTrackWithAttribute = fullTrack + "." + attributeNameAdjusted;
+                    System.out.println("Attribute Element: " + fullTrackWithAttribute);
+                }
             } else if (event == XMLStreamConstants.CHARACTERS) {
                 System.out.println("Text: " + reader.getText());
-            } else if (event == XMLStreamConstants.CDATA) {
-                System.out.println("CDATA: " + reader.getText());
             } else if (event == XMLStreamConstants.END_ELEMENT) {
-                System.out.println("End Element: " + reader.getLocalName());
+                String lastElement = pathTracker.getLastElement();
+                if (lastElement.equals(reader.getLocalName())) {
+                    log.debug(pathTracker.getFullTrack());
+                    pathTracker.removeLastElement();
+                }
             }
         }
         reader.close();
-
-        return null;
+        return payment;
     }
 }

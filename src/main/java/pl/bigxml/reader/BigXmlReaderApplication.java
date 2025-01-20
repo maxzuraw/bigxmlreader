@@ -83,7 +83,11 @@ public class BigXmlReaderApplication implements CommandLineRunner {
 		paymentsProcessor.process(
 				args[0],
 				xmlReaderProperties.getChunkSize(),
-				new SinglePaymentMapper(payinfoConfigs),
+				new SinglePaymentMapper(
+						payinfoConfigs,
+						resultHolder.getHeader().toString(),
+						resultHolder.getFooter().toString()
+				),
 				new StorageCallback()
 		);
 

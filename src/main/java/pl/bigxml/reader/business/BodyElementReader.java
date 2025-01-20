@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamReader;
+import java.util.Objects;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class BodyElementReader {
@@ -65,7 +66,7 @@ public class BodyElementReader {
     private static void appendNamespacesIfExists(XMLStreamReader reader, StringBuilder builder) {
         for (int i = 0; i < reader.getNamespaceCount(); i++) {
             builder.append(" xmlns");
-            if (reader.getNamespacePrefix(i) != null) {
+            if (reader.getNamespacePrefix(i) != null && Objects.equals(reader.getLocalName(), "Document")) {
                 builder.append(":").append(reader.getNamespacePrefix(i));
             }
             builder.append("=\"").append(reader.getNamespaceURI(i)).append("\"");
@@ -76,7 +77,7 @@ public class BodyElementReader {
         for (int i = 0; i < reader.getAttributeCount(); i++) {
             builder.append(" ")
                     .append(reader.getAttributePrefix(i) != null && !reader.getAttributePrefix(i).isEmpty()
-                            ? reader.getAttributePrefix(i) + ":"
+                            ? reader.getAttributePrefix(i)
                             : "")
                     .append(reader.getAttributeLocalName(i))
                     .append("=\"")
