@@ -6,19 +6,19 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import pl.bigxml.reader.business.*;
+import pl.bigxml.reader.business.MappingsFileReader;
 import pl.bigxml.reader.business.chunks.ChunkProcessingCallback;
 import pl.bigxml.reader.business.chunks.ChunksProcessor;
 import pl.bigxml.reader.business.headerandfooter.HeaderFooterProcessor;
-import pl.bigxml.reader.business.payments.PaymentsProcessor;
 import pl.bigxml.reader.business.payments.SinglePaymentMapper;
 import pl.bigxml.reader.business.payments.StorageCallback;
+import pl.bigxml.reader.business.payments.ValuesProcessor;
 import pl.bigxml.reader.config.CsvReaderProperties;
 import pl.bigxml.reader.config.XmlChunkWriterProperties;
 import pl.bigxml.reader.config.XmlReaderProperties;
-import pl.bigxml.reader.domain.MappingsConfig;
 import pl.bigxml.reader.domain.ConfigurationMaps;
 import pl.bigxml.reader.domain.HeaderFooter;
+import pl.bigxml.reader.domain.MappingsConfig;
 import pl.bigxml.reader.exceptions.CommandLineArgumentsCountMissmatchException;
 
 import java.util.List;
@@ -41,7 +41,7 @@ public class BigXmlReaderApplication implements CommandLineRunner {
 
 	private final HeaderFooterProcessor headerFooterProcessor;
 	private final ChunksProcessor chunksProcessor;
-	private final PaymentsProcessor paymentsProcessor;
+	private final ValuesProcessor valuesProcessor;
 
 
 	public static void main(String[] args) {
@@ -53,10 +53,6 @@ public class BigXmlReaderApplication implements CommandLineRunner {
 		if (args.length < 1) {
 			throw new CommandLineArgumentsCountMissmatchException();
 		}
-		List<MappingsConfig> headerFooterMappings = mappingsFileReader.readHeaderFooterMappings();
-		ConfigurationMaps configurationMaps = new ConfigurationMaps(headerFooterMappings);
-
-
 		// 1. First processing: get header and footer as strings & get header values
 		long startTime = System.nanoTime();
 		HeaderFooter headerFooter = headerFooterProcessor.read(args[0]);
@@ -77,8 +73,10 @@ public class BigXmlReaderApplication implements CommandLineRunner {
 
 
 		// 3. Third processing: map payments and store them somewhere
+		List<MappingsConfig> headerFooterMappings = mappingsFileReader.readHeaderFooterMappings();
+		ConfigurationMaps configurationMaps = new ConfigurationMaps(headerFooterMappings);
 		List<MappingsConfig> paymentsConfig = mappingsFileReader.readPaymentMappings();
-		paymentsProcessor.process(
+		valuesProcessor.process(
 				args[0],
 				xmlReaderProperties.getChunkSize(),
 				new SinglePaymentMapper(

@@ -19,7 +19,7 @@ import static pl.bigxml.reader.utils.NanoToSeconds.toSeconds;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class PaymentsProcessor {
+public class ValuesProcessor {
 
     private final XmlReaderProperties readerConfig;
 
