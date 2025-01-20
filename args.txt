@@ -1,10 +1,10 @@
-C:\Users\maxzu\Documents\cpl\zadanko_od_piotra\config.csv
 C:\Users\maxzu\Documents\cpl\zadanko_od_piotra\EUMAREARCH.00001.1900.20241031195539.00011.Payment_formatted.xml
 
 
-C:\Users\maxzu\Documents\cpl\zadanko_od_piotra\config.csv
 C:\Users\maxzu\Documents\cpl\zadanko_od_piotra\EUMAREARCH.00001.1900.20241031195539.00011\EUMAREARCH.00001.1900.20241031195539.00011.Payment_100K
 
 
-C:\Users\maxzu\Documents\cpl\zadanko_od_piotra\config.csv
 C:\Users\maxzu\Documents\cpl\zadanko_od_piotra\BigXmlReader\src\test\resources\Payments_small_10_elements.xml
+
+
+C:\Users\Consileon\Documents\repos\EUMAREARCH.00001.1900.20241031195539.00011\EUMAREARCH.00001.1900.20241031195539.00011.Payment

@@ -12,5 +12,5 @@ bigxmlreader:
     body-node-local-name: PayInf
     body-node-namespace-uri: http://www.equens.com/zvs/archive/transaction
   xml-chunk-writer:
-    target-folder: C:/Users/maxzu/Documents/cpl/zadanko_od_piotra/output
+    target-folder: ${CHUNKS_OUTPUT_FOLDER:C:/Users/maxzu/Documents/cpl/zadanko_od_piotra/output}
     target-file-prefix: chunked_payments_
