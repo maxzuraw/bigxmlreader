@@ -2,6 +2,7 @@ package pl.bigxml.reader.business.payments;
 
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
+import pl.bigxml.reader.domain.HeaderFooter;
 import pl.bigxml.reader.domain.MappingsConfig;
 import pl.bigxml.reader.domain.PathTracker;
 import pl.bigxml.reader.domain.Payment;
@@ -20,10 +21,10 @@ public class SinglePaymentMapper implements Function<String, Payment> {
     private final String header;
     private final String footer;
 
-    public SinglePaymentMapper(List<MappingsConfig> configs, String header, String footer) {
+    public SinglePaymentMapper(List<MappingsConfig> configs, HeaderFooter headerFooter) {
         this.configs = configs;
-        this.header = header;
-        this.footer = footer;
+        this.header = headerFooter.getHeader().toString();
+        this.footer = headerFooter.getFooter().toString();
     }
 
     @SneakyThrows

@@ -76,14 +76,11 @@ public class BigXmlReaderApplication implements CommandLineRunner {
 		List<MappingsConfig> headerFooterMappings = mappingsFileReader.readHeaderFooterMappings();
 		ConfigurationMaps configurationMaps = new ConfigurationMaps(headerFooterMappings);
 		List<MappingsConfig> paymentsConfig = mappingsFileReader.readPaymentMappings();
+		SinglePaymentMapper singlePaymentMapper = new SinglePaymentMapper(paymentsConfig, headerFooter);
 		valuesProcessor.process(
 				args[0],
 				xmlReaderProperties.getChunkSize(),
-				new SinglePaymentMapper(
-						paymentsConfig,
-						headerFooter.getHeader().toString(),
-						headerFooter.getFooter().toString()
-				),
+				singlePaymentMapper,
 				new StorageCallback()
 		);
 	}
