@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import pl.bigxml.reader.config.XmlReaderProperties;
-import pl.bigxml.reader.domain.PathConfigMaps;
 import pl.bigxml.reader.domain.HeaderFooter;
 
 import javax.xml.stream.XMLInputFactory;
@@ -17,15 +16,15 @@ import java.io.FileReader;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class HeaderAndFooterProcessor {
+public class HeaderFooterProcessor {
 
     private final XmlReaderProperties xmlReaderProperties;
 
-    public HeaderFooter read(String pathToXmlFile, PathConfigMaps pathConfigMaps) throws FileNotFoundException, XMLStreamException {
-        return processXmlForValues(pathToXmlFile, pathConfigMaps);
+    public HeaderFooter read(String pathToXmlFile) throws FileNotFoundException, XMLStreamException {
+        return readHeaderFooter(pathToXmlFile);
     }
 
-    private HeaderFooter processXmlForValues(String pathToXmlFile, PathConfigMaps pathConfigMaps) throws FileNotFoundException, XMLStreamException {
+    private HeaderFooter readHeaderFooter(String pathToXmlFile) throws FileNotFoundException, XMLStreamException {
         XMLInputFactory factory = XMLInputFactory.newInstance();
         factory.setProperty(XMLInputFactory.IS_NAMESPACE_AWARE, xmlReaderProperties.isNamespaceAware());
         XMLStreamReader xmlStreamReader = factory.createXMLStreamReader(new FileReader(pathToXmlFile));

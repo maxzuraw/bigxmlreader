@@ -9,7 +9,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import pl.bigxml.reader.business.*;
 import pl.bigxml.reader.business.chunks.ChunkProcessingCallback;
 import pl.bigxml.reader.business.chunks.ChunksProcessor;
-import pl.bigxml.reader.business.headerandfooter.HeaderAndFooterProcessor;
+import pl.bigxml.reader.business.headerandfooter.HeaderFooterProcessor;
 import pl.bigxml.reader.business.payments.PaymentsProcessor;
 import pl.bigxml.reader.business.payments.SinglePaymentMapper;
 import pl.bigxml.reader.business.payments.StorageCallback;
@@ -17,7 +17,7 @@ import pl.bigxml.reader.config.CsvReaderProperties;
 import pl.bigxml.reader.config.XmlChunkWriterProperties;
 import pl.bigxml.reader.config.XmlReaderProperties;
 import pl.bigxml.reader.domain.MappingsConfig;
-import pl.bigxml.reader.domain.PathConfigMaps;
+import pl.bigxml.reader.domain.ConfigurationMaps;
 import pl.bigxml.reader.domain.HeaderFooter;
 import pl.bigxml.reader.exceptions.CommandLineArgumentsCountMissmatchException;
 
@@ -39,7 +39,7 @@ public class BigXmlReaderApplication implements CommandLineRunner {
 	private final XmlReaderProperties xmlReaderProperties;
 	private final XmlChunkWriterProperties xmlChunkWriterProperties;
 
-	private final HeaderAndFooterProcessor headerAndFooterProcessor;
+	private final HeaderFooterProcessor headerFooterProcessor;
 	private final ChunksProcessor chunksProcessor;
 	private final PaymentsProcessor paymentsProcessor;
 
@@ -54,12 +54,12 @@ public class BigXmlReaderApplication implements CommandLineRunner {
 			throw new CommandLineArgumentsCountMissmatchException();
 		}
 		List<MappingsConfig> headerFooterMappings = mappingsFileReader.readHeaderFooterMappings();
-		PathConfigMaps pathConfigMaps = new PathConfigMaps(headerFooterMappings);
+		ConfigurationMaps configurationMaps = new ConfigurationMaps(headerFooterMappings);
 
 
 		// 1. First processing: get header and footer as strings & get header values
 		long startTime = System.nanoTime();
-		HeaderFooter headerFooter = headerAndFooterProcessor.read(args[0], pathConfigMaps);
+		HeaderFooter headerFooter = headerFooterProcessor.read(args[0]);
 		long stopTime = System.nanoTime();
 		log.info("Processing for header/footer string and header values done in seconds: {}", toSeconds(stopTime - startTime));
 
