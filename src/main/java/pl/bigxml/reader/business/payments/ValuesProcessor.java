@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import pl.bigxml.reader.business.ElementReader;
-import pl.bigxml.reader.business.MappingsFileReader;
 import pl.bigxml.reader.config.XmlReaderProperties;
 import pl.bigxml.reader.domain.Payment;
 
@@ -23,7 +22,7 @@ import static pl.bigxml.reader.utils.NanoToSeconds.toSeconds;
 public class ValuesProcessor {
 
     private final XmlReaderProperties readerConfig;
-    private final MappingsFileReader mappingsFileReader;
+    private final ElementReader elementReader;
 
     public void process(
             String pathToXmlFile,
@@ -40,16 +39,12 @@ public class ValuesProcessor {
         while (xmlStreamReader.hasNext()) {
             int event = xmlStreamReader.next();
             if (event == XMLStreamConstants.START_ELEMENT && readerConfig.getBodyNodeLocalName().equals(xmlStreamReader.getLocalName())) {
-                String payInfElement = ElementReader.readElement(xmlStreamReader, readerConfig.getBodyNodeLocalName());
+                String payInfElement = elementReader.readElement(xmlStreamReader, readerConfig.getBodyNodeLocalName());
                 Payment payment = singlePaymentMapper.apply(payInfElement);
-                if (payment != null) {
-                    payments.add(payment);
-                }
+                payments.add(payment);
                 count++;
                 if (count % chunkSize == 0 ) {
-                    if (!payments.isEmpty()) {
-                        storageCallback.apply(payments);
-                    }
+                    storageCallback.apply(payments);
                     payments.clear();
                 }
             }

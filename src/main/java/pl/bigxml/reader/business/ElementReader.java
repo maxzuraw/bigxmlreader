@@ -1,16 +1,19 @@
 package pl.bigxml.reader.business;
 
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamReader;
 import java.util.Objects;
 
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@Component
 public class ElementReader {
 
-    public static String readElement(XMLStreamReader reader, String elementName) throws Exception {
+    @Value("${bigxmlreader.xml-reader.root-node-local-name}")
+    private String rootDocumentLocalName;
+
+    public String readElement(XMLStreamReader reader, String elementName) throws Exception {
         StringBuilder elementBuilder = new StringBuilder();
         elementBuilder.append("<");
 
@@ -57,23 +60,23 @@ public class ElementReader {
         return elementBuilder.toString();
     }
 
-    public static void appendPrefixIfExists(XMLStreamReader reader, StringBuilder builder) {
+    public void appendPrefixIfExists(XMLStreamReader reader, StringBuilder builder) {
         if (reader.getPrefix() != null && !reader.getPrefix().isEmpty()) {
             builder.append(reader.getPrefix()).append(":");
         }
     }
 
-    public static void appendNamespacesIfExists(XMLStreamReader reader, StringBuilder builder) {
+    public void appendNamespacesIfExists(XMLStreamReader reader, StringBuilder builder) {
         for (int i = 0; i < reader.getNamespaceCount(); i++) {
             builder.append(" xmlns");
-            if (reader.getNamespacePrefix(i) != null && Objects.equals(reader.getLocalName(), "Document")) {
+            if (reader.getNamespacePrefix(i) != null && Objects.equals(reader.getLocalName(), rootDocumentLocalName)) {
                 builder.append(":").append(reader.getNamespacePrefix(i));
             }
             builder.append("=\"").append(reader.getNamespaceURI(i)).append("\"");
         }
     }
 
-    public static void appendAttributesIfExists(XMLStreamReader reader, StringBuilder builder) {
+    public void appendAttributesIfExists(XMLStreamReader reader, StringBuilder builder) {
         for (int i = 0; i < reader.getAttributeCount(); i++) {
             builder.append(" ")
                     .append(reader.getAttributePrefix(i) != null && !reader.getAttributePrefix(i).isEmpty()

@@ -2,27 +2,28 @@ package pl.bigxml.reader.business.payments;
 
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
-import pl.bigxml.reader.domain.HeaderFooter;
-import pl.bigxml.reader.domain.MappingsConfig;
-import pl.bigxml.reader.domain.PathTracker;
-import pl.bigxml.reader.domain.Payment;
+import pl.bigxml.reader.domain.*;
+import pl.bigxml.reader.utils.CastingUtils;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamReader;
 import java.io.StringReader;
-import java.util.List;
+import java.util.Map;
 import java.util.function.Function;
+
+import static pl.bigxml.reader.utils.PropertySetter.setProperty;
+import static pl.bigxml.reader.utils.SnakeToCamelCase.toCamelCase;
 
 @Slf4j
 public class SinglePaymentMapper implements Function<String, Payment> {
 
-    private final List<MappingsConfig> configs;
+    private final ConfigurationMaps maps;
     private final String header;
     private final String footer;
 
-    public SinglePaymentMapper(List<MappingsConfig> configs, HeaderFooter headerFooter) {
-        this.configs = configs;
+    public SinglePaymentMapper(ConfigurationMaps maps, HeaderFooter headerFooter) {
+        this.maps = maps;
         this.header = headerFooter.getHeader().toString();
         this.footer = headerFooter.getFooter().toString();
     }
@@ -41,22 +42,19 @@ public class SinglePaymentMapper implements Function<String, Payment> {
 
         Payment payment = Payment.builder().build();
         PathTracker pathTracker = new PathTracker();
+        Map<String, MappingsConfig> perXmlPath = maps.getConfigurationPerXmlPath();
 
         while (reader.hasNext()) {
             int event = reader.next();
             if (event == XMLStreamConstants.START_ELEMENT) {
                 pathTracker.addNextElement(reader.getLocalName());
-                System.out.println("Start Element: " + reader.getLocalName());
                 for (int i =0; i < reader.getAttributeCount(); i++) {
-                    String attributeName = reader.getAttributeLocalName(i);
-                    String attributeValue = reader.getAttributeValue(i);
-                    String attributeNameAdjusted = "[" + attributeName + "]";
-                    var fullTrack = pathTracker.getFullTrack();
-                    String fullTrackWithAttribute = fullTrack + "." + attributeNameAdjusted;
-                    System.out.println("Attribute Element: " + fullTrackWithAttribute);
+                    var fullTrack = getTrackWithDynamicAttribute(reader, i, pathTracker);
+                    String value = reader.getAttributeValue(i);
+                    setValueInPayment(perXmlPath, fullTrack, value, payment);
                 }
             } else if (event == XMLStreamConstants.CHARACTERS) {
-                System.out.println("Text: " + reader.getText());
+                setValueInPayment(perXmlPath, pathTracker.getFullTrack(), reader.getText(), payment);
             } else if (event == XMLStreamConstants.END_ELEMENT) {
                 String lastElement = pathTracker.getLastElement();
                 if (lastElement.equals(reader.getLocalName())) {
@@ -67,5 +65,22 @@ public class SinglePaymentMapper implements Function<String, Payment> {
         }
         reader.close();
         return payment;
+    }
+
+    private static void setValueInPayment(Map<String, MappingsConfig> perXmlPath, String fullTrack, String value, Payment payment) throws ClassNotFoundException {
+        var mappingsConfig = perXmlPath.get(fullTrack);
+        if (mappingsConfig != null) {
+            Class<?> aClass = Class.forName(mappingsConfig.getClassCanonicalName());
+            var setterMethod = toCamelCase(mappingsConfig.getTargetName());
+            Object object = CastingUtils.toObject(value, aClass);
+            setProperty(payment, setterMethod, object);
+        }
+    }
+
+    private static String getTrackWithDynamicAttribute(XMLStreamReader reader, int i, PathTracker pathTracker) {
+        String attributeName = reader.getAttributeLocalName(i);
+        String attributeNameAdjusted = "[" + attributeName + "]";
+        var fullTrack = pathTracker.getFullTrack();
+        return fullTrack + "." + attributeNameAdjusted;
     }
 }

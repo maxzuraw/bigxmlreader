@@ -3,6 +3,7 @@ package pl.bigxml.reader.utils;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -21,6 +22,9 @@ public class CastingUtils {
         }
         if (type.equals(Boolean.class)) {
             return (T) Boolean.valueOf(value);
+        }
+        if (type.equals(BigDecimal.class)) {
+            return (T) new BigDecimal(value);
         }
         return type.cast(value);
     }

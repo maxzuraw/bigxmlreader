@@ -9,6 +9,7 @@ bigxmlreader:
   xml-reader:
     namespace-aware: true
     chunk-size: 30
+    root-node-local-name: Document
     body-node-local-name: PayInf
     body-node-namespace-uri: http://www.equens.com/zvs/archive/transaction
   xml-chunk-writer:

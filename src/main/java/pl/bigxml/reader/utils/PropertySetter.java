@@ -2,6 +2,7 @@ package pl.bigxml.reader.utils;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import pl.bigxml.reader.domain.Payment;
 import pl.bigxml.reader.exceptions.PropertySetterException;
 
@@ -9,6 +10,7 @@ import java.lang.reflect.Method;
 
 import static pl.bigxml.reader.utils.SnakeToCamelCase.toCamelCase;
 
+@Slf4j
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class PropertySetter {
 
@@ -28,7 +30,8 @@ public class PropertySetter {
             }
             setter.invoke(target, value);
         } catch (Exception e) {
-            throw new PropertySetterException("Failed to set property '" + propertyName + "' on " + target, e);
+            // log error silently, but try to map as much as possible
+            log.error("Failed to set property '" + propertyName + "' on " + target, e);
         }
     }
 }

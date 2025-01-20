@@ -3,6 +3,7 @@ package pl.bigxml.reader.business.headerandfooter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+import pl.bigxml.reader.business.ElementReader;
 import pl.bigxml.reader.business.MappingsFileReader;
 import pl.bigxml.reader.config.XmlReaderProperties;
 import pl.bigxml.reader.domain.ConfigurationMaps;
@@ -19,8 +20,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Map;
 
-import static pl.bigxml.reader.business.ElementReader.*;
-
 @Slf4j
 @Component
 @RequiredArgsConstructor
@@ -28,6 +27,7 @@ public class HeaderFooterProcessor {
 
     private final XmlReaderProperties xmlReaderProperties;
     private final MappingsFileReader mappingsFileReader;
+    private final ElementReader elementReader;
 
     public HeaderFooter read(String pathToXmlFile) throws FileNotFoundException, XMLStreamException, ClassNotFoundException {
         return readHeaderFooter(pathToXmlFile);
@@ -59,10 +59,10 @@ public class HeaderFooterProcessor {
                     }
                     if (!insidePayInf) {
                         currentSection.append("<");
-                        appendPrefixIfExists(xmlStreamReader, currentSection);
+                        elementReader.appendPrefixIfExists(xmlStreamReader, currentSection);
                         currentSection.append(xmlStreamReader.getLocalName());
-                        appendNamespacesIfExists(xmlStreamReader, currentSection);
-                        appendAttributesIfExists(xmlStreamReader, currentSection);
+                        elementReader.appendNamespacesIfExists(xmlStreamReader, currentSection);
+                        elementReader.appendAttributesIfExists(xmlStreamReader, currentSection);
                         currentSection.append(">");
                     }
                     pathTracker.addNextElement(localName);

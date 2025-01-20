@@ -19,6 +19,7 @@ import static pl.bigxml.reader.utils.NanoToSeconds.toSeconds;
 public class ChunksProcessor {
 
     private final XmlReaderProperties readerConfig;
+    private final ElementReader elementReader;
 
     public void process(String pathToXmlFile, int chunkSize, ChunkProcessingCallback chunkProcessingCallback) throws Exception {
         XMLInputFactory factory = XMLInputFactory.newInstance();
@@ -34,7 +35,7 @@ public class ChunksProcessor {
             int event = xmlStreamReader.next();
 
             if (event == XMLStreamConstants.START_ELEMENT && readerConfig.getBodyNodeLocalName().equals(xmlStreamReader.getLocalName())) {
-                String payInfElement = ElementReader.readElement(xmlStreamReader, readerConfig.getBodyNodeLocalName());
+                String payInfElement = elementReader.readElement(xmlStreamReader, readerConfig.getBodyNodeLocalName());
                 currentChunk.append(payInfElement).append("\n");
                 count++;
                 currentCount++;

@@ -8,8 +8,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public class XmlReaderProperties {
 
     private boolean namespaceAware;
+    private int chunkSize;
     private String bodyNodeLocalName;
     private String bodyNodeNamespaceUri;
-    private int chunkSize;
+    private String rootNodeLocalName;
 
 }

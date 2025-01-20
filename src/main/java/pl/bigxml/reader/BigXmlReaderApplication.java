@@ -75,7 +75,8 @@ public class BigXmlReaderApplication implements CommandLineRunner {
 
 		// 3. Third processing: map payments and store them somewhere
 		List<MappingsConfig> paymentsConfig = mappingsFileReader.readPaymentMappings();
-		SinglePaymentMapper singlePaymentMapper = new SinglePaymentMapper(paymentsConfig, headerFooter);
+		ConfigurationMaps maps = new ConfigurationMaps(paymentsConfig);
+		SinglePaymentMapper singlePaymentMapper = new SinglePaymentMapper(maps, headerFooter);
 		valuesProcessor.process(
 				args[0],
 				xmlReaderProperties.getChunkSize(),
