@@ -23,6 +23,7 @@ public class ValuesProcessor {
 
     private final XmlReaderProperties readerConfig;
     private final ElementReader elementReader;
+    private final PaymentsToDbUnitString paymentsToDbUnitString;
 
     public void process(
             String pathToXmlFile,
@@ -51,6 +52,7 @@ public class ValuesProcessor {
         }
         if (!payments.isEmpty()) {
             storageCallback.apply(payments);
+            paymentsToDbUnitString.printAsDBUnitPayment(payments);
         }
 
         long stopTime = System.nanoTime();
