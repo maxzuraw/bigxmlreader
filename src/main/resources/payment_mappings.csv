@@ -33,4 +33,4 @@ Document.ZVSPaymentArchive.PayInf.ChrgBr;java.lang.String;charge_bearer
 Document.ZVSPaymentArchive.PayInf.RmtInf.Ustrd;java.lang.String;remittance_info_unstructured
 Document.ZVSPaymentArchive.PayInf.GenProcInf.ManInv.ChgType;java.lang.String;manual_intervention_manual_approval_chgtype
 Document.ZVSPaymentArchive.PayInf.GenProcInf.ManInv.Action;java.lang.String;manual_intervention_manual_approval_action
-Document.ZVSPaymentArchive.PayInf.GenProcInf.RjctDetect;java.lang.String;reject_detected
+Document.ZVSPaymentArchive.PayInf.GenProcInf.[RjctDetect];java.lang.String;reject_detected
